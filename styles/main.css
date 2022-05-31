@@ -1,6 +1,9 @@
+@import url('header.css');
+
 :root {
   --main-blue: #128fc8;
   --dark-blue: #0d6998;
+  --hover-blue: #eaebf2;
   --blued-white: #f8f9ff;
   --white: #fff;
   --black: #001128;
@@ -11,7 +14,8 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  font-family: 
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 16px;
 }
 
 * {
