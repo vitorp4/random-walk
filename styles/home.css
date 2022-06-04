@@ -1,0 +1,8 @@
+section#home {
+  background-color: var(--main-blue);
+  min-height: 100vh;
+}
+
+section#home .section-container {
+  padding-top: 100px;
+}

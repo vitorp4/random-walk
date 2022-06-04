@@ -11,17 +11,24 @@ header {
 
 .toolbar {
   width: 1144px;
+  max-width: 1144px;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
 }
 
-.toolbar .logo a {
+.logo a {
   font-family: 'Red Hat Display', sans-serif;
   color: var(--white);
   text-decoration: none;
   font-size: 26px;
   font-weight: 500;
+}
+
+.logo .icon-person-walking {
+  font-size: 28px;
+  display: inline-block;
+  margin-right: 4px;
 }
 
 .toolbar nav > ul {
@@ -36,6 +43,13 @@ header {
   color: var(--white);
   font-weight: 500;
   cursor: pointer;
+  padding: 16px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.toolbar nav > ul > li:hover {
+  background-color: var(--very-dark-blue);
 }
 
 .nav-dropdown a {
@@ -44,38 +58,47 @@ header {
   align-items: baseline;
 }
 
+.nav-dropdown .icon-chevron {
+  font-size: 12px;
+}
+
 .nav-dropdown:hover > ul {
   opacity: 1;
   visibility: visible;
   transform: none;
+  transition: 0.3s;
 }
 
 .nav-dropdown > ul {
   font-weight: 400;
-  left: -18px;
-  top: 30px;
+  left: 0;
+  top: 50px;
   padding: 6px;
   width: 200px;
   position: absolute;
   list-style: none;
   background-color: var(--white);
   color: var(--black);
+  font-size: 14px;
   border-radius: 6px;
   box-shadow: 0 4px 16px 4px rgba(0,0,0,0.1);
   opacity: 0;
   visibility: hidden;
   transform: translateY(-4px);
-  transition: 0.3s;
+  transition: none;
 }
 
 .nav-dropdown > ul > li {
   position: relative;
-  display: flex;
-  padding: 12px;
-  align-items: center;
-  justify-content: space-between;
   cursor: pointer;
   border-radius: 4px;
+}
+
+.nav-dropdown > ul > li > a {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .nav-dropdown > ul > li:hover {
@@ -86,6 +109,7 @@ header {
   opacity: 1;
   visibility: visible;
   transform: none;
+  transition: 0.3s;
 }
 
 .nav-dropdown > ul > li > ul {
@@ -101,7 +125,7 @@ header {
   opacity: 0;
   visibility: hidden;
   transform: translateX(-8px);
-  transition: 0.3s;
+  transition: none;
 }
 
 .nav-dropdown > ul > li > ul > li {

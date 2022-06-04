@@ -24,7 +24,7 @@
       <div class="toolbar">
         <div class="logo">
           <a href="#home">
-            <i class="fa-solid fa-person-walking"></i>
+            <span class="icon-person-walking"><i class="fa-solid fa-person-walking"></span></i>
             Passeio Aleatório
           </a>
         </div>
@@ -32,28 +32,28 @@
           <ul>
             <li><a>Simulação</a></li>
             <li class="nav-dropdown">
-              <a>Como funciona?<i class="fa-solid fa-chevron-down"></a></i>
+              <a>Como funciona?<span class="icon-chevron"><i class="fa-solid fa-chevron-down"></span></i></a>
               <ul>
                 <li>
-                  Conceitos Iniciais <i class="fa-solid fa-chevron-right"></i>
+                  <a>Conceitos Iniciais<span class="icon-chevron"><i class="fa-solid fa-chevron-right"></i></span></a>
                   <ul>
-                    <li>Variável Aleatória</li>
-                    <li>Processo Estocástico</li>
+                    <li><a>Variável Aleatória</a></li>
+                    <li><a>Processo Estocástico</a></li>
                   </ul>
                 </li>
                 <li>
-                  Passeio Aletório <i class="fa-solid fa-chevron-right"></i>
+                  <a>Passeio Aletório<span class="icon-chevron"><i class="fa-solid fa-chevron-right"></i></span></a>
                   <ul>
-                    <li>Posição Final</li>
-                    <li>Triângulo de Pascal</li>
-                    <li>Modelagem Probabilística</li>
+                    <li><a>Posição Final</a></li>
+                    <li><a>Triângulo de Pascal</a></li>
+                    <li><a>Modelagem Probabilística</a></li>
                   </ul>
                 </li>
                 <li>
-                  Simulação <i class="fa-solid fa-chevron-right"></i>
+                  <a>Simulação<span class="icon-chevron"><i class="fa-solid fa-chevron-right"></i></span></a>
                   <ul>
-                    <li>Controles</li>
-                    <li>Desenvolvimento</li>
+                    <li><a>Controles</a></li>
+                    <li><a>Desenvolvimento</a></li>
                   </ul>
                 </li>
               </ul>
@@ -64,8 +64,85 @@
       </div>
     </header>
     <main>
-      <section id="home"></section>
-      <section></section>
+      <section id="home">
+        <div class="section-container">
+          <div class="charts-container">
+          <div class="primary-simulator">
+            <div class="controls">
+              <div class="step-control">
+                <label for="step-input">Passos</label>
+                <div class="step">
+                  1 <input id="step-input" type="range" /> 1000
+                </div>
+              </div>
+
+              <div class="path-control">
+                <label for="path-select">Caminhos</label>
+                <div class="path">
+                <select id="path-select">
+                  <option value="10">10</option>
+                  <option value="100" selected>100</option>
+                  <option value="1000">1000</option>
+                  <option value="2000">2000</option>
+                </select>
+              </div>
+              </div>
+
+              <div class="buttons-control">
+                <button><i class="fa-solid fa-play"></i></button>
+                <!-- <i class="fa-solid fa-pause"></i> -->
+                <button><i class="fa-solid fa-backward"></i></button>
+                <button><i class="fa-solid fa-forward"></i></button>
+                <button><i class="fa-solid fa-arrow-rotate-right"></i></button>
+                <button><i class="fa-solid fa-shuffle"></i></button>
+              </div>
+
+            </div>
+            <div class="path-chart-wrapper">
+              <canvas id="path-chart"></canvas>
+            </div>
+          </div>
+
+          <div class="secondary-simulator">
+            <h1>Configure, simule, compare.</h1>
+            <ol>
+              <li>Escolha a quantidade de passos e caminhos.</li>
+              <li>Inicie a simulação, acelere o quanto desejar.</li>
+              <li>Acompanhe a proporção simulada se aproximar da probabilidade teórica a cada iteração.</li>
+            </ol>
+            <div class="probability-chart-wrapper">
+              <canvas id="probability-chart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="chevron-container">
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+
+        </div>
+
+      </section>
+      <section id="cards">
+        <div class="section-container">
+          
+
+          <div class="cards-wrapper">
+          <div class="card">
+
+          </div>
+          
+          <div class="card">
+
+          </div>
+
+          <div class="card">
+
+          </div>
+        </div>
+
+        </div>
+
+      </section>
       <div>
         <aside></aside>
         <article>

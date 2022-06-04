@@ -1,8 +1,11 @@
 @import url('header.css');
+@import url('home.css');
+@import url('cards.css');
 
 :root {
   --main-blue: #128fc8;
   --dark-blue: #0d6998;
+  --very-dark-blue: #0a618c;
   --hover-blue: #eaebf2;
   --blued-white: #f8f9ff;
   --white: #fff;
@@ -16,10 +19,15 @@ body {
   min-height: 100vh;
   font-family: 'Kumbh Sans', sans-serif;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+main {
+  min-width: 100vw;
 }
