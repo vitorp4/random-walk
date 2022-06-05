@@ -1,8 +1,259 @@
-section#home {
+#home {
   background-color: var(--main-blue);
-  min-height: 100vh;
 }
 
-section#home .section-container {
-  padding-top: 100px;
+#home .section-container {
+  width: 1100px;
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  position: relative;
 }
+
+.charts-container {
+  display: flex;
+  gap: 52px;
+  align-items: flex-end;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.controls label {
+  font-size: 18px;
+  color: var(--white);
+  font-weight: 600;
+}
+
+.step-control {
+  display: flex;
+  align-items: flex-end;
+  color: var(--white);
+  gap: 10px;
+  padding-bottom: 6px;
+}
+
+.step-control .step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#step-input {
+  appearance: none;
+  width: 106px;
+  height: 8px;
+  background-image: linear-gradient(#dddee7,#dddee7);
+  background-size: 50% 100%;
+  background-position-x: right;
+  background-repeat: no-repeat;
+  border-radius: 3px;
+  width: 100px;
+  margin: 16px 0 5px;
+}
+
+#step-input::-webkit-slider-thumb {
+  appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: ew-resize;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  transition: background .3s ease-in-out;
+}
+
+#step-input::-webkit-slider-runnable-track {
+  appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+#rangeoutput {
+  position: absolute;
+  bottom: -30px;
+  font-size: 14px;
+  width: 36px;
+  text-align: center;
+  background-color: var(--white);
+  color: var(--black);
+  padding: 4px 0;
+  border-radius: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+#rangeoutput.visible {
+  opacity: 1;
+  visibility: visible;
+ 
+}
+
+#rangeoutput::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: inherit;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  clip-path: polygon(50% 50%, 100% 100%, 0 100%);
+}
+
+.path-control label {
+  text-align: center;
+  letter-spacing: 0.5px;
+  display: grid;
+}
+
+#path-select {
+  font-size: 14px;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  color: var(--black);
+  height: 32px;
+  width: 110px;
+  font-family: 'Kumbh Sans',sans-serif;
+  padding-left: 12px;
+  margin-top: 4px;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='rgb(18, 143, 200)' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d='M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z'/></svg>");
+  background-repeat: no-repeat;
+  background-color: var(--white);
+  background-size: 12px;
+  background-position: calc(100% - 10px) 50%;
+}
+
+.buttons-control {
+  display: flex;
+  gap: 12px;
+}
+
+.buttons-control > button {
+  border: none;
+  height: 32px;
+  width: 32px;
+  border-radius: 6px;
+  font-size: 18px;
+  display: grid;
+  place-items: center;
+  color: var(--main-blue);
+  cursor: pointer;
+  background-color: var(--white);
+}
+
+.path-chart-wrapper {
+  background-color: var(--white);
+  border-radius: 6px;
+  width: 680px;
+  height: 375px;
+  padding: 8px 16px 8px 8px;
+}
+
+.secondary-simulator {
+  width: 368px;
+  color: var(--white);
+}
+
+.secondary-simulator h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0 0 16px 8px;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+.secondary-simulator ol {
+  list-style: none;
+  counter-reset: my-counter;
+  padding-left: 24px;
+}
+
+.secondary-simulator ol li {
+  font-weight: 300;
+  position: relative;
+  line-height: 24px;
+  counter-increment: counter;
+}
+
+.secondary-simulator ol li + li {
+  margin-top: 4px;
+}
+
+.secondary-simulator ol li::before {
+  content: counter(counter) ".";
+  color: var(--white); 
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Red Hat Display', sans-serif;
+  text-align: center;
+  width: 16px;
+  left: -24px;
+  top: -2px;
+  position: absolute;
+}
+
+.probability-chart-wrapper {
+  width: 368px;
+  background-color: var(--white);
+  border-radius: 6px;
+  padding: 8px 16px 8px 8px;
+  height: 275px;
+  margin-top: 32px;
+}
+
+.chevron-container {
+ display: grid;
+ place-items: center;
+ position: absolute;
+ bottom: 16px;
+ transition: 0.5s;
+}
+
+.chevron-container:hover {
+  transform: translateY(5px);
+}
+
+.chevron-container > a {
+  height: 40px;
+  width: 72px;
+  position: relative;
+}
+
+.chevron-container > a::before {
+  content: '';
+  background-color: var(--white);
+  width: 36px;
+  border-radius: 2px;
+  height: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-50% + 13px),-50%) rotate(-40deg);
+}
+
+.chevron-container > a::after {
+  content: '';
+  background-color: var(--white);
+  width: 36px;
+  border-radius: 2px;
+  height: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-50% - 13px),-50%) rotate(40deg);
+}
+

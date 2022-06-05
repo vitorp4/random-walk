@@ -1,6 +1,124 @@
-section#cards {
+#cards {
   background-image: url('../assets/layered-peaks-haikei-2.svg');
   background-size: 100vw;
   background-repeat: no-repeat;
   height: 700px;
+}
+
+#cards .section-container {
+  width: 1100px;
+  margin: auto;
+  padding: 112px 16px 0;
+}
+
+#cards .section-container h1 {
+  font-size: 32px;
+  font-family: 'Red Hat Display', sans-serif;
+  width: fit-content;
+  margin: auto;
+  position: relative;
+}
+
+#cards .section-container h1::before {
+content: '';
+position: absolute;
+height: 3px;
+border-radius: 1px;
+background-color: var(--main-blue);
+width: 100%;
+bottom: -4px;
+}
+
+.cards-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+
+.card {
+  position: relative;
+  width: 290px;
+  padding: 48px 16px 14px;
+  border-radius: 6px;
+  background-color: var(--white);
+  box-shadow: 0px 4px 8px rgba(5, 5, 165, 0.05);
+  transition: 0.5s;
+}
+
+.card:hover {
+  box-shadow: 0px 4px 16px 8px rgba(5, 5, 165, 0.05);
+}
+
+.card:nth-child(2) {
+  transform: translateY(24px);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  background-color: var(--main-blue);
+  height: 14px;
+  border-radius: 0 0 6px 6px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.card .lead-icon {
+  position: absolute;
+  height: 54px;
+  width: 54px;
+  font-size: 24px;
+  top: -27px;
+  border-radius: 6px;
+  color: var(--white);
+  background-color: var(--main-blue);
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  place-items: center;
+}
+
+.card h2 {
+  text-align: center;
+  font-family: 'Red Hat Display', sans-serif;
+  margin-bottom: 16px;
+}
+
+.card p {
+  text-align: center;
+  color: var(--black);
+  margin-bottom: 24px;
+}
+
+.card .explore {
+  margin: auto;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.card a {
+  color: var(--main-blue);
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+}
+
+.card a::before {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: var(--main-blue);
+  transform-origin: right;
+  transition: transform 0.3s;
+  border-radius: 1px;
+  bottom: -4px;
+  transform: scaleX(0);
+}
+
+.card a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
 }

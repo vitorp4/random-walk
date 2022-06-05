@@ -1,95 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Passeio Aleatório</title>
-    <link type="text/css" rel="stylesheet" href="styles/main.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;500&family=Red+Hat+Display:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" href="/assets/person-walking-solid.svg" />
-    <script src="script.js" defer></script>
-    <script
-      src="https://kit.fontawesome.com/2240dcfd9d.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <header>
-      <div class="toolbar">
-        <div class="logo">
-          <a href="#home">
-            <span class="icon-person-walking"><i class="fa-solid fa-person-walking"></span></i>
-            Passeio Aleatório
-          </a>
-        </div>
-        <nav>
-          <ul>
-            <li><a>Simulação</a></li>
-            <li class="nav-dropdown">
-              <a>Como funciona?<span class="icon-chevron"><i class="fa-solid fa-chevron-down"></span></i></a>
-              <ul>
-                <li>
-                  <a>Conceitos Iniciais<span class="icon-chevron"><i class="fa-solid fa-chevron-right"></i></span></a>
-                  <ul>
-                    <li><a>Variável Aleatória</a></li>
-                    <li><a>Processo Estocástico</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a>Passeio Aletório<span class="icon-chevron"><i class="fa-solid fa-chevron-right"></i></span></a>
-                  <ul>
-                    <li><a>Posição Final</a></li>
-                    <li><a>Triângulo de Pascal</a></li>
-                    <li><a>Modelagem Probabilística</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a>Simulação<span class="icon-chevron"><i class="fa-solid fa-chevron-right"></i></span></a>
-                  <ul>
-                    <li><a>Controles</a></li>
-                    <li><a>Desenvolvimento</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a>Referências</a></li>
-          </ul>
-        </nav>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Passeio Aleatório</title>
+  <link type="text/css" rel="stylesheet" href="styles/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;500;600;700&family=Red+Hat+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/assets/person-walking-solid.svg" />
+  <script src="script.js" defer></script>
+  <script src="https://kit.fontawesome.com/2240dcfd9d.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="toolbar">
+      <div class="logo">
+        <a href="#home">
+          <span class="icon-person-walking"><i class="fa-solid fa-person-walking"></span></i>
+          Passeio Aleatório
+        </a>
       </div>
-    </header>
-    <main>
-      <section id="home">
-        <div class="section-container">
-          <div class="charts-container">
+      <nav>
+        <ul>
+          <li><a href="#home">Simulação</a></li>
+          <li class="nav-dropdown">
+            <a href="#cards">Como funciona?<span class="icon-chevron"><i class="fa-solid fa-chevron-down"></span></i></a>
+            <ul>
+              <li>
+                <a>Conceitos Iniciais<span class="icon-chevron"><i class="fa-solid fa-chevron-right"></i></span></a>
+                <ul>
+                  <li><a>Variável Aleatória</a></li>
+                  <li><a>Processo Estocástico</a></li>
+                </ul>
+              </li>
+              <li>
+                <a>Passeio Aletório<span class="icon-chevron"><i class="fa-solid fa-chevron-right"></i></span></a>
+                <ul>
+                  <li><a>Posição Final</a></li>
+                  <li><a>Triângulo de Pascal</a></li>
+                  <li><a>Modelagem Probabilística</a></li>
+                </ul>
+              </li>
+              <li>
+                <a>Simulação<span class="icon-chevron"><i class="fa-solid fa-chevron-right"></i></span></a>
+                <ul>
+                  <li><a>Controles</a></li>
+                  <li><a>Desenvolvimento</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a>Referências</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section id="home">
+      <div class="section-container">
+        <div class="charts-container">
           <div class="primary-simulator">
             <div class="controls">
               <div class="step-control">
-                <label for="step-input">Passos</label>
+                1 
                 <div class="step">
-                  1 <input id="step-input" type="range" /> 1000
+                  <label for="step-input">Passos</label>
+                  <input id="step-input" type="range" min="1" max="100" value="50" />
+                  <output id="rangeoutput">50</output>
                 </div>
+                100
               </div>
 
               <div class="path-control">
                 <label for="path-select">Caminhos</label>
                 <div class="path">
-                <select id="path-select">
-                  <option value="10">10</option>
-                  <option value="100" selected>100</option>
-                  <option value="1000">1000</option>
-                  <option value="2000">2000</option>
-                </select>
-              </div>
+                  <select id="path-select">
+                    <option value="10">10</option>
+                    <option value="100" selected>100</option>
+                    <option value="1000">1000</option>
+                  </select>
+                </div>
               </div>
 
               <div class="buttons-control">
-                <button><i class="fa-solid fa-play"></i></button>
+                <button onclick=newRandomWalk()><i class="fa-solid fa-play"></i></button>
                 <!-- <i class="fa-solid fa-pause"></i> -->
                 <button><i class="fa-solid fa-backward"></i></button>
                 <button><i class="fa-solid fa-forward"></i></button>
@@ -106,9 +105,9 @@
           <div class="secondary-simulator">
             <h1>Configure, simule, compare.</h1>
             <ol>
-              <li>Escolha a quantidade de passos e caminhos.</li>
-              <li>Inicie a simulação, acelere o quanto desejar.</li>
-              <li>Acompanhe a proporção simulada se aproximar da probabilidade teórica a cada iteração.</li>
+              <li>Escolha a quantidade de passos e caminhos;</li>
+              <li>Inicie a simulação, acelere o quanto desejar;</li>
+              <li>Acompanhe a proporção simulada se aproximar da probabilidade teórica.</li>
             </ol>
             <div class="probability-chart-wrapper">
               <canvas id="probability-chart"></canvas>
@@ -116,40 +115,49 @@
           </div>
         </div>
         <div class="chevron-container">
-          <i class="fa-solid fa-chevron-down"></i>
+          <a href="#cards"></a>
         </div>
 
-        </div>
-
-      </section>
-      <section id="cards">
-        <div class="section-container">
-          
-
-          <div class="cards-wrapper">
-          <div class="card">
-
-          </div>
-          
-          <div class="card">
-
-          </div>
-
-          <div class="card">
-
-          </div>
-        </div>
-
-        </div>
-
-      </section>
-      <div>
-        <aside></aside>
-        <article>
-          <section></section>
-        </article>
       </div>
-    </main>
-    <footer></footer>
-  </body>
+
+    </section>
+    <section id="cards">
+      <div class="section-container">
+        <h1>Como funciona?</h1>
+        <div class="cards-wrapper">
+          <div class="card">
+            <div class="lead-icon"><i class="fa-solid fa-book"></i></div>
+            <h2>Conceitos Iniciais</h2>
+            <p>O conhecimento sobre probabilidade, variáveis aleatórias e processos estocásticos são de grande importância para...</p>
+            <div class="explore"><a>Explorar</a></div>
+          </div>
+
+          <div class="card">
+            <div class="lead-icon"><i class="fa-solid fa-person-walking"></i></div>
+            <h2>Passeio Aleatório</h2>
+            <p>Imagine lançamentos em sequência de uma moeda. Cada coroa resultante leva a um passo à frente, enquanto cada cara...</p>
+            <div class="explore"><a>Explorar</a></div>
+          </div>
+
+          <div class="card">
+            <div class="lead-icon"><i class="fa-solid fa-computer"></i></div>
+            <h2>Simulação</h2>
+            <p>Os controles disponíveis permitem configurar a quantidade de passos e de caminhos, bem como a velocidade de atualização da...</p>
+            <div class="explore"><a>Explorar</a></div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+    <div>
+      <aside></aside>
+      <article>
+        <section></section>
+      </article>
+    </div>
+  </main>
+  <footer></footer>
+</body>
+
 </html>
