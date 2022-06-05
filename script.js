@@ -1,28 +1,45 @@
-let myChart, myChart2;
-let nChart = 0;
+let pathChart, probabilityChart;
+let nPath = 0;
+let nStep = 0;
+let delayBetweenPoints;
+let totalSteps = 50;
+let totalPaths;
+let down = false;
+
+const elHeader = document.querySelector("header");
+
+const elRangeInput = document.querySelector("#step-input");
+const elRangeOutput = document.querySelector("#rangeoutput");
+const elPathSelect = document.querySelector("#path-select");
+
+const elTotalPaths = document.querySelector("#total-paths");
+const elPathSimulated = document.querySelector("#path-simulated");
+
+const elPathChart = document.querySelector("#path-chart");
+const elProbabilityChart = document.querySelector("#probability-chart");
 
 window.onload = newRandomWalk;
+window.onscroll = headerShadow;
 
 async function newRandomWalk() {
   let steps = [0].concat(
-    Array.from({ length: 100 }, () => (Math.random() < 0.5 ? -1 : 1))
+    Array.from({ length: totalSteps }, () => (Math.random() < 0.5 ? -1 : 1))
   );
   let walk = steps.reduce(
     (acc, step) => [...acc, (acc.at(-1) ?? 0) + step],
     []
   );
 
-  if (!myChart) {
+  if (!pathChart) {
     createChart(walk);
   } else {
-    //   myChart.destroy();
-    updateChart(myChart, walk);
+    updateChart(pathChart, walk);
   }
 }
 
 function createChart(walk) {
   const totalDuration = 2000;
-  const delayBetweenPoints = totalDuration / walk.length;
+  delayBetweenPoints = totalDuration / walk.length;
 
   const previousY = (ctx) =>
     ctx.index === 0
@@ -68,7 +85,7 @@ function createChart(walk) {
         data: walk,
         pointRadius: 0,
         borderWidth: 3,
-        pointHitRadius: 4
+        pointHitRadius: 4,
       },
     ],
   };
@@ -87,8 +104,8 @@ function createChart(walk) {
     },
   };
 
-  myChart = new Chart(document.getElementById("path-chart"), config);
-  myChart2 = new Chart(document.getElementById("probability-chart"), {
+  pathChart = new Chart(elPathChart, config);
+  probabilityChart = new Chart(elProbabilityChart, {
     type: "bar",
     data: {
       labels: ["-4", "-3", "-2", "-1", "0", "1", "2", "3", "4"],
@@ -140,40 +157,33 @@ function createChart(walk) {
 }
 
 function updateChart(chart, data) {
-  const dataset = {
+  chart.data.datasets[nPath].pointRadius = 0;
+  chart.data.datasets[nPath].borderWidth = 2;
+  chart.data.datasets[nPath].borderColor = "#00112822";
+  chart.data.datasets[nPath].pointHitRadius = 0;
+
+  const newDataset = {
     borderColor: "#00112899",
     data: data,
     pointRadius: 0,
     borderWidth: 3,
-    pointHitRadius: 4
+    pointHitRadius: 4,
   };
 
-  chart.data.datasets[nChart].pointRadius = 0;
-  chart.data.datasets[nChart].borderWidth = 2;
-  chart.data.datasets[nChart].borderColor = "#00112822";
-  chart.data.datasets[nChart].pointHitRadius = 0;
-
-  chart.data.datasets[++nChart] = dataset;
+  elPathSimulated.innerHTML = ++nPath + 1;
+  chart.data.datasets[nPath] = newDataset;
   chart.update();
 }
 
-function newSummarizeChart() {}
-
-window.onscroll = headerShadow;
-
 function headerShadow() {
-  let header = document.querySelector("header");
   if (window.scrollY > 0) {
-    header.classList.add("small");
+    elHeader.classList.add("small");
   } else {
-    header.classList.remove("small");
+    elHeader.classList.remove("small");
   }
 }
 
-const rangeInput = document.querySelector("#step-input");
-const rangeOutput = document.querySelector("#rangeoutput");
-
-function handleInputChange(e) {
+elRangeInput.addEventListener("input", (e) => {
   let target = e.target;
   const min = target.min;
   const max = target.max;
@@ -181,23 +191,38 @@ function handleInputChange(e) {
 
   const percent = ((val - min) * 100) / (max - min);
 
-  target.style.backgroundSize =
-    (100 - percent) + "% 100%";
+  target.style.backgroundSize = 100 - percent + "% 100%";
 
-  rangeOutput.style.left = percent + '%';
-  rangeOutput.value = e.target.value;  
-}
-
-let down = false;
-rangeInput.addEventListener("input", handleInputChange);
-rangeInput.addEventListener('mousedown', () => {
-  down = true;
-  rangeOutput.classList.add('visible');
+  if (percent < 50) {
+    elRangeOutput.style.left =
+      "calc( " + percent + "% + " + 16 * ((50 - percent) / 100) + "px)";
+  } else {
+    elRangeOutput.style.left =
+      "calc( " + percent + "% - " + 16 * ((percent - 50) / 100) + "px)";
+  }
+  elRangeOutput.value = e.target.value;
 });
-rangeInput.addEventListener('mousemove', () => {
+
+elRangeInput.addEventListener("mousedown", () => {
+  down = true;
+  elRangeOutput.classList.add("visible");
+});
+
+elRangeInput.addEventListener("mousemove", () => {
   if (!down) return;
 });
-rangeInput.addEventListener('mouseup', () => {
+
+elRangeInput.addEventListener("mouseup", (e) => {
   down = false;
-  setTimeout(()=>rangeOutput.classList.remove('visible'),500);
-})
+  totalSteps = e.target.value;
+  nStep = 0;
+  setTimeout(() => elRangeOutput.classList.remove("visible"), 500);
+});
+
+elPathSelect.addEventListener("change", (e) => {
+  totalPaths = e.target.value;
+  nPath = 0;
+  nStep = 0;
+  elTotalPaths.innerHTML = totalPaths;
+  elPathSimulated.innerHTML = nPath;
+});

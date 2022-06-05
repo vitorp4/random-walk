@@ -9,7 +9,9 @@
   <link type="text/css" rel="stylesheet" href="styles/main.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;500;600;700&family=Red+Hat+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;500;600;700&family=Red+Hat+Display:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="icon" href="/assets/person-walking-solid.svg" />
   <script src="script.js" defer></script>
   <script src="https://kit.fontawesome.com/2240dcfd9d.js" crossorigin="anonymous"></script>
@@ -29,7 +31,8 @@
         <ul>
           <li><a href="#home">Simulação</a></li>
           <li class="nav-dropdown">
-            <a href="#cards">Como funciona?<span class="icon-chevron"><i class="fa-solid fa-chevron-down"></span></i></a>
+            <a href="#cards">Como funciona?<span class="icon-chevron"><i
+                  class="fa-solid fa-chevron-down"></span></i></a>
             <ul>
               <li>
                 <a>Conceitos Iniciais<span class="icon-chevron"><i class="fa-solid fa-chevron-right"></i></span></a>
@@ -67,7 +70,7 @@
           <div class="primary-simulator">
             <div class="controls">
               <div class="step-control">
-                1 
+                1
                 <div class="step">
                   <label for="step-input">Passos</label>
                   <input id="step-input" type="range" min="1" max="100" value="50" />
@@ -97,8 +100,13 @@
               </div>
 
             </div>
-            <div class="path-chart-wrapper">
-              <canvas id="path-chart"></canvas>
+            <div class="display-chart">
+              <div class="path-display">
+                Caminho:&nbsp;<span id="path-simulated">1</span>/<span id="total-paths">100</span>
+              </div>
+              <div class="path-chart-wrapper">
+                <canvas id="path-chart"></canvas>
+              </div>
             </div>
           </div>
 
@@ -128,21 +136,24 @@
           <div class="card">
             <div class="lead-icon"><i class="fa-solid fa-book"></i></div>
             <h2>Conceitos Iniciais</h2>
-            <p>O conhecimento sobre probabilidade, variáveis aleatórias e processos estocásticos são de grande importância para...</p>
+            <p>O conhecimento sobre probabilidade, variáveis aleatórias e processos estocásticos são de grande
+              importância para...</p>
             <div class="explore"><a>Explorar</a></div>
           </div>
 
           <div class="card">
             <div class="lead-icon"><i class="fa-solid fa-person-walking"></i></div>
             <h2>Passeio Aleatório</h2>
-            <p>Imagine lançamentos em sequência de uma moeda. Cada coroa resultante leva a um passo à frente, enquanto cada cara...</p>
+            <p>Imagine lançamentos em sequência de uma moeda. Cada coroa resultante leva a um passo à frente, enquanto
+              cada cara...</p>
             <div class="explore"><a>Explorar</a></div>
           </div>
 
           <div class="card">
             <div class="lead-icon"><i class="fa-solid fa-computer"></i></div>
             <h2>Simulação</h2>
-            <p>Os controles disponíveis permitem configurar a quantidade de passos e de caminhos, bem como a velocidade de atualização da...</p>
+            <p>Os controles disponíveis permitem configurar a quantidade de passos e de caminhos, bem como a velocidade
+              de atualização da...</p>
             <div class="explore"><a>Explorar</a></div>
           </div>
         </div>

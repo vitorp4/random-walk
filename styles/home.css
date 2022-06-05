@@ -65,10 +65,10 @@
   height: 16px;
   width: 16px;
   border-radius: 50%;
-  background: #fff;
+  background-color: #fff;
   cursor: ew-resize;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-  transition: background .3s ease-in-out;
+  transition: background-color .3s ease-in-out;
 }
 
 #step-input::-webkit-slider-runnable-track {
@@ -91,13 +91,12 @@
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
-  transition: opacity 0.5s, visibility 0.5s;
+  transition: opacity 0.3s, visibility 0.3s;
 }
 
-#rangeoutput.visible {
+#step-input:hover ~ #rangeoutput, #rangeoutput.visible {
   opacity: 1;
   visibility: visible;
- 
 }
 
 #rangeoutput::before {
@@ -156,12 +155,27 @@
   background-color: var(--white);
 }
 
-.path-chart-wrapper {
+.display-chart {
   background-color: var(--white);
   border-radius: 6px;
   width: 680px;
   height: 375px;
-  padding: 8px 16px 8px 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+
+.path-display {
+  font-size: 14px;
+  margin: 8px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.path-chart-wrapper {
+  flex: 1;
+  width: 100%;
+  height: auto;
 }
 
 .secondary-simulator {
@@ -202,7 +216,7 @@
   text-align: center;
   width: 16px;
   left: -24px;
-  top: -2px;
+  top: -1px;
   position: absolute;
 }
 
