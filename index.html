@@ -73,40 +73,42 @@
                 1
                 <div class="step">
                   <label for="step-input">Passos</label>
-                  <input id="step-input" type="range" min="1" max="100" value="50" />
-                  <output id="rangeoutput">50</output>
+                  <input id="step-input" type="range" min="1" max="30" value="10" />
+                  <output id="range-output">10</output>
                 </div>
-                100
+                30
               </div>
 
               <div class="path-control">
                 <label for="path-select">Caminhos</label>
                 <div class="path">
                   <select id="path-select">
-                    <option value="10">10</option>
-                    <option value="100" selected>100</option>
+                    <option value="10" selected>10</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="500">500</option>
                     <option value="1000">1000</option>
                   </select>
                 </div>
               </div>
 
               <div class="buttons-control">
-                <button onclick=newRandomWalk()><i class="fa-solid fa-play"></i></button>
-                <!-- <i class="fa-solid fa-pause"></i> -->
-                <button><i class="fa-solid fa-backward"></i></button>
-                <button><i class="fa-solid fa-forward"></i></button>
-                <button><i class="fa-solid fa-arrow-rotate-right"></i></button>
-                <button><i class="fa-solid fa-shuffle"></i></button>
+                <button id="play-pause" tooltip="Play/Pause" class="pause" onclick=playToggle()><i id="icon-play"
+                    class="fa-solid fa-play"></i>
+                  <i id="icon-pause" class="fa-solid fa-pause"></i></button>
+                <button id="slow-down" tooltip="Desacelerar" onclick=slowDown()><i
+                    class="fa-solid fa-backward"></i></button>
+                <button id="speed-up" tooltip="Acelerar" onclick=speedUp()><i
+                    class="fa-solid fa-forward"></i></button>
+                <button id="restart-simulation" disabled tooltip="Reiniciar Simulação" onclick=restart()><i
+                    class="fa-solid fa-arrow-rotate-right"></i></button>
+                <button id="new-simulation" disabled tooltip="Nova Simulação" onclick=initializeSimulation()><i
+                    class="fa-solid fa-shuffle"></i></button>
               </div>
-
             </div>
-            <div class="display-chart">
-              <div class="path-display">
-                Caminho:&nbsp;<span id="path-simulated">1</span>/<span id="total-paths">100</span>
-              </div>
-              <div class="path-chart-wrapper">
-                <canvas id="path-chart"></canvas>
-              </div>
+
+            <div class="path-chart-wrapper">
+              <canvas id="path-chart"></canvas>
             </div>
           </div>
 

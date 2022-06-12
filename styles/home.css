@@ -52,7 +52,7 @@
   width: 106px;
   height: 8px;
   background-image: linear-gradient(#dddee7,#dddee7);
-  background-size: 50% 100%;
+  background-size: 66% 100%;
   background-position-x: right;
   background-repeat: no-repeat;
   border-radius: 3px;
@@ -78,28 +78,21 @@
   background: transparent;
 }
 
-#rangeoutput {
+#range-output {
   position: absolute;
   bottom: -30px;
   font-size: 14px;
-  width: 36px;
+  width: 28px;
   text-align: center;
   background-color: var(--white);
   color: var(--black);
   padding: 4px 0;
   border-radius: 4px;
-  left: 50%;
+  left: calc( 33% + (16px * 0.1));
   transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.3s, visibility 0.3s;
 }
 
-#step-input:hover ~ #rangeoutput, #rangeoutput.visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-#rangeoutput::before {
+#range-output::before {
   content: '';
   width: 10px;
   height: 10px;
@@ -153,29 +146,74 @@
   color: var(--main-blue);
   cursor: pointer;
   background-color: var(--white);
+  position: relative;
 }
 
-.display-chart {
+.buttons-control > button::before {
+  content: attr(tooltip);
+  position: absolute;
+  font-family: 'Kumbh Sans', sans-serif;
+  color: var(--white);
+  background-color: var(--black);
+  left: 50%;
+  bottom: 42px;
+  transform: translateX(-50%); 
+  border-radius: 4px;
+  font-size: 12px;
+  padding: 4px 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.buttons-control > button::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: var(--black);
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  clip-path: polygon(0 0, 50% 50%, 100% 0);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.buttons-control > button:hover::before, .buttons-control > button:hover::after {
+  opacity: 1;
+  visibility: visible;
+} 
+
+.buttons-control > button:disabled {
+  background-color: #e4edf1;
+  color: #89ceee;
+  pointer-events: none;
+}
+
+button#play-pause #icon-play {
+  display: inline;
+}
+
+button#play-pause #icon-pause {
+  display: none;
+}
+
+button#play-pause.pause #icon-play {
+  display: none;
+}
+
+button#play-pause.pause #icon-pause {
+  display: inline;
+}
+
+.path-chart-wrapper {
   background-color: var(--white);
   border-radius: 6px;
   width: 680px;
   height: 375px;
-  display: flex;
-  flex-direction: column;
   padding: 8px;
-}
-
-.path-display {
-  font-size: 14px;
-  margin: 8px 0;
-  display: flex;
-  justify-content: center;
-}
-
-.path-chart-wrapper {
-  flex: 1;
-  width: 100%;
-  height: auto;
 }
 
 .secondary-simulator {

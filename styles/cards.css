@@ -17,6 +17,7 @@
   width: fit-content;
   margin: auto;
   position: relative;
+  color: var(--black);
 }
 
 #cards .section-container h1::before {
@@ -83,6 +84,7 @@ bottom: -4px;
   text-align: center;
   font-family: 'Red Hat Display', sans-serif;
   margin-bottom: 16px;
+  color: var(--black);
 }
 
 .card p {
