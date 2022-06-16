@@ -17,7 +17,7 @@
   width: fit-content;
   margin: auto;
   position: relative;
-  color: var(--black);
+  color: var(--heading-black);
 }
 
 #cards .section-container h1::before {
@@ -44,6 +44,7 @@ bottom: -4px;
   background-color: var(--white);
   box-shadow: 0px 4px 8px rgba(5, 5, 165, 0.05);
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .card:hover {
@@ -84,12 +85,12 @@ bottom: -4px;
   text-align: center;
   font-family: 'Red Hat Display', sans-serif;
   margin-bottom: 16px;
-  color: var(--black);
+  color: var(--heading-black);
 }
 
 .card p {
   text-align: center;
-  color: var(--black);
+  color: var(--text-gray);
   margin-bottom: 24px;
 }
 
@@ -120,7 +121,7 @@ bottom: -4px;
   transform: scaleX(0);
 }
 
-.card a:hover::before {
+.card:hover a::before {
   transform-origin: left;
   transform: scaleX(1);
 }

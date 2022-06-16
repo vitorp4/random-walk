@@ -59,7 +59,7 @@ header.small .nav-dropdown > ul {
 .toolbar nav > ul {
   list-style: none;
   display: flex;
-  color: var(--black);
+  color: var(--heading-black);
   gap: 24px;
 }
 
@@ -117,7 +117,7 @@ header.small .nav-dropdown > ul {
   position: absolute;
   list-style: none;
   background-color: var(--white);
-  color: var(--black);
+  color: var(--heading-black);
   font-size: 14px;
   border-radius: 6px;
   box-shadow: 0 4px 16px 4px rgba(0, 0, 0, 0.1);

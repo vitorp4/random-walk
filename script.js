@@ -2,15 +2,15 @@ let pathChart, probabilityChart;
 let nPath = 0;
 let totalSteps = 10;
 let totalPaths = 10;
-let lastPositionsCounter = Array.from({ length: totalSteps+1 }, () => 0);
+let lastPositionsCounter = Array.from({ length: totalSteps + 1 }, () => 0);
 let interval;
 let paths;
 let walks;
-let baseDelay = 500;  // miliseconds
+let baseDelay = 500; // miliseconds
 let velocityFactor = 1;
 const velocityFactorLimits = {
-  min: 0.25, 
-  max: 8
+  min: 0.25,
+  max: 8,
 };
 let state = "SE"; // SE - simuation executing, SP - simulation paused, SF - simulation finished
 
@@ -56,7 +56,7 @@ function executeSimulation() {
       clearInterval(interval);
       toState("SF");
     }
-  }, baseDelay/velocityFactor);
+  }, baseDelay / velocityFactor);
 }
 
 function createCharts() {
@@ -89,12 +89,21 @@ function createPathChart() {
             weight: 400,
           },
         },
+        annotations: {},
       },
       scales: {
         y: {
           min: -totalSteps,
           max: totalSteps,
+          grid: {
+            color: "#00000010"
+          }
         },
+        x: {
+          grid: {
+            color: "#00000010"
+          }
+        }
       },
       maintainAspectRatio: false,
       animation: false,
@@ -117,8 +126,8 @@ function createProbabilityChart() {
         data: toProbabilities(totalSteps),
         label: "Probabilidade teórica",
         order: 2,
-        borderColor: "#00112855", //d1d1d1
-        backgroundColor: "#fff", //e0e0e0
+        borderColor: "#00112833", //d1d1d1
+        backgroundColor: "#00112811", //e0e0e0  #128fc819
         barPercentage: 0.9,
         borderWidth: 1,
         borderRadius: 2,
@@ -166,6 +175,9 @@ function createProbabilityChart() {
           ticks: {
             beginAtZero: true,
           },
+          grid: {
+            color: "#00000010"
+          }
         },
       },
     },
@@ -181,9 +193,34 @@ function updatePathChart(chart, data) {
     pointRadius: 2,
     borderWidth: 3,
     pointHitRadius: 0,
+    fill: {
+      target: 'origin',
+      below: '#00112811',
+      above: '#00112811'
+    }
+    
   };
   chart.options.plugins.title.text = `Caminho: ${nPath + 1}/${totalPaths}`;
   chart.data.datasets[0] = newDataset;
+
+  const newLabelAnnotation = {
+    annotations: {
+      label1: {
+        type: "label",
+        xValue: totalSteps,
+        xAdjust: -10,
+        yValue: data[data.length - 1],
+        yAdjust: -15,
+        content: [data[data.length - 1]],
+        color: "#128fc8",
+        font: {
+          size: 16,
+          weight: 'bold'
+        },
+      },
+    },
+  };
+  chart.options.plugins.annotation = newLabelAnnotation;
   chart.update();
 }
 
@@ -194,7 +231,9 @@ function updateProbabilityChart(chart, walk) {
 
   lastPositionsCounter[idx] += 1;
 
-  chart.data.datasets[1].data = lastPositionsCounter.map((b) => b / (nPath+1));
+  chart.data.datasets[1].data = lastPositionsCounter.map(
+    (b) => b / (nPath + 1)
+  );
   chart.update();
 }
 
@@ -266,7 +305,7 @@ function toLabel(n) {
 }
 
 function speedUp() {
-  if (velocityFactor*2 <= velocityFactorLimits.max) {
+  if (velocityFactor * 2 <= velocityFactorLimits.max) {
     clearInterval(interval);
     velocityFactor *= 2;
     executeSimulation();
@@ -280,7 +319,7 @@ function speedUp() {
 }
 
 function slowDown() {
-  if (velocityFactor/2 >= velocityFactorLimits.min) {
+  if (velocityFactor / 2 >= velocityFactorLimits.min) {
     clearInterval(interval);
     velocityFactor /= 2;
     executeSimulation();
@@ -319,8 +358,12 @@ function toState(toState) {
     case "SE":
       elPlayPause.classList.add("pause");
       elPlayPause.disabled = false;
-      elSlowDown.disabled = false;
-      elSpeedUp.disabled = false;
+      if (velocityFactor != velocityFactorLimits.max) {
+        elSpeedUp.disabled = false;
+      }
+      if (velocityFactor != velocityFactorLimits.min) {
+        elSlowDown.disabled = false;
+      }
       elRestartSimulation.disabled = false;
       elNewSimulation.disabled = false;
       state = "SE";

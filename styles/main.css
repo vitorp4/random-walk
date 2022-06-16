@@ -9,7 +9,8 @@
   --hover-blue: #eaebf2;
   --blued-white: #f8f9ff;
   --white: #fff;
-  --black: #404244;
+  --heading-black: #404244;
+  --text-gray: #0e1835; /* #727475; #0e1835*/
   
   scroll-behavior: smooth;
 }
