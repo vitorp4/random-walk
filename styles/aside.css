@@ -1,0 +1,5 @@
+aside {
+  position: sticky;
+  top: calc(50% - 100px);
+  height: fit-content;
+}

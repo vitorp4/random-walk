@@ -1,6 +1,8 @@
 @import url('header.css');
 @import url('home.css');
 @import url('cards.css');
+@import url('article.css');
+@import url('aside.css');
 
 :root {
   --main-blue: #128fc8;

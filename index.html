@@ -16,7 +16,8 @@
   <script src="script.js" defer></script>
   <script src="https://kit.fontawesome.com/2240dcfd9d.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.4.0/chartjs-plugin-annotation.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.4.0/chartjs-plugin-annotation.min.js"></script>
 </head>
 
 <body>
@@ -36,10 +37,10 @@
                   class="fa-solid fa-chevron-down"></span></i></a>
             <ul>
               <li>
-                <a>Conceitos Iniciais<span class="icon-chevron"><i class="fa-solid fa-chevron-right"></i></span></a>
+                <a href="#initial-concepts">Conceitos Iniciais<span class="icon-chevron"><i class="fa-solid fa-chevron-right"></i></span></a>
                 <ul>
-                  <li><a>Variável Aleatória</a></li>
-                  <li><a>Processo Estocástico</a></li>
+                  <li><a href="#random-variables">Variáveis Aleatórias</a></li>
+                  <li><a href="#stochastic-processes">Processos Estocásticos</a></li>
                 </ul>
               </li>
               <li>
@@ -94,16 +95,16 @@
               </div>
 
               <div class="buttons-control">
-                <button id="play-pause" tooltip="Play/Pause" class="pause" onclick=playToggle()><i id="icon-play"
+                <button id="play-pause" tooltip="Play/Pause" class="pause" onclick="playToggle()"><i id="icon-play"
                     class="fa-solid fa-play"></i>
                   <i id="icon-pause" class="fa-solid fa-pause"></i></button>
-                <button id="slow-down" tooltip="Desacelerar" onclick=slowDown()><i
+                <button id="slow-down" tooltip="Desacelerar" onclick="slowDown()"><i
                     class="fa-solid fa-backward"></i></button>
-                <button id="speed-up" tooltip="Acelerar" onclick=speedUp()><i
+                <button id="speed-up" tooltip="Acelerar" onclick="speedUp()"><i
                     class="fa-solid fa-forward"></i></button>
-                <button id="restart-simulation" disabled tooltip="Reiniciar Simulação" onclick=restart()><i
+                <button id="restart-simulation" tooltip="Reiniciar Simulação" onclick="restart()"><i
                     class="fa-solid fa-arrow-rotate-right"></i></button>
-                <button id="new-simulation" disabled tooltip="Nova Simulação" onclick=initializeSimulation()><i
+                <button id="new-simulation" tooltip="Nova Simulação" onclick="initializeSimulation()"><i
                     class="fa-solid fa-shuffle"></i></button>
               </div>
             </div>
@@ -155,21 +156,95 @@
           <div class="card">
             <div class="lead-icon"><i class="fa-solid fa-computer"></i></div>
             <h2>Simulação</h2>
-            <p>Os controles disponíveis permitem configurar a quantidade de passos e de caminhos, bem como a velocidade
-              de atualização da...</p>
+            <p>Os controles disponíveis são capazes de configurar o número de passos e de caminhos, bem como a
+              velocidade de...</p>
             <div class="explore"><a>Explorar</a></div>
           </div>
         </div>
 
       </div>
-
     </section>
-    <div>
-      <aside></aside>
-      <article>
-        <section></section>
-      </article>
-    </div>
+
+    <section id="article">
+      <div class="section-container">
+        <aside>
+          <ol>
+            <li>
+              Conceitos Iniciais
+              <ol>
+                <li>Variáveis Aleatórias</li>
+                <li>Processos Estocásticos</li>
+              </ol>
+            </li>
+            <li>
+              Random Walk
+              <ol>
+                <li>Posição Final</li>
+                <li>Triângulo de Pascal</li>
+                <li>Modelagem Probabilística</li>
+              </ol>
+            </li>
+            <li>
+              Simulação
+              <ol>
+                <li>Controles</li>
+                <li>Desenvolvimento</li>
+              </ol>
+            </li>
+          </ol>
+        </aside>
+        <article class="article-content">
+          <section>
+            <h2 id="initial-concepts">Conceitos Iniciais</h2>
+            <h3 id="random-variables">Variável Aleatória</h3>
+            <p>
+              Em muitas situações experimentais estamos interessados em mensurar e registrar acontecimentos 
+              na forma de números. Mesmo nas situações onde os resultados são nitidamente coletados como categorias, 
+              há um desejo de que sejam transformados em números. Números são mais facilmente representados, modelados 
+              e analisados que dados categóricos.
+            </p>
+            <p>
+              Por exemplo, consideremos um jogo constituído de dois lançamentos independentes de uma moeda enviesada 
+              que costuma resultar cara (C) com 4 vezes mais frequência que coroa (R). Pretende-se tomar algumas decisões 
+              com base no resultado:
+            </p>
+            <ul>
+              <li>Se 2 caras, o jogador permanece no jogo;</li>
+              <li>Se faces distintas, o jogador sofrerá uma penalidade;</li>
+              <li>Se ambas coroas, o jogador será desclassificado.</li>
+            </ul>
+            <p>
+              Modelando os resultados através de uma árvore de possibilidades, obtemos:
+            </p>
+            <img src="/assets/prob_tree.PNG" alt="Árvore de possibilidades" />
+            <table>
+              <thead>
+                <td>Resultado</td>
+                <td>Probabilidade</td>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>CC</td>
+                  <td>4/5 * 4/5 = 16/25<td>
+                </tr>
+                <tr>
+                  <td>CR</td>
+                  <td>4/5 * 1/5 = 4/25</td>
+                </tr>
+                <tr>
+                  <td>RC</td>
+                  <td>1/5 * 4/5 = 4/25</td>
+                </tr>
+                <tr>
+                  <td>RR</td>
+                  <td>1/5 * 1/5 = 1/25</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </article>
+      </div>
+    </section>
   </main>
   <footer></footer>
 </body>

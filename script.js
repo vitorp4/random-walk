@@ -96,14 +96,14 @@ function createPathChart() {
           min: -totalSteps,
           max: totalSteps,
           grid: {
-            color: "#00000010"
-          }
+            color: "#00000010",
+          },
         },
         x: {
           grid: {
-            color: "#00000010"
-          }
-        }
+            color: "#00000010",
+          },
+        },
       },
       maintainAspectRatio: false,
       animation: false,
@@ -126,8 +126,8 @@ function createProbabilityChart() {
         data: toProbabilities(totalSteps),
         label: "Probabilidade teórica",
         order: 2,
-        borderColor: "#00112833", //d1d1d1
-        backgroundColor: "#00112811", //e0e0e0  #128fc819
+        borderColor: "#00112833",
+        backgroundColor: "#00112811",
         barPercentage: 0.9,
         borderWidth: 1,
         borderRadius: 2,
@@ -176,8 +176,8 @@ function createProbabilityChart() {
             beginAtZero: true,
           },
           grid: {
-            color: "#00000010"
-          }
+            color: "#00000010",
+          },
         },
       },
     },
@@ -194,11 +194,10 @@ function updatePathChart(chart, data) {
     borderWidth: 3,
     pointHitRadius: 0,
     fill: {
-      target: 'origin',
-      below: '#00112811',
-      above: '#00112811'
-    }
-    
+      target: "origin",
+      below: "#00112811",
+      above: "#00112811",
+    },
   };
   chart.options.plugins.title.text = `Caminho: ${nPath + 1}/${totalPaths}`;
   chart.data.datasets[0] = newDataset;
@@ -210,12 +209,12 @@ function updatePathChart(chart, data) {
         xValue: totalSteps,
         xAdjust: -10,
         yValue: data[data.length - 1],
-        yAdjust: -15,
+        yAdjust: data[data.length - 1] == totalSteps ? 15 : -15,
         content: [data[data.length - 1]],
         color: "#128fc8",
         font: {
           size: 16,
-          weight: 'bold'
+          weight: "bold",
         },
       },
     },
@@ -275,10 +274,10 @@ elPathSelect.addEventListener("change", (e) => {
   initializeSimulation();
 });
 
-function pascalTriangle(nSteps) {
+function pascalTriangle(steps) {
   var arr = [];
   var a;
-  for (i = 0; i <= nSteps; i++) {
+  for (i = 0; i <= steps; i++) {
     a = [];
     for (j = 0; j <= i; j++) {
       if (j == 0 || i == j) {
@@ -292,8 +291,8 @@ function pascalTriangle(nSteps) {
   return arr[arr.length - 1];
 }
 
-function toProbabilities(nSteps) {
-  let pascalCoeficients = pascalTriangle(nSteps);
+function toProbabilities(steps) {
+  let pascalCoeficients = pascalTriangle(steps);
   let sum = pascalCoeficients.reduce((acc, num) => (acc += num), 0);
   return pascalCoeficients.map((a) => a / sum);
 }
@@ -304,15 +303,27 @@ function toLabel(n) {
   return a;
 }
 
+function velocityChangeMsg(parentElement) {
+  let elVelocityChangeMsg = document.createElement("div");
+  elVelocityChangeMsg.setAttribute("class", "velocity-change-msg");
+  elVelocityChangeMsg.innerHTML = velocityFactor + "x";
+  parentElement.appendChild(elVelocityChangeMsg);
+  setTimeout(() => elVelocityChangeMsg.remove(), 2000);
+}
+
 function speedUp() {
   if (velocityFactor * 2 <= velocityFactorLimits.max) {
     clearInterval(interval);
     velocityFactor *= 2;
     executeSimulation();
   }
+
+  velocityChangeMsg(elSpeedUp);
+
   if (velocityFactor == velocityFactorLimits.max) {
     elSpeedUp.disabled = true;
   }
+
   if (elSlowDown.disabled) {
     elSlowDown.disabled = false;
   }
@@ -324,9 +335,13 @@ function slowDown() {
     velocityFactor /= 2;
     executeSimulation();
   }
+
+  velocityChangeMsg(elSlowDown);
+
   if (velocityFactor == velocityFactorLimits.min) {
     elSlowDown.disabled = true;
   }
+
   if (elSpeedUp.disabled) {
     elSpeedUp.disabled = false;
   }

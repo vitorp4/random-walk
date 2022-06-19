@@ -90,6 +90,7 @@ header.small .nav-dropdown > ul {
   display: flex;
   gap: 6px;
   align-items: baseline;
+  color: var(--text-gray);
 }
 
 .nav-dropdown .icon-chevron {
@@ -138,6 +139,7 @@ header.small .nav-dropdown > ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: var(--text-gray);
 }
 
 .nav-dropdown > ul > li:hover {

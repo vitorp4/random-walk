@@ -2,13 +2,12 @@
   background-image: url('../assets/layered-peaks-haikei-2.svg');
   background-size: 100vw;
   background-repeat: no-repeat;
-  height: 700px;
 }
 
 #cards .section-container {
   width: 1100px;
   margin: auto;
-  padding: 112px 16px 0;
+  padding: 112px 16px 168px;
 }
 
 #cards .section-container h1 {
@@ -43,12 +42,12 @@ bottom: -4px;
   border-radius: 6px;
   background-color: var(--white);
   box-shadow: 0px 4px 8px rgba(5, 5, 165, 0.05);
-  transition: 0.5s;
-  cursor: pointer;
+  transition: 0.3s;
+  cursor: default;
 }
 
 .card:hover {
-  box-shadow: 0px 4px 16px 8px rgba(5, 5, 165, 0.05);
+  box-shadow: 0px 8px 16px 2px rgba(5, 5, 165, 0.08);
 }
 
 .card:nth-child(2) {
@@ -92,6 +91,17 @@ bottom: -4px;
   text-align: center;
   color: var(--text-gray);
   margin-bottom: 24px;
+  position: relative;
+}
+
+.card p::after {
+  content: '';
+  height: 3px;
+  width: 3px;
+  display: inline-block;
+  box-shadow: -10px 8px 28px 16px #fff,
+  0 0 8px 4px #fff;
+  z-index: 2;
 }
 
 .card .explore {
