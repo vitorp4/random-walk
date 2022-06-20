@@ -275,7 +275,7 @@ button#play-pause.pause #icon-play {
 
 .secondary-simulator ol {
   list-style: none;
-  counter-reset: my-counter;
+  counter-reset: counter;
   padding-left: 24px;
 }
 
