@@ -1,5 +1,5 @@
 #cards {
-  background-image: url('../assets/layered-peaks-haikei-2.svg');
+  background-image: url('../assets/layered-peaks-haikei-1.svg');
   background-size: 100vw;
   background-repeat: no-repeat;
 }
@@ -16,7 +16,7 @@
   width: fit-content;
   margin: auto;
   position: relative;
-  color: var(--heading-black);
+  color: var(--dark-gray);
 }
 
 #cards .section-container h1::before {
@@ -84,24 +84,14 @@ bottom: -4px;
   text-align: center;
   font-family: 'Red Hat Display', sans-serif;
   margin-bottom: 16px;
-  color: var(--heading-black);
+  color: var(--dark-gray);
 }
 
 .card p {
   text-align: center;
-  color: var(--text-gray);
+  color: var(--medium-gray);
   margin-bottom: 24px;
   position: relative;
-}
-
-.card p::after {
-  content: '';
-  height: 3px;
-  width: 3px;
-  display: inline-block;
-  box-shadow: -10px 8px 28px 16px #fff,
-  0 0 8px 4px #fff;
-  z-index: 2;
 }
 
 .card .explore {

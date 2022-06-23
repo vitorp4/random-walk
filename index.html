@@ -37,30 +37,33 @@
                   class="fa-solid fa-chevron-down"></span></i></a>
             <ul>
               <li>
-                <a href="#initial-concepts">Conceitos Iniciais<span class="icon-chevron"><i class="fa-solid fa-chevron-right"></i></span></a>
+                <a href="#initial-concepts">Conceitos Iniciais<span class="icon-chevron"><i
+                      class="fa-solid fa-chevron-right"></i></span></a>
                 <ul>
                   <li><a href="#random-variables">Variáveis Aleatórias</a></li>
                   <li><a href="#stochastic-processes">Processos Estocásticos</a></li>
                 </ul>
               </li>
               <li>
-                <a>Passeio Aletório<span class="icon-chevron"><i class="fa-solid fa-chevron-right"></i></span></a>
+                <a href="#random-walk">Passeio Aletório<span class="icon-chevron"><i
+                      class="fa-solid fa-chevron-right"></i></span></a>
                 <ul>
-                  <li><a>Posição Final</a></li>
-                  <li><a>Triângulo de Pascal</a></li>
-                  <li><a>Modelagem Probabilística</a></li>
+                  <li><a href="#final-position">Posição Final</a></li>
+                  <li><a href="#pascal-triangle">Triângulo de Pascal</a></li>
+                  <li><a href="#prob-modeling">Modelagem Probabilística</a></li>
                 </ul>
               </li>
               <li>
-                <a>Simulação<span class="icon-chevron"><i class="fa-solid fa-chevron-right"></i></span></a>
+                <a href="#about-simulation">Sobre a Simulação<span class="icon-chevron"><i
+                      class="fa-solid fa-chevron-right"></i></span></a>
                 <ul>
-                  <li><a>Controles</a></li>
-                  <li><a>Desenvolvimento</a></li>
+                  <li><a href="#controls">Controles</a></li>
+                  <li><a href="#development">Desenvolvimento</a></li>
                 </ul>
               </li>
             </ul>
           </li>
-          <li><a>Referências</a></li>
+          <li><a href="#references">Referências</a></li>
         </ul>
       </nav>
     </div>
@@ -141,8 +144,8 @@
             <div class="lead-icon"><i class="fa-solid fa-book"></i></div>
             <h2>Conceitos Iniciais</h2>
             <p>O conhecimento sobre probabilidade, variáveis aleatórias e processos estocásticos são de grande
-              importância para...</p>
-            <div class="explore"><a>Explorar</a></div>
+              importância para a...</p>
+            <div class="explore"><a href="#initial-concepts">Explorar</a></div>
           </div>
 
           <div class="card">
@@ -150,15 +153,15 @@
             <h2>Passeio Aleatório</h2>
             <p>Imagine lançamentos em sequência de uma moeda. Cada coroa resultante leva a um passo à frente, enquanto
               cada cara...</p>
-            <div class="explore"><a>Explorar</a></div>
+            <div class="explore"><a href="#random-walk">Explorar</a></div>
           </div>
 
           <div class="card">
             <div class="lead-icon"><i class="fa-solid fa-computer"></i></div>
             <h2>Simulação</h2>
             <p>Os controles disponíveis são capazes de configurar o número de passos e de caminhos, bem como a
-              velocidade de...</p>
-            <div class="explore"><a>Explorar</a></div>
+              velocidade de execução...</p>
+            <div class="explore"><a href="#about-simulation">Explorar</a></div>
           </div>
         </div>
 
@@ -173,22 +176,22 @@
               <a href="#initial-concepts">Conceitos Iniciais</a>
               <ol>
                 <li class="active"><a href="#random-variables">Variáveis Aleatórias</a></li>
-                <li><a>Processos Estocásticos</a></li>
+                <li><a href="#stochastic-processes">Processos Estocásticos</a></li>
               </ol>
             </li>
             <li>
-              <a>Random Walk</a>
+              <a href="#random-walk">Passeio Aleatório</a>
               <ol>
-                <li><a>Posição Final</a></li>
-                <li><a>Triângulo de Pascal</a></li>
-                <li><a>Modelagem Probabilística</a></li>
+                <li><a href="#final-position">Posição Final</a></li>
+                <li><a href="#pascal-triangle">Triângulo de Pascal</a></li>
+                <li><a href="#prob-modeling">Modelagem Probabilística</a></li>
               </ol>
             </li>
             <li>
-              <a>Simulação</a>
+              <a href="#about-simulation">Sobre a Simulação</a>
               <ol>
-                <li><a>Controles</a></li>
-                <li><a>Desenvolvimento</a></li>
+                <li><a href="#controls">Controles</a></li>
+                <li><a href="#development">Desenvolvimento</a></li>
               </ol>
             </li>
           </ol>
@@ -196,16 +199,17 @@
         <article class="article-content">
           <section>
             <h2 id="initial-concepts">Conceitos Iniciais</h2>
-            <h3 id="random-variables">Variável Aleatória</h3>
+            <h3 id="random-variables">Variáveis Aleatórias</h3>
             <p>
-              Em muitas situações experimentais estamos interessados em mensurar e registrar acontecimentos 
-              na forma de números. Mesmo nas situações onde os resultados são nitidamente coletados como categorias, 
-              há um desejo de que sejam transformados em números. Números são mais facilmente representados, modelados 
+              Em muitas situações experimentais estamos interessados em mensurar e registrar acontecimentos
+              na forma de números. Mesmo nas situações onde os resultados são nitidamente coletados como categorias,
+              há um desejo de que sejam transformados em números. Números são mais facilmente representados, modelados
               e analisados que dados categóricos.
             </p>
             <p>
-              Por exemplo, consideremos um jogo constituído de dois lançamentos independentes de uma moeda enviesada 
-              que costuma resultar cara (C) com 4 vezes mais frequência que coroa (R). Pretende-se tomar algumas decisões 
+              Por exemplo, consideremos um jogo constituído de dois lançamentos independentes de uma moeda enviesada
+              que costuma resultar cara (C) com 4 vezes mais frequência que coroa (R). Pretende-se tomar algumas
+              decisões
               com base no resultado:
             </p>
             <ul>
@@ -216,7 +220,7 @@
             <p>
               Modelando os resultados através de uma árvore de possibilidades, obtemos:
             </p>
-            <img src="/assets/prob_tree.PNG" alt="Árvore de possibilidades" />
+            <img src="/assets/prob_tree.png" alt="Árvore de possibilidades" />
             <table>
               <thead>
                 <td>Resultado</td>
@@ -225,7 +229,8 @@
               <tbody>
                 <tr>
                   <td>CC</td>
-                  <td>4/5 * 4/5 = 16/25<td>
+                  <td>4/5 * 4/5 = 16/25
+                  <td>
                 </tr>
                 <tr>
                   <td>CR</td>
@@ -241,12 +246,94 @@
                 </tr>
               </tbody>
             </table>
+            <h3 id="stochastic-processes">Processos Estocásticos</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi aut fugiat earum ipsum magni ducimus
+              vitae
+              cupiditate fugit atque facere voluptas ex, aspernatur eos voluptate asperiores necessitatibus neque eius
+              explicabo?</p>
+            <h2 id="random-walk">Passeio Aleatório</h2>
+            <h3 id="final-position">Posição Final</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim iure nihil eaque accusantium quisquam illo
+              rem
+              quos, vero odio, omnis nobis voluptatum sit neque nam, blanditiis quas fugit esse natus!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim iure nihil eaque accusantium quisquam illo
+              rem
+              quos, vero odio, omnis nobis voluptatum sit neque nam, blanditiis quas fugit esse natus!</p>
+            <h3 id="pascal-triangle">Triângulo de Pascal</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae iusto quo aliquid illo
+              suscipit
+              repellat, numquam blanditiis assumenda laboriosam odit temporibus minima doloribus nobis. Dolore
+              distinctio
+              maiores tenetur veritatis.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae iusto quo aliquid illo
+              suscipit
+              repellat, numquam blanditiis assumenda laboriosam odit temporibus minima doloribus nobis. Dolore
+              distinctio
+              maiores tenetur veritatis.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae iusto quo aliquid illo
+              suscipit
+              repellat, numquam blanditiis assumenda laboriosam odit temporibus minima doloribus nobis. Dolore
+              distinctio
+              maiores tenetur veritatis.</p>
+            <h3 id="prob-modeling">Modelagem Probabilística</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad et architecto corrupti ipsam blanditiis
+              distinctio in. Architecto, quasi dicta sunt illo temporibus itaque quaerat quam maxime atque neque ullam
+              totam?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad et architecto corrupti ipsam blanditiis
+              distinctio in. Architecto, quasi dicta sunt illo temporibus itaque quaerat quam maxime atque neque ullam
+              totam?</p>
+            <h2 id="about-simulation">Sobre a Simulação</h2>
+            <h3 id="controls">Controles</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aut nulla non cum pariatur molestias!
+              Exercitationem, tempore facilis. Perferendis repellat fugit explicabo dicta accusamus voluptates quisquam,
+              natus corrupti! Ipsa, laborum.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aut nulla non cum pariatur molestias!
+              Exercitationem, tempore facilis. Perferendis repellat fugit explicabo dicta accusamus voluptates quisquam,
+              natus corrupti! Ipsa, laborum.</p>
+            <h3 id="development">Desenvolvimento</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi illo blanditiis laboriosam, atque earum
+              repellat. Quis dolor laudantium illo deserunt esse est, qui exercitationem a, ab aspernatur inventore quae
+              veniam?</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi illo blanditiis laboriosam, atque earum
+              repellat. Quis dolor laudantium illo deserunt esse est, qui exercitationem a, ab aspernatur inventore quae
+              veniam?</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi illo blanditiis laboriosam, atque earum
+              repellat. Quis dolor laudantium illo deserunt esse est, qui exercitationem a, ab aspernatur inventore quae
+              veniam?</p>
           </section>
         </article>
       </div>
     </section>
+    <section id="references">
+      <div class="section-container">
+        <h1>Referências</h1>
+
+      </div>
+    </section>
   </main>
-  <footer></footer>
+  <footer>
+    <div class="footer-container">
+      <div class="logo">
+        <span class="icon-person-walking"><i class="fa-solid fa-person-walking"></span></i>
+        Passeio Aleatório
+      </div>
+      <p>Desenvolvido por <strong>João Vitor Gomes</strong></p>
+      <div class="social-links">
+        <div>
+          <a href="https://codepen.io/vitorp4/" target="_blank"><i class="fa-brands fa-codepen"></i></a>
+        </div>
+        <div>
+          <a href="https://github.com/vitorp4/random-walk" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <div>
+          <a href="https://www.linkedin.com/in/jo%C3%A3o-vitor-da-silva-gomes-a55a211b4/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <div>
+          <a href="https://medium.com/@jvsg" target="_blank"><i class="fa-brands fa-medium"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>

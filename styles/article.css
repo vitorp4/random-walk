@@ -4,10 +4,11 @@
   margin: auto;
   display: grid;
   grid-template-columns: 300px 1fr;
-  padding-bottom: 112px;
+  padding-bottom: 96px;
 }
 
 .article-content {
+  min-height: 1500px;
   background-color: var(--white);
   box-shadow: 0px 8px 36px rgba(5, 5, 165, 0.05);
   border-radius: 6px;
@@ -18,21 +19,33 @@
   font-family: 'Red Hat Display', sans-serif;
   font-size: 32px;
   font-weight: bold;
-  color: var(--text-gray);
-  margin-bottom: 16px;
+  color: var(--dark-gray);
+  margin: 16px 0;
+}
+
+.article-content h2:first-child {
+  margin-top: 0;
 }
 
 .article-content h3 {
   font-family: 'Red Hat Display', sans-serif;
   font-size: 24px;
   font-weight: bold;
-  color: var(--text-gray);
-  margin-bottom: 12px;
+  color: var(--dark-gray);
+  margin: 12px 0;
 }
 
 .article-content p {
   margin-bottom: 12px;
   line-height: 24px;
+  color: var(--medium-gray);
+}
+
+.article-content ul {
+  padding-left: 16px;
+  line-height: 24px;
+  color: var(--medium-gray);
+  margin-bottom: 12px;
 }
 
 

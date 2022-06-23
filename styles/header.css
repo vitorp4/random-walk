@@ -40,7 +40,7 @@ header.small .nav-dropdown > ul {
   justify-content: space-between;
 }
 
-.logo a {
+header .logo a {
   font-family: "Red Hat Display", sans-serif;
   color: var(--white);
   text-decoration: none;
@@ -49,7 +49,7 @@ header.small .nav-dropdown > ul {
   transition: 0.5s;
 }
 
-.logo .icon-person-walking {
+header .logo .icon-person-walking {
   font-size: 28px;
   display: inline-block;
   margin-right: 6px;
@@ -59,7 +59,7 @@ header.small .nav-dropdown > ul {
 .toolbar nav > ul {
   list-style: none;
   display: flex;
-  color: var(--heading-black);
+  color: var(--dark-gray);
   gap: 24px;
 }
 
@@ -90,7 +90,7 @@ header.small .nav-dropdown > ul {
   display: flex;
   gap: 6px;
   align-items: baseline;
-  color: var(--text-gray);
+  color: var(--dark-gray);
 }
 
 .nav-dropdown .icon-chevron {
@@ -118,7 +118,7 @@ header.small .nav-dropdown > ul {
   position: absolute;
   list-style: none;
   background-color: var(--white);
-  color: var(--heading-black);
+  color: var(--dark-gray);
   font-size: 14px;
   border-radius: 6px;
   box-shadow: 0 4px 16px 4px rgba(0, 0, 0, 0.1);
@@ -139,7 +139,7 @@ header.small .nav-dropdown > ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: var(--text-gray);
+  color: var(--dark-gray);
 }
 
 .nav-dropdown > ul > li:hover {

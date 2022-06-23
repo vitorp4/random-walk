@@ -3,6 +3,8 @@
 @import url('cards.css');
 @import url('article.css');
 @import url('aside.css');
+@import url('references.css');
+@import url('footer.css');
 
 :root {
   --main-blue: #128fc8;
@@ -10,10 +12,10 @@
   --very-dark-blue: #0a618c;
   --hover-blue: #eaebf2;
   --blued-white: #f8f9ff;
+  --dark-gray: #404244;
+  --medium-gray: #555464;
+  --light-gray: #a7a7a7;
   --white: #fff;
-  --heading-black: #404244;
-  --text-gray: #0e1835; /* #727475; #0e1835*/
-  --sleep-anchor: #8f8f8f;
   
   scroll-behavior: smooth;
 }
@@ -31,4 +33,8 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+[id] {
+  scroll-margin-top: 64px;
 }

@@ -1,15 +1,15 @@
 aside {
   position: sticky;
-  top: calc(50% - 100px);
+  top: calc(50% - 106px);
   height: fit-content;
 }
 
 aside li {
-  line-height: 30px;
+  line-height: 28px;
 }
 
 aside a {
-  color: var(--sleep-anchor);
+  color: var(--light-gray);
   cursor: pointer;
   text-decoration: none;
 }
@@ -20,47 +20,54 @@ aside > ol {
   padding-left: 42px;
 }
 
-aside > ol > li {
-  position: relative;
-  counter-increment: my-counter;
+aside > ol > li + li {
+  margin-top: 16px;
 }
 
 aside > ol > li > a {
+  position: relative;
+  counter-increment: my-counter;
   font-weight: bold;
 }
 
-aside > ol > li::before {
+aside > ol > li > a::after {
   content: counter(my-counter);
   color: var(--main-blue);
   position: absolute; 
-  line-height: 27px; 
-  left: -37px;  
-  width: 27px;
-  height: 27px; 
+  line-height: 24px;  
+  left: -35px;
+  top: 50%;
+  background-color: var(--blued-white);
+  transform: translateY(-50%);  
+  width: 24px;
+  height: 24px; 
   text-align: center;
   border: 1px solid var(--main-blue);
   font-weight: bold;
   border-radius: 50%;
   font-family: 'Red Hat Display', sans-serif;
+  font-size: 14px; 
 }
 
 aside > ol > li > ol {
   list-style: none;
 }
 
-aside > ol > li > ol > li {
+aside > ol > li > ol > li > a {
   position: relative;
 }
 
-aside > ol > li > ol > li::before {
+aside > ol > li > ol > li > a::before, 
+aside > ol > li > a::before {
   position: absolute;
   content: '';
-  height: 100%;
+  height: 26px;
+  top: 0;
   left: -22px;
-  border-left: 1px dashed var(--sleep-anchor);
+  border-left: 1px dashed rgb(192, 192, 192);
 }
 
-aside > ol > li > ol > li::after {
+aside > ol > li > ol > li > a::after {
   content: '';
   position: absolute;
   left: -25px;  
@@ -73,20 +80,20 @@ aside > ol > li > ol > li::after {
   transform: translateY(-50%);
 }
 
-aside > ol > li:last-child > ol > li:last-child::before {
+aside > ol > li > ol > li:last-child > a::before {
   height: 50%;
 }
 
 aside > ol > li.active > a, 
 aside > ol > li > ol > li.active > a{
-  color: var(--heading-black);
+  color: var(--dark-gray);
 }
 
-aside > ol > li.active::before {
+aside > ol > li.active > a::after {
   color: var(--white);
   background-color: var(--main-blue);
 }
 
-aside > ol > li > ol >li.active::after {
+aside > ol > li > ol >li.active > a::after {
   background-color: var(--main-blue);
 }
