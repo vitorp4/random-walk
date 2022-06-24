@@ -1,5 +1,10 @@
 #home {
   background-color: var(--main-blue);
+  background-image: url('../assets/polygon-scatter-haikei.svg'), url('../assets/polygon-scatter-haikei.svg');
+  background-position: top left, bottom right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* background-attachment: fixed; */
 }
 
 #home .section-container {
@@ -259,6 +264,7 @@ button#play-pause.pause #icon-play {
   width: 680px;
   height: 375px;
   padding: 8px;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.05);
 }
 
 .secondary-simulator {
@@ -310,6 +316,7 @@ button#play-pause.pause #icon-play {
   padding: 8px 16px 8px 8px;
   height: 275px;
   margin-top: 32px;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.05);
 }
 
 .chevron-container {

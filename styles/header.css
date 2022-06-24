@@ -125,7 +125,7 @@ header .logo .icon-person-walking {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-4px);
-  transition: none;
+  transition: 0.2s;
 }
 
 .nav-dropdown > ul > li {

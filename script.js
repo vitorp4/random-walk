@@ -23,8 +23,16 @@ const elPathSelect = document.querySelector("#path-select");
 const elPathChart = document.querySelector("#path-chart");
 const elProbabilityChart = document.querySelector("#probability-chart");
 
-window.onscroll = headerShadow;
-window.onload = initializeSimulation;
+window.onscroll = () => {
+  headerShadow();
+  asideHighlight();
+};
+
+window.onload = () => { 
+  headerShadow();
+  asideHighlight();
+  initializeSimulation();
+}
 
 async function initializeSimulation(newData = true) {
   toState("SE");
@@ -402,4 +410,28 @@ function toState(toState) {
       state = "SF";
       break;
   }
+}
+
+
+const asideLinks = document.querySelectorAll("aside a");
+const articleHeadings = document.querySelectorAll(
+  ".article-content h2[id], .article-content h3[id]"
+);
+
+function asideHighlight() {
+
+  const articleHeadingsList = [...articleHeadings];
+  const asideLinksList = [...asideLinks];
+
+  const headingsScrolled = articleHeadingsList
+    .filter((el) => el.getBoundingClientRect().top < 80)
+    .map((el) => el.id);
+
+  asideLinksList.forEach((el) => {
+    if (headingsScrolled.includes(el.getAttribute("href").slice(1))) {
+      el.classList.add("active");
+    } else {
+      el.classList.remove("active");
+    }
+  });
 }

@@ -13,6 +13,7 @@
   box-shadow: 0px 8px 36px rgba(5, 5, 165, 0.05);
   border-radius: 6px;
   padding: 42px;
+  z-index:1;
 }
 
 .article-content h2 {
