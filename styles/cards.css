@@ -65,6 +65,17 @@ bottom: -4px;
   left: 0;
 }
 
+.card::after {
+  content: '';
+  position: absolute;
+  background-color: var(--white);
+  height: 14px;
+  border-radius: 0 0 4px 4px;
+  width: 100%;
+  bottom: 10px;
+  left: 0;
+}
+
 .card .lead-icon {
   position: absolute;
   height: 54px;

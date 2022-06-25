@@ -197,115 +197,158 @@
           </ol>
         </aside>
         <article class="article-content">
-            <h2 id="initial-concepts">Conceitos Iniciais</h2>
-            <h3 id="random-variables">Variáveis Aleatórias</h3>
-            <p>
-              Em muitas situações experimentais estamos interessados em mensurar e registrar acontecimentos
-              na forma de números. Mesmo nas situações onde os resultados são nitidamente coletados como categorias,
-              há um desejo de que sejam transformados em números. Números são mais facilmente representados, modelados
-              e analisados que dados categóricos.
-            </p>
-            <p>
-              Por exemplo, consideremos um jogo constituído de dois lançamentos independentes de uma moeda enviesada
-              que costuma resultar cara (C) com 4 vezes mais frequência que coroa (R). Pretende-se tomar algumas
-              decisões
-              com base no resultado:
-            </p>
-            <ul>
-              <li>Se 2 caras, o jogador permanece no jogo;</li>
-              <li>Se faces distintas, o jogador sofrerá uma penalidade;</li>
-              <li>Se ambas coroas, o jogador será desclassificado.</li>
-            </ul>
-            <p>
-              Modelando os resultados através de uma árvore de possibilidades, obtemos:
-            </p>
-            <img src="/assets/prob_tree.png" alt="Árvore de possibilidades" />
-            <table>
-              <thead>
-                <td>Resultado</td>
-                <td>Probabilidade</td>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>CC</td>
-                  <td>4/5 * 4/5 = 16/25
-                  <td>
-                </tr>
-                <tr>
-                  <td>CR</td>
-                  <td>4/5 * 1/5 = 4/25</td>
-                </tr>
-                <tr>
-                  <td>RC</td>
-                  <td>1/5 * 4/5 = 4/25</td>
-                </tr>
-                <tr>
-                  <td>RR</td>
-                  <td>1/5 * 1/5 = 1/25</td>
-                </tr>
-              </tbody>
-            </table>
-            <h3 id="stochastic-processes">Processos Estocásticos</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi aut fugiat earum ipsum magni ducimus
-              vitae
-              cupiditate fugit atque facere voluptas ex, aspernatur eos voluptate asperiores necessitatibus neque eius
-              explicabo?</p>
-            <h2 id="random-walk">Passeio Aleatório</h2>
-            <h3 id="final-position">Posição Final</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim iure nihil eaque accusantium quisquam illo
-              rem
-              quos, vero odio, omnis nobis voluptatum sit neque nam, blanditiis quas fugit esse natus!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim iure nihil eaque accusantium quisquam illo
-              rem
-              quos, vero odio, omnis nobis voluptatum sit neque nam, blanditiis quas fugit esse natus!</p>
-            <h3 id="pascal-triangle">Triângulo de Pascal</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae iusto quo aliquid illo
-              suscipit
-              repellat, numquam blanditiis assumenda laboriosam odit temporibus minima doloribus nobis. Dolore
-              distinctio
-              maiores tenetur veritatis.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae iusto quo aliquid illo
-              suscipit
-              repellat, numquam blanditiis assumenda laboriosam odit temporibus minima doloribus nobis. Dolore
-              distinctio
-              maiores tenetur veritatis.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae iusto quo aliquid illo
-              suscipit
-              repellat, numquam blanditiis assumenda laboriosam odit temporibus minima doloribus nobis. Dolore
-              distinctio
-              maiores tenetur veritatis.</p>
-            <h3 id="prob-modeling">Modelagem Probabilística</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad et architecto corrupti ipsam blanditiis
-              distinctio in. Architecto, quasi dicta sunt illo temporibus itaque quaerat quam maxime atque neque ullam
-              totam?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad et architecto corrupti ipsam blanditiis
-              distinctio in. Architecto, quasi dicta sunt illo temporibus itaque quaerat quam maxime atque neque ullam
-              totam?</p>
-            <h2 id="about-simulation">Sobre a Simulação</h2>
-            <h3 id="controls">Controles</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aut nulla non cum pariatur molestias!
-              Exercitationem, tempore facilis. Perferendis repellat fugit explicabo dicta accusamus voluptates quisquam,
-              natus corrupti! Ipsa, laborum.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aut nulla non cum pariatur molestias!
-              Exercitationem, tempore facilis. Perferendis repellat fugit explicabo dicta accusamus voluptates quisquam,
-              natus corrupti! Ipsa, laborum.</p>
-            <h3 id="development">Desenvolvimento</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi illo blanditiis laboriosam, atque earum
-              repellat. Quis dolor laudantium illo deserunt esse est, qui exercitationem a, ab aspernatur inventore quae
-              veniam?</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi illo blanditiis laboriosam, atque earum
-              repellat. Quis dolor laudantium illo deserunt esse est, qui exercitationem a, ab aspernatur inventore quae
-              veniam?</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi illo blanditiis laboriosam, atque earum
-              repellat. Quis dolor laudantium illo deserunt esse est, qui exercitationem a, ab aspernatur inventore quae
-              veniam?</p>
+          <h2 id="initial-concepts">Conceitos Iniciais</h2>
+          <h3 id="random-variables">Variáveis Aleatórias</h3>
+          <p>
+            Em muitas situações experimentais estamos interessados em mensurar e registrar acontecimentos
+            na forma de números. Mesmo nas situações onde os resultados são nitidamente coletados como categorias,
+            há um desejo de que sejam transformados em números. Números são mais facilmente representados, modelados
+            e analisados que dados categóricos.
+          </p>
+          <p>
+            Por exemplo, consideremos um jogo constituído de dois lançamentos independentes de uma moeda enviesada
+            que costuma resultar cara (C) com 4 vezes mais frequência que coroa (R). Pretende-se tomar algumas
+            decisões
+            com base no resultado:
+          </p>
+          <ul>
+            <li>Se 2 caras, o jogador permanece no jogo;</li>
+            <li>Se faces distintas, o jogador sofrerá uma penalidade;</li>
+            <li>Se ambas coroas, o jogador será desclassificado.</li>
+          </ul>
+          <p>
+            Modelando os resultados através de uma árvore de possibilidades, obtemos:
+          </p>
+          <img src="/assets/prob_tree.png" alt="Árvore de possibilidades" />
+          <table>
+            <thead>
+              <td>Resultado</td>
+              <td>Probabilidade</td>
+            </thead>
+            <tbody>
+              <tr>
+                <td>CC</td>
+                <td>4/5 * 4/5 = 16/25
+                <td>
+              </tr>
+              <tr>
+                <td>CR</td>
+                <td>4/5 * 1/5 = 4/25</td>
+              </tr>
+              <tr>
+                <td>RC</td>
+                <td>1/5 * 4/5 = 4/25</td>
+              </tr>
+              <tr>
+                <td>RR</td>
+                <td>1/5 * 1/5 = 1/25</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3 id="stochastic-processes">Processos Estocásticos</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi aut fugiat earum ipsum magni ducimus
+            vitae
+            cupiditate fugit atque facere voluptas ex, aspernatur eos voluptate asperiores necessitatibus neque eius
+            explicabo?</p>
+          <h2 id="random-walk">Passeio Aleatório</h2>
+          <h3 id="final-position">Posição Final</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim iure nihil eaque accusantium quisquam illo
+            rem
+            quos, vero odio, omnis nobis voluptatum sit neque nam, blanditiis quas fugit esse natus!</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim iure nihil eaque accusantium quisquam illo
+            rem
+            quos, vero odio, omnis nobis voluptatum sit neque nam, blanditiis quas fugit esse natus!</p>
+          <h3 id="pascal-triangle">Triângulo de Pascal</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae iusto quo aliquid illo
+            suscipit
+            repellat, numquam blanditiis assumenda laboriosam odit temporibus minima doloribus nobis. Dolore
+            distinctio
+            maiores tenetur veritatis.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae iusto quo aliquid illo
+            suscipit
+            repellat, numquam blanditiis assumenda laboriosam odit temporibus minima doloribus nobis. Dolore
+            distinctio
+            maiores tenetur veritatis.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae iusto quo aliquid illo
+            suscipit
+            repellat, numquam blanditiis assumenda laboriosam odit temporibus minima doloribus nobis. Dolore
+            distinctio
+            maiores tenetur veritatis.</p>
+          <h3 id="prob-modeling">Modelagem Probabilística</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad et architecto corrupti ipsam blanditiis
+            distinctio in. Architecto, quasi dicta sunt illo temporibus itaque quaerat quam maxime atque neque ullam
+            totam?</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad et architecto corrupti ipsam blanditiis
+            distinctio in. Architecto, quasi dicta sunt illo temporibus itaque quaerat quam maxime atque neque ullam
+            totam?</p>
+          <h2 id="about-simulation">Sobre a Simulação</h2>
+          <h3 id="controls">Controles</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aut nulla non cum pariatur molestias!
+            Exercitationem, tempore facilis. Perferendis repellat fugit explicabo dicta accusamus voluptates quisquam,
+            natus corrupti! Ipsa, laborum.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aut nulla non cum pariatur molestias!
+            Exercitationem, tempore facilis. Perferendis repellat fugit explicabo dicta accusamus voluptates quisquam,
+            natus corrupti! Ipsa, laborum.</p>
+          <h3 id="development">Desenvolvimento</h3>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi illo blanditiis laboriosam, atque earum
+            repellat. Quis dolor laudantium illo deserunt esse est, qui exercitationem a, ab aspernatur inventore quae
+            veniam?</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi illo blanditiis laboriosam, atque earum
+            repellat. Quis dolor laudantium illo deserunt esse est, qui exercitationem a, ab aspernatur inventore quae
+            veniam?</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi illo blanditiis laboriosam, atque earum
+            repellat. Quis dolor laudantium illo deserunt esse est, qui exercitationem a, ab aspernatur inventore quae
+            veniam?</p>
         </article>
       </div>
     </section>
     <section id="references">
       <div class="section-container">
         <h1>Referências</h1>
+        <div class="ref-cards-wrapper">
+          <div class="ref-card">
+            <div class="ref-card-header">
+              Livros
+            </div>
+            <ul>
+              <li>P. L. Meyer (1983). Probabilidade. Aplicações à Estatística. Livros Técnicos e Científicos;</li>
+              <li>S. Ross (2010). A First Course in Probability. Pearson Prentice Hall;</li>
+              <li>A. Papoulis, S. A. Pilai (2002). Probability, Random Variables and Sochastic Processes. McGraw-Hill
+                Higher Education.</li>
+            </ul>
 
+          </div>
+          <div class="ref-card">
+            <div class="ref-card-header">
+              Vídeos
+            </div>
+            <ul>
+              <li><a href="https://www.youtube.com/watch?v=stgYW6M5o4k&t=123s" target="_blank">Infinity series <i
+                    class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
+              <li><a href="https://www.youtube.com/watch?v=2SZCkq-a6wU" target="_blank">Professor da USP fala sobre
+                  aplicações do passeio aleatório <i class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
+              <li>Explicando random walk no papel: <a href="https://www.youtube.com/watch?v=ZZcne16szFM"
+                  target="_blank">Parte 1 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>, <a
+                  href="https://www.youtube.com/watch?v=u1ntFlrKwBQ" target="_blank">Parte 2 <i
+                    class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
+              <li><a href="https://www.youtube.com/watch?v=vz1wWCFpzl0" target="_blank">Videoaula em pt-br <i
+                    class="fa-solid fa-arrow-up-right-from-square"></i></a>.</li>
+            </ul>
+          </div>
+          <div class="ref-card">
+            <div class="ref-card-header">
+              Outras simulações
+            </div>
+            <ul>
+              <li><a href="https://www.randomservices.org/random/apps/RandomWalk.html" target="_blank">Simulando além da posição final <i class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
+              <li><a href="http://e.sci.osaka-cu.ac.jp/yoshino/download/rw/" target="_blank">Simulando em 1 ou 2 dimensões <i
+                    class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
+              <li><a href="https://demonstrations.wolfram.com/SimulatingTheSimpleRandomWalk/" target="_blank">Simulando
+                  com intervalo de confiança <i class="fa-solid fa-arrow-up-right-from-square"></i></a>.</li>
+            </ul>
+
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -324,7 +367,8 @@
           <a href="https://github.com/vitorp4/random-walk" target="_blank"><i class="fa-brands fa-github"></i></a>
         </div>
         <div>
-          <a href="https://www.linkedin.com/in/jo%C3%A3o-vitor-da-silva-gomes-a55a211b4/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://www.linkedin.com/in/jo%C3%A3o-vitor-da-silva-gomes-a55a211b4/" target="_blank"><i
+              class="fa-brands fa-linkedin-in"></i></a>
         </div>
         <div>
           <a href="https://medium.com/@jvsg" target="_blank"><i class="fa-brands fa-medium"></i></a>

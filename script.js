@@ -424,7 +424,7 @@ function asideHighlight() {
   const asideLinksList = [...asideLinks];
 
   const headingsScrolled = articleHeadingsList
-    .filter((el) => el.getBoundingClientRect().top < 80)
+    .filter((el) => el.getBoundingClientRect().top <100)
     .map((el) => el.id);
 
   asideLinksList.forEach((el) => {
