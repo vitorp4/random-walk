@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;500;600;700&family=Red+Hat+Display:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;500;600;700&family=Red+Hat+Display:wght@300;400;500;600;700&family=BIZ+UDPGothic&display=swap"
     rel="stylesheet">
   <link rel="icon" href="/assets/person-walking-solid.svg" />
   <script src="script.js" defer></script>
@@ -18,6 +18,8 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.4.0/chartjs-plugin-annotation.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
@@ -158,7 +160,7 @@
 
           <div class="card">
             <div class="lead-icon"><i class="fa-solid fa-computer"></i></div>
-            <h2>Simulação</h2>
+            <h2>A Simulação</h2>
             <p>Os controles disponíveis são capazes de configurar o número de passos e de caminhos, bem como a
               velocidade de execução...</p>
             <div class="explore"><a href="#about-simulation">Explorar</a></div>
@@ -198,58 +200,114 @@
         </aside>
         <article class="article-content">
           <h2 id="initial-concepts">Conceitos Iniciais</h2>
+          <p>Antes de mergulharmos na definição de passeio aleatório, parece razoável nos familiarizarmos com alguns dos
+            conceitos básicos estabelecidos pela teoria da probabilidade. Embora seja uma apresentação inicial,
+            recomenda-se que o leitor possua noções de probabilidade.</p>
           <h3 id="random-variables">Variáveis Aleatórias</h3>
           <p>
-            Em muitas situações experimentais estamos interessados em mensurar e registrar acontecimentos
-            na forma de números. Mesmo nas situações onde os resultados são nitidamente coletados como categorias,
-            há um desejo de que sejam transformados em números. Números são mais facilmente representados, modelados
-            e analisados que dados categóricos.
+            Frequentemente, quando um experimento probabilístico é realizado, estamos interessados em uma função
+            definida sobre o resultado ao invés do resultado propriamente dito. Por exemplo, supondo que seja feito o
+            lançamento simultâneo de dois dados, geralmente nos atentamos para a soma resultante e não para os
+            resultados separados de cada dado. Imagine que estamos prestes a vencer um jogo de tabuleiro e que para isso
+            precisamos avançar exatamente \(9\) casas. Nesta situação, há um interesse maior em saber se a soma dos
+            dados
+            será igual a \(9\), ao passo que deixamos de lado a preocupação com os resultados isolados de cada dado:
+            \((3,6),
+            (4,5), (5,4)\) ou \((6,3)\).
           </p>
           <p>
-            Por exemplo, consideremos um jogo constituído de dois lançamentos independentes de uma moeda enviesada
-            que costuma resultar cara (C) com 4 vezes mais frequência que coroa (R). Pretende-se tomar algumas
-            decisões
-            com base no resultado:
+            Estas funções que abstraem os possíveis resultados de um experimento probabilístico e os mapeiam a uma
+            quantidade de interesse, são conhecidas como variáveis aleatórias.
+          </p>
+          <h4>Mais um exemplo</h4>
+          <p>
+            Agora consideremos um jogo constituído de dois lançamentos independentes de uma moeda enviesada
+            que costuma resultar cara \((C)\) com \(4\) vezes mais frequência que coroa \((R)\). Pretende-se tomar
+            algumas
+            decisões com base no resultado:
           </p>
           <ul>
-            <li>Se 2 caras, o jogador permanece no jogo;</li>
+            <li>Se \(2\) caras, o jogador permanece no jogo;</li>
             <li>Se faces distintas, o jogador sofrerá uma penalidade;</li>
             <li>Se ambas coroas, o jogador será desclassificado.</li>
           </ul>
           <p>
             Modelando os resultados através de uma árvore de possibilidades, obtemos:
           </p>
-          <img src="/assets/prob_tree.png" alt="Árvore de possibilidades" />
-          <table>
+          <div class="container-figures coin-tree">
+            <figure>
+              <img src="/assets/prob_tree.png" alt="Árvore de possibilidades" />
+              <figcaption>Árvore de possibilidades</figcaption>
+            </figure>
+            <figure>
+              <img src="/assets/sample_space.png" alt="Espaço amostral" />
+              <figcaption>Espaço amostral</figcaption>
+            </figure>
+          </div>
+          <p>A árvore de possibilidades possui \(2\) níveis, cada um representando o lançamento de uma das moedas. Como
+            um lançamento é limitado
+            a resultar cara ou coroa, cada nó de ramificação gera \(2\) novos ramos. Ao fim percebe-se a existência
+            de \(4\) folhas: \(CC,CR,RC\) e \(RR\).
+          </p>
+          <p>Como foi dito que os lançamentos são indepententes, então assume-se que partindo da raiz, a probabilidade
+            de alcançar determinada folha é igual a multiplicação das probabilidades associadas
+            aos ramos percorridos. E é o conjunto destas folhas e suas probabilidades que formam o espaço amostral \(S\)
+            do experimento.
+          </p>
+          <table class="coin-table">
             <thead>
-              <td>Resultado</td>
-              <td>Probabilidade</td>
+              <tr>
+                <td>Resultado</td>
+                <td>Probabilidade</td>
+              </tr>
             </thead>
             <tbody>
               <tr>
-                <td>CC</td>
-                <td>4/5 * 4/5 = 16/25
-                <td>
+                <td>\(CC\)</td>
+                <td>$$\frac{4}{5} \times \frac{4}{5} = \frac{16}{25}$$</td>
               </tr>
               <tr>
-                <td>CR</td>
-                <td>4/5 * 1/5 = 4/25</td>
+                <td>\(CR\)</td>
+                <td>$$\frac{4}{5} \times \frac{1}{5} = \frac{4}{25}$$</td>
               </tr>
               <tr>
-                <td>RC</td>
-                <td>1/5 * 4/5 = 4/25</td>
+                <td>\(RC\)</td>
+                <td>$$\frac{1}{5} \times \frac{4}{5} = \frac{4}{25}$$</td>
               </tr>
               <tr>
-                <td>RR</td>
-                <td>1/5 * 1/5 = 1/25</td>
+                <td>\(RR\)</td>
+                <td>$$\frac{1}{5} \times \frac{1}{5} = \frac{1}{25}$$</td>
               </tr>
             </tbody>
           </table>
+          <p>Definamos a seguinte variável aleatória
+            \(X =\) "número de coroas obtidas nos dois lançamentos de moeda". Isso nos permite criar um mapeamento da
+            forma:
+          </p>
+          <div class="container-figures random-variable">
+            <figure>
+              <img src="assets/random_variable.PNG" alt="Variável Aleatória" />
+              <figcaption>Variável aleatória \(X\)</figcaption>
+            </figure>
+            <p class="align-eq-left">
+              $$P(X=0) = P(\{CC\}) = \frac{16}{25}$$
+              $$P(X=1) = P(\{CR,RC\}) = \frac{4}{25}+\frac{4}{25}=\frac{8}{25}$$
+              $$P(X=2) = P(\{RR\}) = \frac{1}{25}$$
+            </p>
+          </div>
+          <blockquote>\(P(X=x)\), no geral lê-se: probabilidade de que a variável aleatória \(X\) assuma o valor \(x\).
+          </blockquote>
+          <p>Logo, se nos for perguntado qual a probabilidade de que o jogador sofra uma penalidade como consequência do
+            lançamento das moedas, reponderíamos que é a mesma probabilidade de se obter 1 coroa, ou seja
+            \(P(X=1)=8/25\).</p>
+          <p>
+            Uma função \(X\), definida no espaço amostral \(S\) e com valores num conjunto enumerável de pontos da reta é
+            denominada <strong>variável aleatória discreta</strong>.
+          </p>
           <h3 id="stochastic-processes">Processos Estocásticos</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi aut fugiat earum ipsum magni ducimus
-            vitae
-            cupiditate fugit atque facere voluptas ex, aspernatur eos voluptate asperiores necessitatibus neque eius
-            explicabo?</p>
+          <p>Um processo estocástico \(\{ X_t , t \in T \}\) pode ser definido como uma sequência de variáveis aleatórias
+            indexadas por um conjunto totalmente ordenado de índices (geralmente o tempo). Isto é, para cada \(t \in T\), \(X_t\) é
+            uma variável aleatória.</p>
           <h2 id="random-walk">Passeio Aleatório</h2>
           <h3 id="final-position">Posição Final</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim iure nihil eaque accusantium quisquam illo
@@ -311,12 +369,11 @@
               Livros
             </div>
             <ul>
-              <li>P. L. Meyer (1983). Probabilidade. Aplicações à Estatística. Livros Técnicos e Científicos;</li>
-              <li>S. Ross (2010). A First Course in Probability. Pearson Prentice Hall;</li>
-              <li>A. Papoulis, S. A. Pilai (2002). Probability, Random Variables and Sochastic Processes. McGraw-Hill
+              <li>P. L. Meyer (1983). <cite>Probabilidade. Aplicações à Estatística</cite>. Livros Técnicos e Científicos;</li>
+              <li>S. Ross (1976). <cite>A First Course in Probability</cite>. Pearson Education;</li>
+              <li>A. Papoulis, S. A. Pilai (1965). <cite>Probability, Random Variables and Stochastic Processes</cite>. McGraw-Hill
                 Higher Education.</li>
             </ul>
-
           </div>
           <div class="ref-card">
             <div class="ref-card-header">
@@ -327,10 +384,6 @@
                     class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
               <li><a href="https://www.youtube.com/watch?v=2SZCkq-a6wU" target="_blank">Professor da USP fala sobre
                   aplicações do passeio aleatório <i class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
-              <li>Explicando random walk no papel: <a href="https://www.youtube.com/watch?v=ZZcne16szFM"
-                  target="_blank">Parte 1 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>, <a
-                  href="https://www.youtube.com/watch?v=u1ntFlrKwBQ" target="_blank">Parte 2 <i
-                    class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
               <li><a href="https://www.youtube.com/watch?v=vz1wWCFpzl0" target="_blank">Videoaula em pt-br <i
                     class="fa-solid fa-arrow-up-right-from-square"></i></a>.</li>
             </ul>
@@ -340,13 +393,13 @@
               Outras simulações
             </div>
             <ul>
-              <li><a href="https://www.randomservices.org/random/apps/RandomWalk.html" target="_blank">Simulando além da posição final <i class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
-              <li><a href="http://e.sci.osaka-cu.ac.jp/yoshino/download/rw/" target="_blank">Simulando em 1 ou 2 dimensões <i
-                    class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
-              <li><a href="https://demonstrations.wolfram.com/SimulatingTheSimpleRandomWalk/" target="_blank">Simulando
+              <li><a href="https://www.randomservices.org/random/apps/RandomWalk.html" target="_blank">Simulando outras
+                  variáveis além da posição final <i class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
+              <li><a href="http://e.sci.osaka-cu.ac.jp/yoshino/download/rw/" target="_blank">Passeio aleatório em 1 ou 2
+                  dimensões <i class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
+              <li><a href="https://demonstrations.wolfram.com/SimulatingTheSimpleRandomWalk/" target="_blank">Simulação
                   com intervalo de confiança <i class="fa-solid fa-arrow-up-right-from-square"></i></a>.</li>
             </ul>
-
           </div>
         </div>
       </div>

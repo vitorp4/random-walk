@@ -2,7 +2,7 @@ aside {
   position: sticky;
   top: calc(50% - 142px);
   height: fit-content;
-  padding: 16px 0 16px 8px;
+  padding: 16px 0;
 }
 
 aside li {
@@ -29,6 +29,7 @@ aside > ol > li > a {
   position: relative;
   counter-increment: my-counter;
   font-weight: bold;
+  transition: 0.2s;
 }
 
 aside > ol > li > a::after {
@@ -48,6 +49,7 @@ aside > ol > li > a::after {
   border-radius: 50%;
   font-family: 'Red Hat Display', sans-serif;
   font-size: 14px; 
+  transition: 0.2s;
 }
 
 aside > ol > li > ol {
@@ -56,6 +58,7 @@ aside > ol > li > ol {
 
 aside > ol > li > ol > li > a {
   position: relative;
+  transition: 0.2s;
 }
 
 aside > ol > li > ol > li > a::before, 
@@ -79,6 +82,7 @@ aside > ol > li > ol > li > a::after {
   background-color: var(--blued-white);
   top: 50%;
   transform: translateY(-50%);
+  transition: 0.2s;
 }
 
 aside > ol > li > ol > li:last-child > a::before {

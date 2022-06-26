@@ -7,13 +7,13 @@
 @import url('footer.css');
 
 :root {
-  --main-blue: #128fc8;
-  --dark-blue: #0d6998;
   --very-dark-blue: #0a618c;
-  --hover-blue: #eaebf2;
+  --dark-blue: #0d6998;
+  --main-blue: #128fc8;
+  --hover-blue: #f1f4ff;
   --blued-white: #f8f9ff;
   --black: #000;
-  --dark-gray: #404244;
+  --dark-gray: #292929;
   --medium-gray: #555464;
   --light-gray: #a7a7a7;
   --white: #fff;

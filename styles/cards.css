@@ -20,15 +20,14 @@
 }
 
 #cards .section-container h1::before {
-content: '';
-position: absolute;
-height: 3px;
-border-radius: 1px;
-background-color: var(--main-blue);
-width: 100%;
-bottom: -4px;
-}
-
+  content: '';
+  position: absolute;
+  height: 3px;
+  border-radius: 1px;
+  background-color: var(--main-blue);
+  width: 100%;
+  bottom: -4px;
+  }
 .cards-wrapper {
   display: flex;
   justify-content: space-between;
@@ -43,11 +42,12 @@ bottom: -4px;
   background-color: var(--white);
   box-shadow: 0px 4px 8px rgba(5, 5, 165, 0.05);
   transition: 0.3s;
+  color: var(--dark-gray);
   cursor: default;
 }
 
 .card:hover {
-  box-shadow: 0px 8px 16px 2px rgba(5, 5, 165, 0.08);
+  box-shadow: 2px 2px 16px rgba(5, 5, 165, 0.1);
 }
 
 .card:nth-child(2) {
@@ -95,12 +95,10 @@ bottom: -4px;
   text-align: center;
   font-family: 'Red Hat Display', sans-serif;
   margin-bottom: 16px;
-  color: var(--dark-gray);
 }
 
 .card p {
   text-align: center;
-  color: var(--medium-gray);
   margin-bottom: 24px;
   position: relative;
 }

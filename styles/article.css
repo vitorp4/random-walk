@@ -13,14 +13,19 @@
   box-shadow: 0px 8px 36px rgba(5, 5, 165, 0.05);
   border-radius: 6px;
   padding: 42px;
+  color: var(--dark-gray);
+}
+
+.acrticle-content h2,
+.acrticle-content h3,
+.acrticle-content h4 {
+  font-family: 'Red Hat Display', sans-serif;
+  font-weight: bold;
 }
 
 .article-content h2 {
-  font-family: 'Red Hat Display', sans-serif;
   font-size: 32px;
-  font-weight: bold;
-  color: var(--dark-gray);
-  margin: 16px 0;
+  margin: 48px 0 24px;
 }
 
 .article-content h2:first-child {
@@ -28,24 +33,116 @@
 }
 
 .article-content h3 {
-  font-family: 'Red Hat Display', sans-serif;
   font-size: 24px;
-  font-weight: bold;
-  color: var(--dark-gray);
-  margin: 12px 0;
+  margin: 36px 0 16px;
+}
+
+.article-content h4 {
+  font-size: 18px;
+  margin: 16px 0;
 }
 
 .article-content p {
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   line-height: 24px;
-  color: var(--medium-gray);
 }
 
 .article-content ul {
   padding-left: 16px;
   line-height: 24px;
-  color: var(--medium-gray);
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
+
+table.coin-table {
+  border-collapse: collapse;
+  margin: 32px auto;
+}
+
+table.coin-table thead {
+  font-weight: 500;
+}
+
+table.coin-table tbody {
+   font-family: 'Century';
+}
+
+table.coin-table thead tr {
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+table.coin-table tbody tr td:last-child {
+  text-align: left;
+}
+
+table.coin-table td {
+  padding: 8px 16px;
+  text-align: center;
+}
+
+table.coin-table tbody tr:nth-child(odd) {
+  background-color: var(--blued-white);
+}
+
+.container-figures {
+  margin: 32px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;  
+}
+
+.container-figures.coin-tree figure:last-child img,
+.container-figures.random-variable figure img {
+  width: 200px;
+}
+
+.container-figures.coin-tree figure:first-child img {
+  width: 300px;
+}
+
+figure {
+  display: grid;
+  place-items: center;
+}
+
+figcaption {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--medium-gray);
+}
+
+.align-eq-left mjx-container {
+  text-align: left !important;
+}
+
+mjx-container {
+  margin: 0 !important;
+}
+
+.container-figures p {
+  font-size: 15px;
+  margin: 0;
+}
+
+blockquote {
+  background-color: var(--hover-blue);
+  text-align: center;
+  border-radius: 3px;
+  position: relative;
+  padding: 4px 0;
+  margin: 16px 0;
+}
+
+blockquote::before {
+  content: '"';
+  transform: rotate(180deg);
+  position: absolute;
+  top: -30px;
+  left: 0;
+  color: var(--main-blue);
+  font-size: 42px;
+  font-family: 'BIZ UDPGothic', sans-serif;
+}
+
 
 
