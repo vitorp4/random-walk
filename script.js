@@ -277,6 +277,11 @@ elRangeInput.addEventListener("mouseup", (e) => {
   initializeSimulation();
 });
 
+elRangeInput.addEventListener("touchend", (e) => {
+  totalSteps = +e.target.value;
+  initializeSimulation();
+});
+
 elPathSelect.addEventListener("change", (e) => {
   totalPaths = +e.target.value;
   initializeSimulation();
