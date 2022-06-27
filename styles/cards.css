@@ -27,14 +27,15 @@
   background-color: var(--main-blue);
   width: 100%;
   bottom: -4px;
-  }
+}
+
 .cards-wrapper {
   display: flex;
   justify-content: space-between;
   margin-top: 80px;
 }
 
-.card {
+.cards-wrapper .card {
   position: relative;
   width: 290px;
   padding: 48px 16px 14px;
@@ -46,15 +47,15 @@
   cursor: default;
 }
 
-.card:hover {
+.cards-wrapper .card:hover {
   box-shadow: 2px 2px 16px rgba(5, 5, 165, 0.1);
 }
 
-.card:nth-child(2) {
+.cards-wrapper .card:nth-child(2) {
   transform: translateY(24px);
 }
 
-.card::before {
+.cards-wrapper .card::before {
   content: '';
   position: absolute;
   background-color: var(--main-blue);
@@ -65,7 +66,7 @@
   left: 0;
 }
 
-.card::after {
+.cards-wrapper .card::after {
   content: '';
   position: absolute;
   background-color: var(--white);
@@ -76,7 +77,7 @@
   left: 0;
 }
 
-.card .lead-icon {
+.cards-wrapper .card .lead-icon {
   position: absolute;
   height: 54px;
   width: 54px;
@@ -91,25 +92,25 @@
   place-items: center;
 }
 
-.card h2 {
+.cards-wrapper .card h2 {
   text-align: center;
   font-family: 'Red Hat Display', sans-serif;
   margin-bottom: 16px;
 }
 
-.card p {
+.cards-wrapper .card p {
   text-align: center;
   margin-bottom: 24px;
   position: relative;
 }
 
-.card .explore {
+.cards-wrapper .card .explore {
   margin: auto;
   text-align: center;
   margin-bottom: 24px;
 }
 
-.card a {
+.cards-wrapper .card a {
   color: var(--main-blue);
   text-decoration: none;
   font-weight: 600;
@@ -117,7 +118,7 @@
   position: relative;
 }
 
-.card a::before {
+.cards-wrapper .card a::before {
   content: '';
   position: absolute;
   height: 3px;
@@ -130,7 +131,7 @@
   transform: scaleX(0);
 }
 
-.card:hover a::before {
+.cards-wrapper .card:hover a::before {
   transform-origin: left;
   transform: scaleX(1);
 }

@@ -1,0 +1,141 @@
+@media only screen and (max-width: 600px) {
+  
+  
+  .toolbar {
+    width: 100%;
+    max-width: none;
+  }
+
+  .toolbar nav {
+    display: none;
+  }
+
+
+
+
+
+  #home .section-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .charts-container {
+    display: flex;
+    gap: 52px;
+    flex-direction: column; 
+    align-items: none;
+  }
+
+  .controls {
+    display: grid;
+    justify-content: none;
+    align-items: none; 
+    justify-items: center;
+    gap: 40px;
+    margin: 40px 0;
+  }
+
+  .buttons-control {
+    grid-column: 1 / 3;
+  }
+
+  .path-chart-wrapper {
+    width: 100%;
+  }
+
+  .primary-simulator {
+    width: 100%; 
+  } 
+
+  .secondary-simulator {
+    margin-bottom: 56px; 
+  }
+
+  .probability-chart-wrapper {
+    width: 100%;
+    padding: 8px; 
+  } 
+
+  .chevron-container {
+    display: none;
+  }
+
+  
+
+
+
+
+  .cards-wrapper {
+    flex-direction: column;
+    align-items: center; 
+    gap: 48px;  
+  }
+
+  #cards {
+    background-size: 200%;
+  }
+
+
+  .cards-wrapper .card:nth-child(2) {
+    transform: none;
+  }
+
+  #cards .section-container {
+    width: 100%;
+    padding: 112px 16px 56px;
+  } 
+
+  
+
+
+
+  #article .section-container {
+    width: 100%;
+    max-width: none;
+    display: block;
+    padding: 0 8px 96px;
+  }
+
+  aside {
+    display: none;
+  }
+
+  .article-content {
+    padding: 24px 16px;
+  }
+
+  .container-figures {
+    margin: 32px 0;
+    flex-direction: column;
+    justify-content: none;
+    gap: 24px;  
+  }
+
+  blockquote {
+    padding: 8px;
+    text-align: left;
+  }
+
+  blockquote::before {
+    top: -32px;
+    left: -8px; 
+  }
+
+
+
+
+  #references .section-container {
+    width: 100%;
+    max-width: auto; 
+    padding: 0 16px 64px;
+  }
+
+  #references {
+    background-size: 200%; 
+  }
+
+  .ref-card:first-child {
+    grid-column: initial; 
+  }
+
+}

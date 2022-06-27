@@ -4,7 +4,6 @@
   background-position: top left, bottom right;
   background-repeat: no-repeat;
   background-size: contain;
-  /* background-attachment: fixed; */
 }
 
 #home .section-container {
@@ -20,7 +19,8 @@
 .charts-container {
   display: flex;
   gap: 52px;
-  align-items: flex-end;
+  align-items: flex-start;
+  margin-top: 70px; 
 }
 
 .controls {
