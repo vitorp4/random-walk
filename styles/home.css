@@ -66,9 +66,7 @@
   z-index: 1;
 }
 
-#step-input::-webkit-slider-thumb,
-#step-input::-moz-range-thumb,
-#step-input::-ms-thumb {
+#step-input::-webkit-slider-thumb {
   appearance: none;
   height: 16px;
   width: 16px;
@@ -80,9 +78,7 @@
   z-index: 2;
 }
 
-#step-input::-webkit-slider-runnable-track,
-#step-input::-moz-range-track,
-#step-input::-ms-track {
+#step-input::-webkit-slider-runnable-track {
   appearance: none;
   box-shadow: none;
   border: none;

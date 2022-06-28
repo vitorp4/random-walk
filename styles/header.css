@@ -40,6 +40,10 @@ header.small .nav-dropdown > ul {
   justify-content: space-between;
 }
 
+.toolbar .hamburger {
+  display: none;
+}
+
 header .logo a {
   font-family: "Red Hat Display", sans-serif;
   color: var(--white);

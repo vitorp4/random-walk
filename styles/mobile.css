@@ -4,10 +4,25 @@
   .toolbar {
     width: 100%;
     max-width: none;
+    padding: 0 16px;
   }
 
   .toolbar nav {
     display: none;
+  }
+
+  .toolbar .hamburger {
+    display: block;
+    color: var(--white);
+    font-size: 18px;
+  }
+
+  header .logo a {
+    font-size: 24px;
+  }
+ 
+  header .logo .icon-person-walking {
+    font-size: 24px;
   }
 
 
@@ -68,21 +83,73 @@
   .cards-wrapper {
     flex-direction: column;
     align-items: center; 
-    gap: 48px;  
+    gap: 36px;  
+    padding: 0 8px 0 112px;
+    margin-top: 64px;
+    counter-reset: card-counter;
   }
 
   #cards {
-    background-size: 200%;
+    background-size: 250%;
   }
-
 
   .cards-wrapper .card:nth-child(2) {
     transform: none;
   }
 
+  .cards-wrapper .card {
+    padding: 16px;
+    width: 100%;
+    counter-increment: card-counter;
+    background-color: initial;
+  }
+
+  .cards-wrapper .card::before {
+    content: counter(card-counter);
+    top: 50%;
+    left: -104px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: var(--white);
+    display: grid;
+    place-items: center;
+    transform: translateY(-50%);
+  }
+
+  .cards-wrapper .card::after {
+    width: 9px;
+    height: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -64px;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    background-color: var(--main-blue);
+  }
+
+  .cards-wrapper .card h2 {
+    font-size: 22px;
+  }
+
+  .cards-wrapper .card p {
+    display: none 
+  }
+
+  .cards-wrapper .card .explore {
+    margin-bottom: 8px;
+  }
+
+  .cards-wrapper .card .lead-icon {
+    top: 50%; 
+    transform: translateY(-50%);
+    left: -56px;
+    color: var(--main-blue);
+    background-color: initial;
+  }
+
   #cards .section-container {
     width: 100%;
-    padding: 112px 16px 56px;
+    padding: 96px 8px 56px;
   } 
 
   
@@ -93,7 +160,7 @@
     width: 100%;
     max-width: none;
     display: block;
-    padding: 0 0 96px;
+    padding: 0 8px 56px;
   }
 
   aside {
@@ -127,15 +194,35 @@
   #references .section-container {
     width: 100%;
     max-width: auto; 
-    padding: 0 16px 64px;
+    padding: 0 16px 80px;
   }
 
   #references {
-    background-size: 200%; 
+    background-size: 230%; 
   }
 
   .ref-card:first-child {
     grid-column: initial; 
+  }
+
+  .ref-card-header {
+    border-radius: 6px;
+  }
+
+  .ref-card {
+    box-shadow: none;
+    border-radius: 6px 0 6px 6px;
+  }
+
+  .ref-card ul {
+    padding: 48px 0 16px 24px;  
+  }
+
+
+
+
+  footer {
+    background: var(--main-blue);
   }
 
 }
