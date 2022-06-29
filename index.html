@@ -76,63 +76,63 @@
   <main>
     <section id="home">
       <div class="section-container">
-        <div class="charts-container">
-          <div class="primary-simulator">
-            <div class="controls">
-              <div class="step-control">
-                1
-                <div class="step">
-                  <label for="step-input">Passos</label>
-                  <input id="step-input" type="range" min="1" max="30" value="10" />
-                  <output id="range-output">10</output>
-                </div>
-                30
-              </div>
+        <div class="home-grid">
 
-              <div class="path-control">
-                <label for="path-select">Caminhos</label>
-                <div class="path">
-                  <select id="path-select">
-                    <option value="10" selected>10</option>
-                    <option value="100">100</option>
-                    <option value="200">200</option>
-                    <option value="500">500</option>
-                    <option value="1000">1000</option>
-                  </select>
-                </div>
+          <div class="controls">
+            <div class="step-control">
+              1
+              <div class="step">
+                <label for="step-input">Passos</label>
+                <input id="step-input" type="range" min="1" max="30" value="10" />
+                <output id="range-output">10</output>
               </div>
+              30
+            </div>
 
-              <div class="buttons-control">
-                <button id="play-pause" tooltip="Play/Pause" class="pause" onclick="playToggle()"><i id="icon-play"
-                    class="fa-solid fa-play"></i>
-                  <i id="icon-pause" class="fa-solid fa-pause"></i></button>
-                <button id="slow-down" tooltip="Desacelerar" onclick="slowDown()"><i
-                    class="fa-solid fa-backward"></i></button>
-                <button id="speed-up" tooltip="Acelerar" onclick="speedUp()"><i
-                    class="fa-solid fa-forward"></i></button>
-                <button id="restart-simulation" tooltip="Reiniciar Simulação" onclick="restart()"><i
-                    class="fa-solid fa-arrow-rotate-right"></i></button>
-                <button id="new-simulation" tooltip="Nova Simulação" onclick="initializeSimulation()"><i
-                    class="fa-solid fa-shuffle"></i></button>
+            <div class="path-control">
+              <label for="path-select">Caminhos</label>
+              <div class="path">
+                <select id="path-select">
+                  <option value="10" selected>10</option>
+                  <option value="100">100</option>
+                  <option value="200">200</option>
+                  <option value="500">500</option>
+                  <option value="1000">1000</option>
+                </select>
               </div>
             </div>
 
-            <div class="path-chart-wrapper">
-              <canvas id="path-chart"></canvas>
+            <div class="buttons-control">
+              <button id="play-pause" tooltip="Play/Pause" class="pause" onclick="playToggle()"><i id="icon-play"
+                  class="fa-solid fa-play"></i>
+                <i id="icon-pause" class="fa-solid fa-pause"></i></button>
+              <button id="slow-down" tooltip="Desacelerar" onclick="slowDown()"><i
+                  class="fa-solid fa-backward"></i></button>
+              <button id="speed-up" tooltip="Acelerar" onclick="speedUp()"><i class="fa-solid fa-forward"></i></button>
+              <button id="restart-simulation" tooltip="Reiniciar Simulação" onclick="restart()"><i
+                  class="fa-solid fa-arrow-rotate-right"></i></button>
+              <button id="new-simulation" tooltip="Nova Simulação" onclick="initializeSimulation()"><i
+                  class="fa-solid fa-shuffle"></i></button>
             </div>
           </div>
 
-          <div class="secondary-simulator">
+          <div class="path-chart-wrapper">
+            <canvas id="path-chart"></canvas>
+          </div>
+
+          <div class="intro-content">
             <h1>Configure, simule, compare.</h1>
             <ol>
               <li>Escolha a quantidade de passos e caminhos;</li>
               <li>Inicie a simulação, acelere o quanto desejar;</li>
               <li>Acompanhe a proporção simulada se aproximar da probabilidade teórica.</li>
             </ol>
-            <div class="probability-chart-wrapper">
-              <canvas id="probability-chart"></canvas>
-            </div>
           </div>
+
+          <div class="probability-chart-wrapper">
+            <canvas id="probability-chart"></canvas>
+          </div>
+
         </div>
         <div class="chevron-container">
           <a href="#cards"></a>
@@ -304,12 +304,15 @@
             lançamento das moedas, reponderíamos que é a mesma probabilidade de se obter 1 coroa, ou seja
             \(P(X=1)=8/25\).</p>
           <p>
-            Uma função \(X\), definida no espaço amostral \(S\) e com valores num conjunto enumerável de pontos da reta é
+            Uma função \(X\), definida no espaço amostral \(S\) e com valores num conjunto enumerável de pontos da reta
+            é
             denominada <strong>variável aleatória discreta</strong>.
           </p>
           <h3 id="stochastic-processes">Processos Estocásticos</h3>
-          <p>Um processo estocástico \(\{ X_t , t \in T \}\) pode ser definido como uma sequência de variáveis aleatórias
-            indexadas por um conjunto totalmente ordenado de índices (geralmente o tempo). Isto é, para cada \(t \in T\), \(X_t\) é
+          <p>Um processo estocástico \(\{ X_t , t \in T \}\) pode ser definido como uma sequência de variáveis
+            aleatórias
+            indexadas por um conjunto totalmente ordenado de índices (geralmente o tempo). Isto é, para cada \(t \in
+            T\), \(X_t\) é
             uma variável aleatória.</p>
           <h2 id="random-walk">Passeio Aleatório</h2>
           <h3 id="final-position">Posição Final</h3>
@@ -372,9 +375,11 @@
               Livros
             </div>
             <ul>
-              <li>P. L. Meyer (1983). <cite>Probabilidade. Aplicações à Estatística</cite>. Livros Técnicos e Científicos;</li>
+              <li>P. L. Meyer (1983). <cite>Probabilidade. Aplicações à Estatística</cite>. Livros Técnicos e
+                Científicos;</li>
               <li>S. Ross (1976). <cite>A First Course in Probability</cite>. Pearson Education;</li>
-              <li>A. Papoulis, S. A. Pilai (1965). <cite>Probability, Random Variables and Stochastic Processes</cite>. McGraw-Hill
+              <li>A. Papoulis, S. A. Pilai (1965). <cite>Probability, Random Variables and Stochastic Processes</cite>.
+                McGraw-Hill
                 Higher Education.</li>
             </ul>
           </div>

@@ -440,3 +440,7 @@ function asideHighlight() {
     }
   });
 }
+
+document.querySelector('.hamburger').addEventListener('click', () => {
+  document.querySelector('.toolbar').classList.toggle('active');
+})

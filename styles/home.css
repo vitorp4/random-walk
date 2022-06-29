@@ -3,7 +3,7 @@
   background-image: url('../assets/polygon-scatter-haikei.svg'), url('../assets/polygon-scatter-haikei.svg');
   background-position: top left, bottom right;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 #home .section-container {
@@ -16,17 +16,20 @@
   position: relative;
 }
 
-.charts-container {
-  display: flex;
-  gap: 52px;
-  align-items: flex-start;
-  margin-top: 70px; 
+.home-grid {
+  display: grid;
+  grid-template-areas: 'control content'
+                       'path content'
+                       'path prob';
+  column-gap: 52px; 
 }
 
 .controls {
+  grid-area: control;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  align-self: flex-end;
   gap: 40px;
   margin-bottom: 40px;
 }
@@ -259,6 +262,7 @@ button#play-pause.pause #icon-play {
 }
 
 .path-chart-wrapper {
+  grid-area: path;
   background-color: var(--white);
   border-radius: 6px;
   width: 680px;
@@ -267,36 +271,39 @@ button#play-pause.pause #icon-play {
   box-shadow: 2px 2px 4px rgba(0,0,0,0.05);
 }
 
-.secondary-simulator {
-  width: 368px;
+.intro-content {
+  grid-area: content;
+  max-width: 368px;
   color: var(--white);
+  margin: auto;
 }
 
-.secondary-simulator h1 {
+.intro-content h1 {
+  max-width: 368px;
   font-size: 26px;
   font-weight: 700;
-  margin: 0 0 16px 8px;
+  margin-bottom: 16px;
   font-family: 'Red Hat Display', sans-serif;
 }
 
-.secondary-simulator ol {
+.intro-content ol {
   list-style: none;
   counter-reset: counter;
   padding-left: 24px;
 }
 
-.secondary-simulator ol li {
+.intro-content ol li {
   font-weight: 300;
   position: relative;
   line-height: 24px;
   counter-increment: counter;
 }
 
-.secondary-simulator ol li + li {
+.intro-content ol li + li {
   margin-top: 4px;
 }
 
-.secondary-simulator ol li::before {
+.intro-content ol li::before {
   content: counter(counter) ".";
   color: var(--white); 
   font-size: 18px;
@@ -310,7 +317,8 @@ button#play-pause.pause #icon-play {
 }
 
 .probability-chart-wrapper {
-  width: 368px;
+  grid-area: prob;
+  max-width: 368px;
   background-color: var(--white);
   border-radius: 6px;
   padding: 8px 16px 8px 8px;
