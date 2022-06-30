@@ -444,3 +444,7 @@ function asideHighlight() {
 document.querySelector('.hamburger').addEventListener('click', () => {
   document.querySelector('.toolbar').classList.toggle('active');
 })
+
+document.querySelector('.toolbar nav').addEventListener('click', () => {
+  document.querySelector('.toolbar').classList.remove('active');
+})

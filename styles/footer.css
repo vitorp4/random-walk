@@ -56,6 +56,9 @@ footer p {
   color: inherit;
 }
 
-.social-links > div:hover {
-  background-color: var(--dark-blue);
-} 
+
+@media (hover: hover) and (pointer: fine) {
+  .social-links > div:hover {
+    background-color: var(--dark-blue);
+  } 
+}

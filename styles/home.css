@@ -165,46 +165,6 @@
   outline: 3px solid #00112888;
 }
 
-.buttons-control > button::before {
-  content: attr(tooltip);
-  position: absolute;
-  font-family: 'Kumbh Sans', sans-serif;
-  color: var(--white);
-  background-color: var(--dark-gray);
-  left: 50%;
-  bottom: 42px;
-  transform: translateX(-50%); 
-  border-radius: 4px;
-  font-size: 12px;
-  padding: 4px 8px;
-  pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s;
-}
-
-.buttons-control > button::after {
-  content: '';
-  width: 10px;
-  height: 10px;
-  background-color: var(--dark-gray);
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  pointer-events: none;
-  position: absolute;
-  clip-path: polygon(0 0, 50% 50%, 100% 0);
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s;
-}
-
-.buttons-control > button:hover::before, 
-.buttons-control > button:hover::after {
-  opacity: 1;
-  visibility: visible;
-} 
-
 .buttons-control > button:disabled {
   background-color: #e4edf1;
   color: #89ceee;
@@ -335,10 +295,6 @@ button#play-pause.pause #icon-play {
  transition: 0.5s;
 }
 
-.chevron-container:hover {
-  transform: translateY(5px);
-}
-
 .chevron-container > a {
   height: 40px;
   width: 72px;
@@ -367,5 +323,52 @@ button#play-pause.pause #icon-play {
   top: 50%;
   left: 50%;
   transform: translate(calc(-50% - 13px),-50%) rotate(40deg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .buttons-control > button::before {
+    content: attr(tooltip);
+    position: absolute;
+    font-family: 'Kumbh Sans', sans-serif;
+    color: var(--white);
+    background-color: var(--dark-gray);
+    left: 50%;
+    bottom: 42px;
+    transform: translateX(-50%); 
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 4px 8px;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+  }
+  
+  .buttons-control > button::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: var(--dark-gray);
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    position: absolute;
+    clip-path: polygon(0 0, 50% 50%, 100% 0);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+  }
+  
+  .buttons-control > button:hover::before, 
+  .buttons-control > button:hover::after {
+    opacity: 1;
+    visibility: visible;
+  } 
+
+  .chevron-container:hover {
+    transform: translateY(5px);
+  }
+
 }
 

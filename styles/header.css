@@ -17,7 +17,7 @@ header.small {
 }
 
 header.small .toolbar nav>ul>li {
-  padding: 8px 16px;
+  padding: 0;
 }
 
 header.small .logo a {
@@ -86,8 +86,6 @@ header .logo .icon-person-walking {
   text-decoration: none;
 }
 
-
-
 .nav-dropdown a {
   display: flex;
   gap: 6px;
@@ -108,7 +106,7 @@ header .logo .icon-person-walking {
   font-weight: 400;
   left: 0;
   top: 50px;
-  padding: 6px;
+  padding: 0px;
   width: 200px;
   position: absolute;
   list-style: none;

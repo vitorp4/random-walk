@@ -47,10 +47,6 @@
   cursor: default;
 }
 
-.cards-wrapper .card:hover {
-  box-shadow: 2px 2px 16px rgba(5, 5, 165, 0.1);
-}
-
 .cards-wrapper .card:nth-child(2) {
   transform: translateY(24px);
 }
@@ -131,7 +127,14 @@
   transform: scaleX(0);
 }
 
-.cards-wrapper .card:hover a::before {
-  transform-origin: left;
-  transform: scaleX(1);
+
+@media (hover: hover) and (pointer: fine) {
+  .cards-wrapper .card:hover {
+    box-shadow: 2px 2px 16px rgba(5, 5, 165, 0.1);
+  }
+  
+  .cards-wrapper .card:hover a::before {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
 }

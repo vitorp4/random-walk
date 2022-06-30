@@ -67,6 +67,9 @@
   text-decoration: none;
 }
 
-.ref-card ul a:hover {
-  text-decoration: underline;
+
+@media (hover: hover) and (pointer: fine) {
+  .ref-card ul a:hover {
+    text-decoration: underline;
+  }
 }
