@@ -1,4 +1,12 @@
 @media only screen and (max-width: 600px) {
+
+  @media (orientation: landscape) {
+    body {
+      height: 100vw;
+      transform: rotate(90deg);
+    }
+  }
+
   /*  -------------------------- header.css -------------------------------------- */
   header {
     height: 50px;
@@ -43,8 +51,8 @@
     position: fixed;
     padding: 24px;  
     right: 0;
-    top: 50px;
-    transform: translateX(100%);
+    top: calc(50vh - 225px);
+    transform: translate(100%);
     background-color: var(--white);
     transition: transform 0.6s;
     border-radius: 6px 0 0 6px;
@@ -54,10 +62,10 @@
   .toolbar nav::before {
     content: '';
     position: absolute;
-    height: 100vh;
+    height: 200vh;
     width: 200vw;
     transition: background-color 1s, transform 0s 1s;
-    top: -50px;
+    top: -300px;
     right: 0;
     transform: scale(0) translateZ(-10px);
   }
@@ -70,6 +78,11 @@
 
   .toolbar.active .hamburger .fa-bars {
     display: none;
+  }
+
+  .toolbar.active .hamburger {
+    background-color: #00000080;
+    transition: 0.3s;
   }
 
   .toolbar.active .hamburger .fa-xmark {
@@ -367,3 +380,4 @@
   }
 
 }
+
