@@ -16,8 +16,8 @@ header.small {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-header.small .toolbar nav>ul>li {
-  padding: 0;
+header.small .toolbar nav > ul > li {
+  padding: 8px 16px;
 }
 
 header.small .logo a {
@@ -60,14 +60,14 @@ header .logo .icon-person-walking {
   transition: 0.5s;
 }
 
-.toolbar nav>ul {
+.toolbar nav > ul {
   list-style: none;
   display: flex;
   color: var(--dark-gray);
   gap: 24px;
 }
 
-.toolbar nav>ul>li {
+.toolbar nav > ul > li {
   position: relative;
   font-weight: 600;
   cursor: pointer;
@@ -78,11 +78,11 @@ header .logo .icon-person-walking {
   font-family: "Red Hat Display", sans-serif;
 }
 
-.toolbar nav>ul>li>a {
+.toolbar nav > ul > li > a {
   color: var(--white);
 }
 
-.toolbar nav>ul>li a {
+.toolbar nav > ul > li a {
   text-decoration: none;
 }
 
@@ -102,11 +102,11 @@ header .logo .icon-person-walking {
   font-size: 12px;
 }
 
-.nav-dropdown>ul {
+.nav-dropdown > ul {
   font-weight: 400;
   left: 0;
   top: 50px;
-  padding: 0px;
+  padding: 6px;
   width: 200px;
   position: absolute;
   list-style: none;
@@ -121,13 +121,13 @@ header .logo .icon-person-walking {
   transition: 0.2s;
 }
 
-.nav-dropdown>ul>li {
+.nav-dropdown > ul > li {
   position: relative;
   cursor: pointer;
   border-radius: 4px;
 }
 
-.nav-dropdown>ul>li>a {
+.nav-dropdown > ul > li > a {
   padding: 12px;
   display: flex;
   align-items: center;
@@ -135,7 +135,7 @@ header .logo .icon-person-walking {
   color: var(--dark-gray);
 }
 
-.nav-dropdown>ul>li>ul {
+.nav-dropdown > ul > li > ul {
   left: 100%;
   padding: 6px;
   width: max-content;
@@ -151,7 +151,7 @@ header .logo .icon-person-walking {
   transition: none;
 }
 
-.nav-dropdown>ul>li>ul>li {
+.nav-dropdown > ul > li > ul > li {
   padding: 12px;
   border-radius: 4px;
 }
@@ -159,26 +159,26 @@ header .logo .icon-person-walking {
 
 @media (hover: hover) and (pointer: fine) { 
 
-  .toolbar nav>ul>li:hover {
+  .toolbar nav > ul > li:hover {
     background-color: var(--very-dark-blue);
   }
 
-  .nav-dropdown>ul>li>ul>li:hover {
+  .nav-dropdown > ul > li > ul > li:hover {
     background-color: var(--hover-blue);
   }
 
-  .nav-dropdown>ul>li:hover {
+  .nav-dropdown > ul > li:hover {
     background-color: var(--hover-blue);
   }
 
-  .nav-dropdown>ul>li:hover>ul {
+  .nav-dropdown > ul > li:hover > ul {
     opacity: 1;
     visibility: visible;
     transform: none;
     transition: 0.3s;
   }
 
-  .nav-dropdown:hover>ul {
+  .nav-dropdown:hover > ul {
     opacity: 1;
     visibility: visible;
     transform: none;

@@ -126,10 +126,9 @@ mjx-container {
 
 blockquote {
   background-color: var(--hover-blue);
-  text-align: center;
   border-radius: 3px;
   position: relative;
-  padding: 4px 0;
+  padding: 16px;
   margin: 16px 0;
 }
 

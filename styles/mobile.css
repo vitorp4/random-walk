@@ -1,4 +1,5 @@
 @media only screen and (max-width: 600px) {
+  /*  -------------------------- header.css -------------------------------------- */
   header {
     height: 50px;
   }
@@ -6,19 +7,20 @@
   .toolbar {
     width: 100%;
     max-width: none;
-    padding: 0 16px;
+    padding: 0 12px 0 16px;
   }
 
   .toolbar .hamburger {
+    border: none;
+    background-color: transparent;
     color: var(--white);
     font-size: 18px;
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     display: grid;
     place-items: center;
     border-radius: 50%;
-    z-index: 100;
-    transition-delay: 0.5s;
+    z-index: 4;
   }
 
   .toolbar .hamburger .fa-bars {
@@ -39,33 +41,31 @@
   
   .toolbar nav {
     position: fixed;
-    height: 100vh;
+    padding: 24px;  
     right: 0;
-    top: 0;
+    top: 50px;
     transform: translateX(100%);
-    background-color: var(--white); 
-    width: min(70%, 350px);
+    background-color: var(--white);
     transition: transform 0.6s;
+    border-radius: 6px 0 0 6px;
+    transform-style: preserve-3d;
   } 
-
+  
   .toolbar nav::before {
     content: '';
     position: absolute;
     height: 100vh;
-    width: 100vw;
-    transition: background-color 0.3s;
-    right: 100%;
-    transform: scaleX(0);
+    width: 200vw;
+    transition: background-color 1s, transform 0s 1s;
+    top: -50px;
+    right: 0;
+    transform: scale(0) translateZ(-10px);
   }
   
   .toolbar.active nav::before {
     background-color: rgba(0,0,0,0.5);
-    transform: none;
-  }
-
-  .toolbar.active .hamburger {
-    color: var(--dark-gray);
-    transition-delay: 0.1s;
+    transform: scale(1) translateZ(-10px);
+    transition:  background-color 1s, transform 0s 0s;
   }
 
   .toolbar.active .hamburger .fa-bars {
@@ -77,171 +77,77 @@
   }
   
   .toolbar.active nav {
+    box-shadow: 0 0 8px 4px rgba(0,0,0,0.3);
     transform: none;
   }
 
-  
   .toolbar nav > ul {
-    padding: 56px 0 0 16px;  
-    list-style: none; 
-    display: block;
-    color: var(--dark-gray);
+    display: initial;
   }
 
   .toolbar nav > ul > li {
+    padding: 0 !important;
     position: initial;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 0px; 
-    border-radius: 6px;
-    letter-spacing: 0.5px;
-    transition: 0.3s;
-    font-family: "Red Hat Display", sans-serif;
   }
 
   .toolbar nav > ul > li > a {
-    color: var(--dark-gray);
-  }
-
-  .toolbar nav > ul > li a {
-    text-decoration: none;
-  }
-
-  .nav-dropdown a {
-    display: flex;
-    gap: 6px;
-    align-items: baseline;
-    color: var(--dark-gray);
-  }
-
-  .nav-dropdown .icon-chevron {
-    font-size: 14px;
-  }
-
-  .nav-dropdown ul .icon-chevron {
-    color: #00112899;
-    font-size: 12px;
+    display: block;
+    padding: 6px;
+    margin-left: 0px;
+    color: var(--main-blue);
+    font-weight: 500;
   }
 
   .nav-dropdown > ul {
-    font-weight: 400;
-    left: 0;
-    top: 50px;
-    padding: 0px;
-    width: 200px;
+    padding: 0;
+    width: initial;
     position: initial;
-    list-style: none;
-    background-color: var(--white);
-    color: var(--dark-gray);
-    font-size: 14px;
-    border-radius: 6px;
     box-shadow: initial;
     opacity: initial;
     visibility: initial;
-    transform: translateY(-4px);
-    transition: 0.2s;
+    transform: none;
+    transition: none;
   }
 
   .nav-dropdown > ul > li {
     position: initial;
-    cursor: pointer;
-    border-radius: 4px;
   }
 
   .nav-dropdown > ul > li > a {
-    padding: 8px;  
-    display: flex; 
-    align-items: center;
-    justify-content: flex-start;
-    color: var(--dark-gray);
-  }
-
-  .nav-dropdown > ul > li > a  .icon-chevron {
-    transform: rotate(90deg); 
+    display: block;
+    font-weight: 600;
+    padding: 6px;
+    margin-left: 16px;
   }
 
   .nav-dropdown > ul > li > ul {
-    left: 100%;
-    padding: 0px;
-    width: max-content;
-    top: -8px;
+    padding: 0;
+    width: initial;
     position: initial;
     list-style: none;
-    background-color: var(--white);
-    border-radius: 6px;
     box-shadow: initial;
     opacity: initial;
     visibility: initial;
-    transform: translateX(-8px);
+    transform: none;
     transition: none;
-  }
-
-  .nav-dropdown > ul > li > ul > li {
-    padding: 8px;
-    border-radius: 4px;
-  }
-
-  nav li {
-    padding: 0 !important;
-  }
-
-  nav li a {
-    padding: 8px !important;
-    display: flex;
-    gap: 6px;
   }
 
   .nav-dropdown .icon-chevron {
     display: none;
   }
   
-  .nav-dropdown ul .icon-chevron {
-    display: none;
-  }
-
-  nav > ul {
-    counter-reset: nivel1;
-  }
-
-  nav > ul > li > a {
-    counter-increment: nivel1;
-    margin-left: 0px;
-  }
-
-  nav > ul > li > a::before {
-    content:counter(nivel1) ".";
-  }
-
-  
-  nav > ul > li > ul {
-    counter-reset: nivel2;
+  .nav-dropdown > ul > li > ul > li {
+    padding: 0;
   }
   
-  nav > ul > li > ul > li > a {
-    counter-increment: nivel2;
-    margin-left: 8px;
+  .nav-dropdown > ul > li > ul > li > a {
+    padding: 6px;
+    margin-left: 32px;   
   }
 
-  nav > ul > li > ul > li > a::before {
-    content: counter(nivel1) "." counter(nivel2) ".";
-  }
-
-  nav > ul > li > ul > li > ul {
-    counter-reset: nivel3;
-  }
-  
-  nav > ul > li > ul > li > ul > li > a {
-    margin-left: 24px;
-    counter-increment: nivel3;
-  }
-
-  nav > ul > li > ul > li > ul > li > a::before {
-    content: counter(nivel1) "." counter(nivel2) "." counter(nivel3) ".";
-  }
-  
 
 
-
+  /*  -------------------------- home.css -------------------------------------- */
   #home {
     background: var(--main-blue);
   }
@@ -258,7 +164,7 @@
 
   .home-grid {
     display: block;
-    margin-top: 70px;
+    margin-top: 50px;
     padding-bottom: 72px;
     width: 100%;
   }
@@ -270,7 +176,7 @@
     justify-items: initial;
     align-self: initial;
     gap: 40px;
-    margin: 0 0 40px;
+    margin: 24px 0 36px;
   }
 
   .buttons-control {
@@ -280,35 +186,40 @@
 
   .path-chart-wrapper {
     width: 100%;
+    border-radius: 6px 6px 0 0;
   }
 
   .probability-chart-wrapper {
     width: 100%;
     max-width: initial;
     padding: 8px; 
-    margin-top: 8px;
+    margin: 0;
+    border-top: 1px solid #00000020;
+    border-radius: 0 0 6px 6px;
   } 
 
   .chevron-container {
     display: none;
   }
 
-  
 
 
-
-
+  /*  -------------------------- cards.css -------------------------------------- */
   .cards-wrapper {
     flex-direction: column;
     align-items: center; 
     gap: 36px;  
     padding: 0 8px 0 72px;
-    margin-top: 64px;
+    margin-top: 48px;
     counter-reset: card-counter;
   }
 
   #cards {
     background-size: 250%;
+  }
+
+  #cards .section-container h1::before {
+    display: none;
   }
 
   .cards-wrapper .card:nth-child(2) {
@@ -383,10 +294,18 @@
     padding: 96px 8px 56px;
   } 
 
+
+
+
+  /*  -------------------------- aside.css -------------------------------------- */
+  aside {
+    display: none;
+  }
+
+
+
   
-
-
-
+  /*  -------------------------- article.css -------------------------------------- */
   #article .section-container {
     width: 100%;
     max-width: none;
@@ -394,9 +313,6 @@
     padding: 0 8px 56px;
   }
 
-  aside {
-    display: none;
-  }
 
   .article-content {
     padding: 24px 16px;
@@ -405,23 +321,13 @@
   .container-figures {
     margin: 32px 0;
     flex-direction: column;
-    justify-content: none;
+    justify-content: initial;
     gap: 24px;  
   }
 
-  blockquote {
-    padding: 8px;
-    text-align: left;
-  }
-
-  blockquote::before {
-    top: -32px;
-    left: -8px; 
-  }
 
 
-
-
+  /*  -------------------------- references.css -------------------------------------- */
   #references .section-container {
     width: 100%;
     max-width: auto; 
@@ -430,6 +336,10 @@
 
   #references {
     background-size: 230%; 
+  }
+
+  #references .section-container h1::before {
+    display: none;
   }
 
   .ref-card:first-child {
@@ -451,7 +361,7 @@
 
 
 
-
+  /*  -------------------------- footer.css -------------------------------------- */
   footer {
     background: var(--main-blue);
   }

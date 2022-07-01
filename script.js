@@ -26,6 +26,7 @@ const elProbabilityChart = document.querySelector("#probability-chart");
 window.onscroll = () => {
   headerShadow();
   asideHighlight();
+  stopSimulationOnScroll();
 };
 
 window.onload = () => { 
@@ -136,7 +137,7 @@ function createProbabilityChart() {
         order: 2,
         borderColor: "#00112833",
         backgroundColor: "#00112811",
-        barPercentage: 0.9,
+        barPercentage: 1,
         borderWidth: 1,
         borderRadius: 2,
       },
@@ -146,7 +147,7 @@ function createProbabilityChart() {
         order: 1,
         backgroundColor: "#128fc8",
         barPercentage: 0.5,
-        borderRadius: 3,
+        borderRadius: 2,
       },
     ],
   };
@@ -375,6 +376,13 @@ function playToggle() {
   }
 }
 
+function stopSimulationOnScroll() {
+  if (window.scrollY > window.innerHeight) {
+    clearInterval(interval);
+    toState("SP");
+  }
+}
+
 const elPlayPause = document.querySelector("#play-pause");
 const elSlowDown = document.querySelector("#slow-down");
 const elSpeedUp = document.querySelector("#speed-up");
@@ -424,7 +432,6 @@ const articleHeadings = document.querySelectorAll(
 );
 
 function asideHighlight() {
-
   const articleHeadingsList = [...articleHeadings];
   const asideLinksList = [...asideLinks];
 
