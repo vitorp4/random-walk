@@ -449,6 +449,10 @@ function asideHighlight() {
 }
 
 document.querySelector('.hamburger').addEventListener('click', () => {
+  if (state === 'SE') {
+    clearInterval(interval);
+    toState("SP");
+  }
   document.querySelector('.toolbar').classList.toggle('active');
 })
 
