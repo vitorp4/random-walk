@@ -13,13 +13,14 @@
     href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;500;600;700&family=Red+Hat+Display:wght@300;400;500;600;700&family=BIZ+UDPGothic&display=swap"
     rel="stylesheet">
   <link rel="icon" href="/assets/person-walking-solid.svg" />
-  <script src="script.js" defer></script>
+  <script src="script-rollback.js" defer></script>
   <script src="https://kit.fontawesome.com/2240dcfd9d.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.4.0/chartjs-plugin-annotation.min.js"></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://unpkg.com/rxjs@^7/dist/bundles/rxjs.umd.min.js"></script>
 </head>
 
 <body>
@@ -299,23 +300,54 @@
               $$P(X=2) = P(\{RR\}) = \frac{1}{25}$$
             </p>
           </div>
-          <blockquote>\(P(X=x)\), no geral lê-se: probabilidade de que a variável aleatória \(X\) assuma o valor \(x\).
+          <blockquote>
+            \(P(X=x)\), no geral lê-se: probabilidade de que a variável aleatória \(X\) assuma o valor \(x\).
           </blockquote>
           <p>Logo, se nos for perguntado qual a probabilidade de que o jogador sofra uma penalidade como consequência do
             lançamento das moedas, reponderíamos que é a mesma probabilidade de se obter 1 coroa, ou seja
             \(P(X=1)=8/25\).</p>
           <p>
             Uma função \(X\), definida no espaço amostral \(S\) e com valores num conjunto enumerável de pontos da reta
-            é
-            denominada <strong>variável aleatória discreta</strong>.
+            é denominada <strong>variável aleatória discreta</strong>.
           </p>
           <h3 id="stochastic-processes">Processos Estocásticos</h3>
-          <p>Um processo estocástico \(\{ X_t , t \in T \}\) pode ser definido como uma sequência de variáveis
+          <p>Um ônibus universitário que transporta estudantes entre os dormitórios e a reitoria chega à parada dos
+            dormitórios em intervalos regulares de tempo ao longo do dia. O ônibus tem capacidade para acomodar \(k\)
+            pessoas.</p>
+          <ul>
+            <li>Se houver \(k\) ou menos pessoas esperando no ponto quando o ônibus chegar, ele parte levando todos.</li>
+            <li>Se houver mais que \(k\) pessoas esperando, então o motorista permite que apenas as primeiras \(k\) pessoas
+              embarquem, e as restantes devem esperar pelo próximo ônibus.</li>
+          </ul>
+          <p>Os gestores de mobilidade da universidade gostariam de saber, dado certo período do dia, quantas pessoas
+            são deixadas para trás quando um ônibus parte.</p>
+          <p>Este problema trata de um processo estocástico. Considere como variável de interesse o número de alunos
+            deixados esperando no momento da chegada do ônibus, enquanto que o tempo é contado pelo número de vezes que
+            o ônibus chega. Então, mais precisamente, temos um processo estocástico de tempo discreto e estado discreto.
+            Mas por que?</p>
+          <h4>Tempo</h3>
+          <blockquote>
+            Como o tempo é dado pelo número de chegadas do ônibus, então ele há de ser representado pelo conjunto dos
+            números naturais. Dizemos que este processo estocástico é de tempo discreto.
+          </blockquote>
+          <h4>Estados</h4>
+          <blockquote>
+            Como nossa variável de interesse advém da contagem de pessoas, podendo haver ausência, então os valores que
+            ela pode assumir pertence aos números inteiros não negativos. Dizemos que o processo estocástico é de estado
+            discreto.
+          </blockquote>
+          <p>Um processo estocástico \(\{ X_t \text{, } t \in T \}\) é definido como uma sequência de variáveis
             aleatórias
             indexadas por um conjunto totalmente ordenado de índices (geralmente o tempo). Isto é, para cada \(t \in
-            T\), \(X_t\) é
-            uma variável aleatória.</p>
+            T\text{, } X_t\) é uma variável aleatória.</p>
           <h2 id="random-walk">Passeio Aleatório</h2>
+          <p>Podemos descrever o passeio aleatório simples e simétrico como um processo estocástico formado através da
+            soma de variáveis
+            aleatórias independentes e identicamente distribuídas \(Z_k\) que assumem valores em \(\{-1\text{, }1\}\) com igual
+            probabilidade.</p>
+          <p>Ou seja, a sequência \(\{S_n\text{, } n \in \mathbb{Z}_{\geq0}\}\) com \(S_0 = 0\) e</p>
+          <p> $$S_n = \sum_{k=1}^n Z_k$$</p>
+          <p>é dita passeio aleatório.</p>
           <h3 id="final-position">Posição Final</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim iure nihil eaque accusantium quisquam illo
             rem
@@ -389,11 +421,16 @@
               Vídeos
             </div>
             <ul>
-              <li><a href="https://www.youtube.com/watch?v=stgYW6M5o4k&t=123s" target="_blank"><cite>What is a Random Walk?</cite> por Infinity Series <i
-                    class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
-              <li><a href="https://www.youtube.com/watch?v=2SZCkq-a6wU" target="_blank"><cite>Random Walk, o Andar do Bêbado - Professor da USP Explica</cite> por 
-                Caio Dallaqua <i class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
-              <li><a href="https://www.youtube.com/watch?v=vz1wWCFpzl0" target="_blank"><cite>Passeio aleatório</cite> por Camillo Penna <i
+              <li><a href="https://www.youtube.com/watch?v=stgYW6M5o4k&t=123s" target="_blank"><cite>What is a Random
+                    Walk?</cite> por Infinity Series <i class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
+              <li><a href="https://www.youtube.com/watch?v=2SZCkq-a6wU" target="_blank"><cite>Random Walk, o Andar do
+                    Bêbado - Professor da USP Explica</cite> por
+                  Caio Dallaqua <i class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
+              <li><a href="https://www.youtube.com/watch?v=vz1wWCFpzl0" target="_blank"><cite>Passeio aleatório</cite>
+                  por Camillo Penna <i class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
+              <li><a href="https://www.youtube.com/watch?v=TuTmC8aOQJE&t=519s" target="_blank"><cite>Stochastic
+                    Processes
+                  </cite> by MIT OpenCourseWare <i
                     class="fa-solid fa-arrow-up-right-from-square"></i></a>.</li>
             </ul>
           </div>
@@ -433,7 +470,7 @@
               class="fa-brands fa-linkedin-in"></i></a>
         </div>
         <div>
-          <a href="https://medium.com/@jvsg" target="_blank"><i class="fa-brands fa-medium"></i></a>
+          <a href="https://medium.com/@vitorp4" target="_blank"><i class="fa-brands fa-medium"></i></a>
         </div>
       </div>
     </div>

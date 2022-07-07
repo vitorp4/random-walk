@@ -128,7 +128,7 @@ blockquote {
   background-color: var(--hover-blue);
   border-radius: 3px;
   position: relative;
-  padding: 16px;
+  padding: 16px 24px;
   margin: 16px 0;
 }
 

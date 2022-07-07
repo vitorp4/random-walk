@@ -1,5 +1,3 @@
-import Simulator from './simulator.js';
-
 let pathChart, probabilityChart;
 let nPath = 0;
 let totalSteps = 10;
@@ -378,7 +376,7 @@ function playToggle() {
 }
 
 function stopSimulationOnScroll() {
-  if (window.scrollY > window.innerHeight) {
+  if (window.scrollY > window.innerHeight && state == 'SE') {
     clearInterval(interval);
     toState("SP");
   }
@@ -437,7 +435,7 @@ function asideHighlight() {
   const asideLinksList = [...asideLinks];
 
   const headingsScrolled = articleHeadingsList
-    .filter((el) => el.getBoundingClientRect().top <100)
+    .filter((el) => el.getBoundingClientRect().top < 100)
     .map((el) => el.id);
 
   asideLinksList.forEach((el) => {
