@@ -99,9 +99,17 @@ table.coin-table tbody tr:nth-child(odd) {
   width: 300px;
 }
 
+figure.bus-stop {
+  margin-bottom: 32px;
+}
+
+figure.bus-stop img {
+  max-width: min(400px, 100%);
+}
+
 figure {
   display: grid;
-  place-items: center;
+  place-items: center; 
 }
 
 figcaption {
@@ -109,6 +117,10 @@ figcaption {
   text-align: center;
   font-size: 14px;
   color: var(--medium-gray);
+}
+
+figcaption a {
+  color: inherit;
 }
 
 .align-eq-left mjx-container {

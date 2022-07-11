@@ -2,8 +2,8 @@
   background-color: var(--main-blue);
   /* background-image: url('../assets/polygon-scatter-haikei.svg'), url('../assets/polygon-scatter-haikei.svg');
   background-position: top left, bottom right;
-  background-repeat: no-repeat;
-  background-size: cover; */
+  background-repeat: no-repeat; */
+  /* background-size: cover; */
 }
 
 #home .section-container {
@@ -22,6 +22,7 @@
                        'path content'
                        'path prob';
   column-gap: 52px; 
+  background-color: var(--main-blue);
 }
 
 .controls {

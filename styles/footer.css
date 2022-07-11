@@ -1,9 +1,9 @@
 footer {
   background-color: var(--main-blue);
-  background-image: url('../assets/polygon-scatter-haikei.svg'), url('../assets/polygon-scatter-haikei.svg');
+  /* background-image: url('../assets/polygon-scatter-haikei.svg'), url('../assets/polygon-scatter-haikei.svg');
   background-position: center left, top right;
   background-repeat: no-repeat;
-  background-size: 500px;
+  background-size: 500px; */
 }
 
 footer .footer-container {

@@ -8,15 +8,20 @@
 @import url('mobile.css');
 
 :root {
-  --very-dark-blue: #0a618c;
-  --dark-blue: #0d6998;
-  --main-blue: #128fc8;
-  --hover-blue: #f1f4ff;
   --blued-white: #f8f9ff;
-  --black: #000;
-  --dark-gray: #292929;
-  --medium-gray: #555464;
+  --hover-blue: #f1f4ff;
+  --main-blue: #128fc8;
+  --dark-blue: #0d6998;
+  --very-dark-blue: #0a618c;
+  --very-light-orange: #f6ca7a;
+  --light-orange: #ffb93f;
+  --medium-orange: #fa9746;
+  --dark-orange: #ed7d2b;
+  --very-dark-orange: #cc6e2e;
   --light-gray: #a7a7a7;
+  --medium-gray: #555464;
+  --dark-gray: #292929;
+  --black: #000;
   --white: #fff;
   
   scroll-behavior: smooth;
