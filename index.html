@@ -47,8 +47,8 @@
                 <a href="#initial-concepts">Conceitos Iniciais<span class="icon-chevron"><i
                       class="fa-solid fa-chevron-right"></i></span></a>
                 <ul>
-                  <li><a href="#random-variables">Variáveis Aleatórias</a></li>
-                  <li><a href="#stochastic-processes">Processos Estocásticos</a></li>
+                  <li><a href="#random-variable">Variável Aleatória</a></li>
+                  <li><a href="#stochastic-process">Processo Estocástico</a></li>
                 </ul>
               </li>
               <li>
@@ -182,8 +182,8 @@
             <li>
               <a href="#initial-concepts">Conceitos Iniciais</a>
               <ol>
-                <li><a href="#random-variables">Variáveis Aleatórias</a></li>
-                <li><a href="#stochastic-processes">Processos Estocásticos</a></li>
+                <li><a href="#random-variable">Variável Aleatória</a></li>
+                <li><a href="#stochastic-process">Processo Estocástico</a></li>
               </ol>
             </li>
             <li>
@@ -205,10 +205,12 @@
         </aside>
         <article class="article-content">
           <h2 id="initial-concepts">Conceitos Iniciais</h2>
-          <p>Antes de mergulharmos na definição de passeio aleatório, parece razoável nos familiarizarmos com alguns dos
+          <p>
+            Antes de mergulharmos na definição de passeio aleatório, parece razoável nos familiarizarmos com alguns dos
             conceitos básicos estabelecidos pela teoria da probabilidade. Embora seja uma apresentação inicial,
-            recomenda-se que o leitor possua noções de probabilidade.</p>
-          <h3 id="random-variables">Variáveis Aleatórias</h3>
+            recomenda-se que o leitor possua noções de probabilidade.
+          </p>
+          <h3 id="random-variable">Variáveis Aleatórias</h3>
           <p>
             Frequentemente, quando um experimento probabilístico é realizado, estamos interessados em uma função
             definida sobre o resultado ao invés do resultado propriamente dito. Por exemplo, supondo que seja feito o
@@ -249,12 +251,14 @@
               <figcaption>Espaço amostral</figcaption>
             </figure>
           </div>
-          <p>A árvore de possibilidades possui \(2\) níveis, cada um representando o lançamento de uma das moedas. Como
+          <p>
+            A árvore de possibilidades possui \(2\) níveis, cada um representando o lançamento de uma das moedas. Como
             um lançamento é limitado
             a resultar cara ou coroa, cada nó de ramificação gera \(2\) novos ramos. Ao fim percebe-se a existência
             de \(4\) folhas: \(CC,CR,RC\) e \(RR\).
           </p>
-          <p>Como foi dito que os lançamentos são indepententes, então assume-se que partindo da raiz, a probabilidade
+          <p>
+            Como foi dito que os lançamentos são indepententes, então assume-se que partindo da raiz, a probabilidade
             de alcançar determinada folha é igual a multiplicação das probabilidades associadas
             aos ramos percorridos. E é o conjunto destas folhas e suas probabilidades que formam o espaço amostral \(S\)
             do experimento.
@@ -285,7 +289,8 @@
               </tr>
             </tbody>
           </table>
-          <p>Definamos a seguinte variável aleatória
+          <p>
+            Definamos a seguinte variável aleatória
             \(X =\) "número de coroas obtidas nos dois lançamentos de moeda". Isso nos permite criar um mapeamento da
             forma:
           </p>
@@ -303,18 +308,22 @@
           <blockquote>
             \(P(X=x)\), no geral lê-se: probabilidade de que a variável aleatória \(X\) assuma o valor \(x\).
           </blockquote>
-          <p>Logo, se nos for perguntado qual a probabilidade de que o jogador sofra uma penalidade como consequência do
+          <p>
+            Logo, se nos for perguntado qual a probabilidade de que o jogador sofra uma penalidade como consequência do
             lançamento das moedas, reponderíamos que é a mesma probabilidade de se obter 1 coroa, ou seja
-            \(P(X=1)=8/25\).</p>
+            \(P(X=1)=8/25\).
+          </p>
           <p>
             Uma função \(X\), definida no espaço amostral \(S\) e com valores num conjunto enumerável de pontos da reta
             é denominada <strong>variável aleatória discreta</strong>.
           </p>
-          <h3 id="stochastic-processes">Processos Estocásticos</h3>
-          <p>Um ônibus universitário que transporta estudantes entre os dormitórios e a reitoria chega à parada mais
+          <h3 id="stochastic-process">Processos Estocásticos</h3>
+          <p>
+            Um ônibus universitário que transporta estudantes entre os dormitórios e a reitoria chega à parada mais
             próxima dos dormitórios em intervalos regulares de tempo. O ponto de espera possui \(6\) assentos e serve de
             abrigo contra o sol. Porém, uma vez que todos os assentos estejam ocupados, as pessoas remanescentes ficam
-            desabrigadas até a chegada do ônibus. Esta espera desemboca então nas seguintes situações:</p>
+            desabrigadas até a chegada do ônibus. Esta espera desemboca então nas seguintes situações:
+          </p>
           <ul>
             <li>Quando há espaço suficiente no ônibus, ele parte levando todos, e o ponto fica vazio;</li>
             <li>Quando a lotação é alcançada, o motorista permite que apenas as primeiras pessoas da fila
@@ -324,117 +333,164 @@
             <img src="./assets/bus_stop.jpg" alt="Pessoas na parada de ônibus" />
             <figcaption>Ilustração por <a href='https://www.freepik.com/vectors/commute'>pch.vector</a></figcaption>
           </figure>
-          <p>Atendendo às reclamações do corpo discente quanto à infraestrutura reduzida do ponto de espera, os gestores
+          <p>
+            Atendendo às reclamações do corpo discente quanto à infraestrutura reduzida do ponto de espera, os gestores
             de mobilidade urbana da universidade propuseram a condução de um estudo. Eles decidiram que seria útil ter
-            conhecimento
-            da quantidade de assentos do ponto que permanecem ocupados após a partida de um ônibus. Espera-se que essas
-            informações
-            sirvam de base para a tomada de decisões. Será que vale a pena investir em uma reforma?</p>
-          <p>Podemos tratar este problema como um processo estocástico. Consideremos como variável de interesse o número
+            conhecimento da quantidade de assentos do ponto que permanecem ocupados após a partida de um ônibus. Espera-se 
+            que essas informações sirvam de base para a tomada de decisões. Será que vale a pena investir em uma reforma?
+          </p>
+          <p>
+            Podemos tratar este problema como um processo estocástico. Consideremos como variável de interesse o número
             de assentos ainda ocupados no ponto após a partida de um ônibus, ao passo em que o tempo é contado pelo
             número de vezes que um ônibus chega. Dependendo do horário, a probabilidade de que o ponto permaneça mais
             vazio ou mais ocupado pode variar porque, naturalmente, a chegada de pessoas à fila possui natureza
             estocástica (aleatória). Mais precisamente, dizemos que este é um <strong>processo estocástico de tempo
-              discreto e estado discreto</strong>.</p>
+            discreto e estado discreto</strong>.
+          </p>
           <h4>Tempo</h3>
-            <blockquote>
-              No nosso exemplo, o tempo é dado pela contagem de chegadas do ônibus. O ínidice do processo assume valores
-              que pertencem ao conjunto dos números naturais, \(t =1,2,3,...\)
-            </blockquote>
-            <h4>Estado</h4>
-            <blockquote>
-              No exemplo, a variável de estudo pode apenas assumir valores em \(\{0,1,2,3,4,5,6\}\), que é a quantidade
-              de assentos ocupados.
-            </blockquote>
-            <h4>Interpretando realizações e probabilidades</h4>
-            <p>A figura abaixo ilustra uma realização do processo estocástico alvo do estudo. No gráfico mais acima está
-              representada a contagem de assentos ocupados que foi observada após as \(9\) primeiras viagens do dia. No
-              esquema mais abaixo, apontado por setas, está a probabilidade de que após a partida do \(t\)-ésimo ôninbus, aquela
-              quantidade específica de assentos ocupados fosse observada.</p>
-            <figure class="bus-stop" style="margin-top: 32px">
-              <img src="./assets/stochastic_process.PNG" alt="Processo estocástico" />
-              <figcaption>Uma realização do processo estocástico</figcaption>
-            </figure>
-            <ul>
-              <li>Neste dia em específico, quando o 2º ônibus partiu, todos os estudantes embarcaram e portanto nenhum
-                assento do ponto de espera permaneceu ocupado. A probabilidade de que isso aconteça é denotado pela expressão \(P(X_2=0)\).
-              </li>
-              <li>Vemos através da distribuição \(X_2\) que é mais provável que o ponto fique vazio após a partida do
-                ônibus #2. A probabilidade está representada pela altura das barras verticais.
-              </li>
-              <li>Ainda neste dia, quando o 5º ônibus partiu, 3 pessoas foram deixadas para trás e por isso 3 assentos do
-                ponto permaneceram ocupados. A probabilidade de que isso venha a acontecer é dado por \(P(X_5=3)\).
-              </li>
-              <li>Pela distribuição de \(X_5\) vemos que é pouco provável que o ponto fique vazio ou completamente ocupado 
-                após a partida do ônibus #5.
-              </li>
-              <li>Fechando a análise para este dia, depois que o ônibus #8 partiu, o ponto permaneceu lotado. Todos os 6 assentos
-                ficaram ocupados.
-              </li>
-              <li>Através da distribuição de probabilidade de \(X_8\) evidencia-se que a lotação do ponto neste instante
-                deve ocorrer com frequência.</li>
-            </ul>
-            <p>Um processo estocástico \(\{ X_t \text{, } t \in T \}\) é definido como uma sequência de variáveis
-              aleatórias
-              indexadas por um conjunto ordenado de índices (geralmente o tempo). Isto é, para cada \(t \in
-              T\text{, } X_t\) é uma variável aleatória.</p>
-            <h2 id="random-walk">Passeio Aleatório</h2>
-            <p>Podemos descrever o passeio aleatório simples e simétrico como um processo estocástico formado através da
-              soma de variáveis
-              aleatórias independentes e identicamente distribuídas \(Z_k\) que assumem valores em \(\{-1\text{, }1\}\)
-              com igual
-              probabilidade.</p>
-            <p>Ou seja, a sequência \(\{S_n\text{, } n \in \mathbb{Z}_{\geq0}\}\) com \(S_0 = 0\) e</p>
-            <p> $$S_n = \sum_{k=1}^n Z_k$$</p>
-            <p>é dita passeio aleatório.</p>
-            <h3 id="final-position">Posição Final</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim iure nihil eaque accusantium quisquam illo
-              rem
-              quos, vero odio, omnis nobis voluptatum sit neque nam, blanditiis quas fugit esse natus!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim iure nihil eaque accusantium quisquam illo
-              rem
-              quos, vero odio, omnis nobis voluptatum sit neque nam, blanditiis quas fugit esse natus!</p>
-            <h3 id="pascal-triangle">Triângulo de Pascal</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae iusto quo aliquid illo
-              suscipit
-              repellat, numquam blanditiis assumenda laboriosam odit temporibus minima doloribus nobis. Dolore
-              distinctio
-              maiores tenetur veritatis.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae iusto quo aliquid illo
-              suscipit
-              repellat, numquam blanditiis assumenda laboriosam odit temporibus minima doloribus nobis. Dolore
-              distinctio
-              maiores tenetur veritatis.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae iusto quo aliquid illo
-              suscipit
-              repellat, numquam blanditiis assumenda laboriosam odit temporibus minima doloribus nobis. Dolore
-              distinctio
-              maiores tenetur veritatis.</p>
-            <h3 id="prob-modeling">Modelagem Probabilística</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad et architecto corrupti ipsam blanditiis
-              distinctio in. Architecto, quasi dicta sunt illo temporibus itaque quaerat quam maxime atque neque ullam
-              totam?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad et architecto corrupti ipsam blanditiis
-              distinctio in. Architecto, quasi dicta sunt illo temporibus itaque quaerat quam maxime atque neque ullam
-              totam?</p>
-            <h2 id="about-simulation">Sobre a Simulação</h2>
-            <h3 id="controls">Controles</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aut nulla non cum pariatur molestias!
-              Exercitationem, tempore facilis. Perferendis repellat fugit explicabo dicta accusamus voluptates quisquam,
-              natus corrupti! Ipsa, laborum.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aut nulla non cum pariatur molestias!
-              Exercitationem, tempore facilis. Perferendis repellat fugit explicabo dicta accusamus voluptates quisquam,
-              natus corrupti! Ipsa, laborum.</p>
-            <h3 id="development">Desenvolvimento</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi illo blanditiis laboriosam, atque earum
-              repellat. Quis dolor laudantium illo deserunt esse est, qui exercitationem a, ab aspernatur inventore quae
-              veniam?</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi illo blanditiis laboriosam, atque earum
-              repellat. Quis dolor laudantium illo deserunt esse est, qui exercitationem a, ab aspernatur inventore quae
-              veniam?</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi illo blanditiis laboriosam, atque earum
-              repellat. Quis dolor laudantium illo deserunt esse est, qui exercitationem a, ab aspernatur inventore quae
-              veniam?</p>
+          <p>
+            O conjunto dos índices que evidenciam a evolução do processo geralmente é referido como tempo. Esta representação
+            pode ser dada pela passagem contínua do tempo; ou pela contagem de unidades discretas, como a quantidade de horas. 
+            Há ainda os casos em que os índices são uma abstração do tempo através da contagem de acontecimentos.
+          </p>
+          <blockquote>
+            No nosso exemplo, o tempo é dado pelas chegadas sucessivas do ônibus. O índice desse processo assume valores
+            no conjunto dos números naturais, \(t=1,2,3,...\).
+          </blockquote>
+          <h4>Estado</h4>
+          <p>
+            Os valores que a variável de interesse pode assumir formam o espaço de estados do processo. Para cada estado
+            deste espaço há de existir uma probabilidade associada que evolui ao longo do tempo.
+          </p>
+          <blockquote>
+            No exemplo, a variável de estudo pode assumir valores em \(\{0,1,2,3,4,5,6\}\), que é a quantidade
+            de assentos ocupados no ponto de espera.
+          </blockquote>
+          <h4>Interpretando realizações e probabilidades</h4>
+          <p>
+            A figura abaixo ilustra uma realização do processo estocástico alvo do estudo. No gráfico mais acima está
+            representada a contagem de assentos ocupados que foi observada após as \(9\) primeiras viagens do dia. No
+            esquema mais abaixo, apontado por setas, está a probabilidade de que após a partida do \(t\)-ésimo
+            ônibus, aquela
+            quantidade específica de assentos ocupados fosse observada.
+          </p>
+          <figure class="bus-stop" style="margin-top: 32px">
+            <img src="./assets/stochastic_process.PNG" alt="Processo estocástico" />
+            <figcaption>Uma realização do processo estocástico</figcaption>
+          </figure>
+          <ul>
+            <li>Neste dia em específico, quando o 2º ônibus partiu, todos os estudantes embarcaram e portanto nenhum
+              assento do ponto de espera permaneceu ocupado. A probabilidade de que isso aconteça é denotado pela
+              expressão \(P(X_2=0)\).
+            </li>
+            <li>Vemos através da distribuição \(X_2\) que é mais provável que o ponto fique vazio após a partida do
+              ônibus #2. A probabilidade está representada pela altura das barras verticais.
+            </li>
+            <li>Ainda neste dia, quando o 5º ônibus partiu, 3 pessoas foram deixadas para trás e por isso 3 assentos
+              do
+              ponto permaneceram ocupados. A probabilidade de que isso venha a acontecer é dado por \(P(X_5=3)\).
+            </li>
+            <li>Pela distribuição de \(X_5\) vemos que é pouco provável que o ponto fique vazio ou completamente
+              ocupado
+              após a partida do ônibus #5.
+            </li>
+            <li>Fechando a análise para este dia, depois que o ônibus #8 partiu, o ponto permaneceu lotado. Todos os 6
+              assentos
+              ficaram ocupados.
+            </li>
+            <li>Através da distribuição de probabilidade de \(X_8\) percebemos que a lotação do ponto neste instante
+              é algo muito provável.</li>
+          </ul>
+          <p>
+            Um processo estocástico \(\{ X_t \text{, } t \in T \}\) é definido como uma sequência de variáveis aleatórias 
+            indexadas por um conjunto ordenado de índices.
+          </p>
+          <h2 id="random-walk">Passeio Aleatório</h2>
+          <p>
+            Podemos descrever o passeio aleatório simples e simétrico como um processo estocástico formado através da
+            soma de variáveis
+            aleatórias independentes e identicamente distribuídas \(Z_k\) que assumem valores em \(\{-1\text{, }1\}\)
+            com igual probabilidade.
+          </p>
+          <p>
+            Ou seja, a sequência \(\{S_n\text{, } n \in \mathbb{Z}_{\geq0}\}\) com \(S_0 = 0\) e
+          </p>
+          <p> $$S_n = \sum_{k=1}^n Z_k$$</p>
+          <p>
+            é dita passeio aleatório.
+          </p>
+          <h3 id="final-position">Posição Final</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim iure nihil eaque accusantium quisquam illo
+            rem
+            quos, vero odio, omnis nobis voluptatum sit neque nam, blanditiis quas fugit esse natus!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim iure nihil eaque accusantium quisquam illo
+            rem
+            quos, vero odio, omnis nobis voluptatum sit neque nam, blanditiis quas fugit esse natus!
+          </p>
+          <h3 id="pascal-triangle">Triângulo de Pascal</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae iusto quo aliquid illo
+            suscipit
+            repellat, numquam blanditiis assumenda laboriosam odit temporibus minima doloribus nobis. Dolore
+            distinctio
+            maiores tenetur veritatis.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae iusto quo aliquid illo
+            suscipit
+            repellat, numquam blanditiis assumenda laboriosam odit temporibus minima doloribus nobis. Dolore
+            distinctio
+            maiores tenetur veritatis.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae iusto quo aliquid illo
+            suscipit
+            repellat, numquam blanditiis assumenda laboriosam odit temporibus minima doloribus nobis. Dolore
+            distinctio
+            maiores tenetur veritatis.
+          </p>
+          <h3 id="prob-modeling">Modelagem Probabilística</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad et architecto corrupti ipsam blanditiis
+            distinctio in. Architecto, quasi dicta sunt illo temporibus itaque quaerat quam maxime atque neque ullam
+            totam?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad et architecto corrupti ipsam blanditiis
+            distinctio in. Architecto, quasi dicta sunt illo temporibus itaque quaerat quam maxime atque neque ullam
+            totam?
+          </p>
+          <h2 id="about-simulation">Sobre a Simulação</h2>
+          <h3 id="controls">Controles</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aut nulla non cum pariatur molestias!
+            Exercitationem, tempore facilis. Perferendis repellat fugit explicabo dicta accusamus voluptates quisquam,
+            natus corrupti! Ipsa, laborum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aut nulla non cum pariatur molestias!
+            Exercitationem, tempore facilis. Perferendis repellat fugit explicabo dicta accusamus voluptates quisquam,
+            natus corrupti! Ipsa, laborum.
+          </p>
+          <h3 id="development">Desenvolvimento</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi illo blanditiis laboriosam, atque earum
+            repellat. Quis dolor laudantium illo deserunt esse est, qui exercitationem a, ab aspernatur inventore quae
+            veniam?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi illo blanditiis laboriosam, atque earum
+            repellat. Quis dolor laudantium illo deserunt esse est, qui exercitationem a, ab aspernatur inventore quae
+            veniam?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi illo blanditiis laboriosam, atque earum
+            repellat. Quis dolor laudantium illo deserunt esse est, qui exercitationem a, ab aspernatur inventore quae
+            veniam?
+          </p>
         </article>
       </div>
     </section>
