@@ -210,7 +210,7 @@
             conceitos básicos estabelecidos pela teoria da probabilidade. Embora seja uma apresentação inicial,
             recomenda-se que o leitor possua noções de probabilidade.
           </p>
-          <h3 id="random-variable">Variáveis Aleatórias</h3>
+          <h3 id="random-variable">Variável Aleatória</h3>
           <p>
             Frequentemente, quando um experimento probabilístico é realizado, estamos interessados em uma função
             definida sobre o resultado ao invés do resultado propriamente dito. Por exemplo, supondo que seja feito o
@@ -317,7 +317,7 @@
             Uma função \(X\), definida no espaço amostral \(S\) e com valores num conjunto enumerável de pontos da reta
             é denominada <strong>variável aleatória discreta</strong>.
           </p>
-          <h3 id="stochastic-process">Processos Estocásticos</h3>
+          <h3 id="stochastic-process">Processo Estocástico</h3>
           <p>
             Um ônibus universitário que transporta estudantes entre os dormitórios e a reitoria chega à parada mais
             próxima dos dormitórios em intervalos regulares de tempo. O ponto de espera possui \(6\) assentos e serve de
@@ -336,8 +336,10 @@
           <p>
             Atendendo às reclamações do corpo discente quanto à infraestrutura reduzida do ponto de espera, os gestores
             de mobilidade urbana da universidade propuseram a condução de um estudo. Eles decidiram que seria útil ter
-            conhecimento da quantidade de assentos do ponto que permanecem ocupados após a partida de um ônibus. Espera-se 
-            que essas informações sirvam de base para a tomada de decisões. Será que vale a pena investir em uma reforma?
+            conhecimento da quantidade de assentos do ponto que permanecem ocupados após a partida de um ônibus.
+            Espera-se
+            que essas informações sirvam de base para a tomada de decisões. Será que vale a pena investir em uma
+            reforma?
           </p>
           <p>
             Podemos tratar este problema como um processo estocástico. Consideremos como variável de interesse o número
@@ -347,19 +349,23 @@
             estocástica (aleatória). Mais precisamente, dizemos que este é um <strong>processo estocástico de tempo
             discreto e estado discreto</strong>.
           </p>
-          <h4>Tempo</h3>
+          <h4>Tempo</h4>
           <p>
-            O conjunto dos índices que evidenciam a evolução do processo geralmente é referido como tempo. Esta representação
-            pode ser dada pela passagem contínua do tempo; ou pela contagem de unidades discretas, como a quantidade de horas. 
+            O conjunto dos índices que evidenciam a evolução do processo geralmente é referido como tempo. Esta
+            representação
+            pode ser dada pela passagem contínua do tempo; ou pela contagem de unidades discretas, como a quantidade
+            de horas.
             Há ainda os casos em que os índices são uma abstração do tempo através da contagem de acontecimentos.
           </p>
           <blockquote>
-            No nosso exemplo, o tempo é dado pelas chegadas sucessivas do ônibus. O índice desse processo assume valores
+            No nosso exemplo, o tempo é dado pelas chegadas sucessivas do ônibus. O índice desse processo assume
+            valores
             no conjunto dos números naturais, \(t=1,2,3,...\).
           </blockquote>
           <h4>Estado</h4>
           <p>
-            Os valores que a variável de interesse pode assumir formam o espaço de estados do processo. Para cada estado
+            Os valores que a variável de interesse pode assumir formam o espaço de estados do processo. Para cada
+            estado
             deste espaço há de existir uma probabilidade associada que evolui ao longo do tempo.
           </p>
           <blockquote>
@@ -379,22 +385,26 @@
             <figcaption>Uma realização do processo estocástico</figcaption>
           </figure>
           <ul>
-            <li>Neste dia em específico, quando o 2º ônibus partiu, todos os estudantes embarcaram e portanto nenhum
+            <li>
+              Neste dia em específico, quando o \(2º\) ônibus partiu, todos os estudantes embarcaram e portanto nenhum
               assento do ponto de espera permaneceu ocupado. A probabilidade de que isso aconteça é denotado pela
               expressão \(P(X_2=0)\).
             </li>
-            <li>Vemos através da distribuição \(X_2\) que é mais provável que o ponto fique vazio após a partida do
-              ônibus #2. A probabilidade está representada pela altura das barras verticais.
+            <li>
+              Vemos através da distribuição \(X_2\) que é mais provável que o ponto fique vazio após a partida do
+              ônibus \(\#2\). A probabilidade está representada pela altura das barras verticais.
             </li>
-            <li>Ainda neste dia, quando o 5º ônibus partiu, 3 pessoas foram deixadas para trás e por isso 3 assentos
+            <li>
+              Ainda neste dia, quando o \(5º\) ônibus partiu, \(3\) pessoas foram deixadas para trás e por isso \(3\) assentos
               do
               ponto permaneceram ocupados. A probabilidade de que isso venha a acontecer é dado por \(P(X_5=3)\).
             </li>
-            <li>Pela distribuição de \(X_5\) vemos que é pouco provável que o ponto fique vazio ou completamente
-              ocupado
-              após a partida do ônibus #5.
+            <li>
+              Pela distribuição de \(X_5\) vemos que é pouco provável que o ponto fique vazio ou completamente
+              ocupado após a partida do ônibus \(\#5\).
             </li>
-            <li>Fechando a análise para este dia, depois que o ônibus #8 partiu, o ponto permaneceu lotado. Todos os 6
+            <li>
+              Fechando a análise para este dia, depois que o ônibus \(\#8\) partiu, o ponto permaneceu lotado. Todos os 6
               assentos
               ficaram ocupados.
             </li>
@@ -402,28 +412,62 @@
               é algo muito provável.</li>
           </ul>
           <p>
-            Um processo estocástico \(\{ X_t \text{, } t \in T \}\) é definido como uma sequência de variáveis aleatórias 
+            Um processo estocástico \(\{ X_t \text{, } t \in T \}\) é definido como uma sequência de variáveis
+            aleatórias
             indexadas por um conjunto ordenado de índices.
           </p>
           <h2 id="random-walk">Passeio Aleatório</h2>
           <p>
-            Podemos descrever o passeio aleatório simples e simétrico como um processo estocástico formado através da
-            soma de variáveis
-            aleatórias independentes e identicamente distribuídas \(Z_k\) que assumem valores em \(\{-1\text{, }1\}\)
-            com igual probabilidade.
+            Uma forma irreverente de descrever o passeio aleatório se dá através do andar de um bêbado. Imaginemos que
+            os movimentos dessa pessoa embriagada são de certo modo imprevisíveis e que consistem de simples passos.
+            Sempre após uma unidade de tempo é dado um passo: podendo ser para frente, com probabilidade \(p\); ou
+            para trás, com probabilidade \(1-p\).
           </p>
           <p>
-            Ou seja, a sequência \(\{S_n\text{, } n \in \mathbb{Z}_{\geq0}\}\) com \(S_0 = 0\) e
+            A fim de simplificar o problema assumiremos que \(p=0.5\), ou seja, trataremos de um passeio aleatório
+            simétrico onde
+            a probabilidade de um passo para frente ou para trás são idênticas. Assumiremos
+            também que o problema
+            é unidimensional, o que significa que não haverá outros graus de liberdade de movimento, a direção é única.
           </p>
-          <p> $$S_n = \sum_{k=1}^n Z_k$$</p>
           <p>
-            é dita passeio aleatório.
+            Portanto, definimos \(X=\) "sentido do passo (frente \(=+1\), trás\(=-1\))", de forma que:
+          </p>
+          <p>
+            $$P(X=+1) = p = 0.5$$
+          </p>
+          <p>
+            $$P(X=-1) = 1-p = 0.5$$
+          </p>
+          <p>
+            Indexamos a variável aleatória \(X\) com um inteiro não negativo \(k\) para identificar o \(k\)-ésimo passo
+            dado.
+            Por exemplo, para um passeio aleatório composto de \(n\) passos:
+          </p>
+          <ul>
+            <li>\(X_1=\) sentido do \(1º\) passo</li>
+            <li>\(X_2=\) sentido do \(2º\) passo<br>...</li>
+            <li>\(X_n=\) sentido do \(n\)-ésimo passo</li>
+          </ul>
+          <p>
+            É então partindo de uma posição inicial \(0\) e somando os valores assumidos por \(X_k,\) \(k=1,2,...,n\) que
+            encontraremos a posição final do passeio.
           </p>
           <h3 id="final-position">Posição Final</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim iure nihil eaque accusantium quisquam illo
-            rem
-            quos, vero odio, omnis nobis voluptatum sit neque nam, blanditiis quas fugit esse natus!
+            A posição final é uma das variáveis de interesse em um passeio aleatório. Qual a probabilidade de que
+            a pessoa embriagada, partindo da posição inicial \(0\) esteja na posição \(3\) depois de \(3\) passos?
+            Ah, essa é simples, todos os passos foram dados à frente, \(X_1=X_2=X_3=+1\). Se cada passo tem probabilidade
+            de \(1/2\) então a resposta é:
+          </p>
+          <p class="align-eq-left" style="font-size: 15px">
+            $$P(X_1=+1)\times P(X_2=+1)\times P(X_3=+1)$$
+            $$=\frac{1}{2}\times \frac{1}{2} \times \frac{1}{2}$$
+            $$=\frac{1}{8}$$
+          </p>
+          <p>
+            E qual a probabilidade de retornar a posição \(0\) com \(4\) passos?
+            Essa pergunta é um pouco mais difícil de responder imediatamente e tende a ficar ainda mais conforme a quantidade de passos do passeio aumente
           </p>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim iure nihil eaque accusantium quisquam illo

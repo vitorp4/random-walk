@@ -57,6 +57,7 @@
 table.coin-table {
   border-collapse: collapse;
   margin: 32px auto;
+  font-size: 15px;
 }
 
 table.coin-table thead {
@@ -127,6 +128,10 @@ figcaption a {
 .align-eq-left mjx-container {
   text-align: left !important;
 }
+
+/* .align-eq-left mjx-container + mjx-container {
+  margin-top: 10px !important;
+}*/
 
 mjx-container {
   margin: 0 !important;
