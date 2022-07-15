@@ -8,7 +8,6 @@
 }
 
 .article-content {
-  min-height: 1500px;
   background-color: var(--white);
   box-shadow: 0px 8px 36px rgba(5, 5, 165, 0.05);
   border-radius: 6px;
@@ -57,7 +56,6 @@
 table.coin-table {
   border-collapse: collapse;
   margin: 32px auto;
-  font-size: 15px;
 }
 
 table.coin-table thead {
@@ -90,6 +88,33 @@ table.coin-table tbody tr:nth-child(odd) {
   display: flex;
   justify-content: space-evenly;
   align-items: center;  
+}
+
+.container-figures.paths-1 {
+  justify-content: center;
+  gap: 56px;
+}
+
+.container-figures.paths-1 figure img {
+  width: 130px;
+}
+
+.container-figures.paths-2 {
+  justify-content: center;
+  gap: 56px;
+}
+
+.container-figures.paths-2 figure img {
+  width: 180px;
+}
+
+.container-figures.paths-3 {
+  justify-content: center;
+  gap: 32px;
+}
+
+.container-figures.paths-3 figure img {
+  width: 215px;
 }
 
 .container-figures.coin-tree figure:last-child img,
@@ -126,19 +151,15 @@ figcaption a {
 }
 
 .align-eq-left mjx-container {
+  font-size: 15px;
   text-align: left !important;
 }
-
-/* .align-eq-left mjx-container + mjx-container {
-  margin-top: 10px !important;
-}*/
 
 mjx-container {
   margin: 0 !important;
 }
 
 .container-figures p {
-  font-size: 15px;
   margin: 0;
 }
 

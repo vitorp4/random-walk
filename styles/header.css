@@ -164,11 +164,11 @@ header .logo .icon-person-walking {
   }
 
   .nav-dropdown > ul > li > ul > li:hover {
-    background-color: var(--hover-blue);
+    background-color: var(--transparent-gray);
   }
 
   .nav-dropdown > ul > li:hover {
-    background-color: var(--hover-blue);
+    background-color: var(--transparent-gray);
   }
 
   .nav-dropdown > ul > li:hover > ul {

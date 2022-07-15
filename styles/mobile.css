@@ -164,10 +164,6 @@
     padding: 0 8px;
   }
 
-  .intro-content {
-    display: none;
-  }
-
   .home-grid {
     display: block;
     margin-top: 50px;
@@ -194,7 +190,7 @@
     width: 100%;
     border-radius: 6px 6px 0 0;
   }
-
+  
   .probability-chart-wrapper {
     width: 100%;
     max-width: initial;
@@ -204,6 +200,10 @@
     border-radius: 0 0 6px 6px;
   } 
 
+  .intro-content,
+  .path-chart-wrapper::before, 
+  .probability-chart-wrapper::before, 
+  .probability-chart-wrapper::after, 
   .chevron-container {
     display: none;
   }
@@ -223,10 +223,6 @@
 
   #cards {
     background-size: 250%;
-  }
-
-  #cards .section-container h1::before {
-    display: none;
   }
 
   .cards-wrapper .card:nth-child(2) {
@@ -271,10 +267,6 @@
     margin-bottom: 4px;
   }
 
-  .cards-wrapper .card p {
-    display: none 
-  }
-
   .cards-wrapper .card .explore {
     margin-bottom: 0;
     text-align: left;
@@ -284,6 +276,8 @@
     font-size: 16px;
   }
 
+  #cards .section-container h1::before,
+  .cards-wrapper .card p,
   .cards-wrapper .card .explore a::before {
     display: none;
   }
@@ -319,7 +313,6 @@
     display: block;
     padding: 0 8px 56px;
   }
-
 
   .article-content {
     padding: 24px 16px;

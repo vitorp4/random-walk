@@ -347,7 +347,7 @@
             número de vezes que um ônibus chega. Dependendo do horário, a probabilidade de que o ponto permaneça mais
             vazio ou mais ocupado pode variar porque, naturalmente, a chegada de pessoas à fila possui natureza
             estocástica (aleatória). Mais precisamente, dizemos que este é um <strong>processo estocástico de tempo
-            discreto e estado discreto</strong>.
+              discreto e estado discreto</strong>.
           </p>
           <h4>Tempo</h4>
           <p>
@@ -391,22 +391,23 @@
               expressão \(P(X_2=0)\).
             </li>
             <li>
-              Vemos através da distribuição \(X_2\) que é mais provável que o ponto fique vazio após a partida do
-              ônibus \(\#2\). A probabilidade está representada pela altura das barras verticais.
+              Vemos através da distribuição \(X_2\) que é mais provável que o ponto fique vazio após a partida do \(2º\)
+              ônibus. A probabilidade está representada pela altura das barras verticais.
             </li>
             <li>
-              Ainda neste dia, quando o \(5º\) ônibus partiu, \(3\) pessoas foram deixadas para trás e por isso \(3\) assentos
+              Ainda neste dia, quando o \(5º\) ônibus partiu, \(3\) pessoas foram deixadas para trás e por isso \(3\)
+              assentos
               do
               ponto permaneceram ocupados. A probabilidade de que isso venha a acontecer é dado por \(P(X_5=3)\).
             </li>
             <li>
-              Pela distribuição de \(X_5\) vemos que é pouco provável que o ponto fique vazio ou completamente
-              ocupado após a partida do ônibus \(\#5\).
+              Pela distribuição de \(X_5\) vemos que é pouco provável que o ponto fique completamente vazio ou
+              completamente
+              ocupado após a partida do \(5º\) ônibus.
             </li>
             <li>
-              Fechando a análise para este dia, depois que o ônibus \(\#8\) partiu, o ponto permaneceu lotado. Todos os 6
-              assentos
-              ficaram ocupados.
+              Fechando a análise para este dia, depois que o \(8º\) ônibus partiu, o ponto permaneceu lotado. Todos os 6
+              assentos permaneceram ocupados.
             </li>
             <li>Através da distribuição de probabilidade de \(X_8\) percebemos que a lotação do ponto neste instante
               é algo muito provável.</li>
@@ -431,49 +432,134 @@
             é unidimensional, o que significa que não haverá outros graus de liberdade de movimento, a direção é única.
           </p>
           <p>
-            Portanto, definimos \(X=\) "sentido do passo (frente \(=+1\), trás\(=-1\))", de forma que:
+            Portanto, definimos \(Y=\) "sentido do passo (frente \(=+1\), trás\(=-1\))", de forma que:
+          </p>
+          <p class="align-eq-left">
+            $$P(Y=+1) = p = 0.5$$
+          </p>
+          <p class="align-eq-left">
+            $$P(Y=-1) = 1-p = 0.5$$
           </p>
           <p>
-            $$P(X=+1) = p = 0.5$$
-          </p>
-          <p>
-            $$P(X=-1) = 1-p = 0.5$$
-          </p>
-          <p>
-            Indexamos a variável aleatória \(X\) com um inteiro não negativo \(k\) para identificar o \(k\)-ésimo passo
+            Indexamos a variável aleatória \(Y\) com um inteiro não negativo \(k\) para identificar o \(k\)-ésimo passo
             dado.
             Por exemplo, para um passeio aleatório composto de \(n\) passos:
           </p>
           <ul>
-            <li>\(X_1=\) sentido do \(1º\) passo</li>
-            <li>\(X_2=\) sentido do \(2º\) passo<br>...</li>
-            <li>\(X_n=\) sentido do \(n\)-ésimo passo</li>
+            <li>\(Y_1=\) sentido do \(1º\) passo</li>
+            <li>\(Y_2=\) sentido do \(2º\) passo<br>...</li>
+            <li>\(Y_n=\) sentido do \(n\)-ésimo passo</li>
           </ul>
           <p>
-            É então partindo de uma posição inicial \(0\) e somando os valores assumidos por \(X_k,\) \(k=1,2,...,n\) que
+            É então partindo de uma posição inicial \(0\) e somando os valores assumidos por \(Y_k,\) \(k=1,2,...,n\)
+            que
             encontraremos a posição final do passeio.
           </p>
           <h3 id="final-position">Posição Final</h3>
           <p>
             A posição final é uma das variáveis de interesse em um passeio aleatório. Qual a probabilidade de que
             a pessoa embriagada, partindo da posição inicial \(0\) esteja na posição \(3\) depois de \(3\) passos?
-            Ah, essa é simples, todos os passos foram dados à frente, \(X_1=X_2=X_3=+1\). Se cada passo tem probabilidade
+            Essa é simples, todos os passos devem ser dados à frente, \(Y_1=Y_2=Y_3=+1\). Se cada passo tem
+            probabilidade
             de \(1/2\) então a resposta é:
           </p>
-          <p class="align-eq-left" style="font-size: 15px">
-            $$P(X_1=+1)\times P(X_2=+1)\times P(X_3=+1)$$
-            $$=\frac{1}{2}\times \frac{1}{2} \times \frac{1}{2}$$
-            $$=\frac{1}{8}$$
+          <p class="align-eq-left">
+            $$P(Y_1=+1)\times P(Y_2=+1)\times P(Y_3=+1)$$
+          </p>
+          <p class="align-eq-left">
+            $$=\frac{1}{2}\times \frac{1}{2} \times \frac{1}{2} =\frac{1}{8}$$
           </p>
           <p>
-            E qual a probabilidade de retornar a posição \(0\) com \(4\) passos?
-            Essa pergunta é um pouco mais difícil de responder imediatamente e tende a ficar ainda mais conforme a quantidade de passos do passeio aumente
+            E qual a probabilidade de retornar à posição \(0\) com exatos \(3\) passos?
+            Essa pergunta é um pouco mais difícil de responder que a anterior, e a dificuldade tende a escalar ainda mais 
+            complicado conforme a quantidade de passos aumenta. Por isso vamos construir o raciocínio por partes.
           </p>
+          <h4>Caminhos com 1 passo</h4>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim iure nihil eaque accusantium quisquam illo
             rem
             quos, vero odio, omnis nobis voluptatum sit neque nam, blanditiis quas fugit esse natus!
           </p>
+          <div class="container-figures paths-1">
+            <figure>
+              <img src="./assets/paths-1-1.png" />
+              <figcaption></figcaption>
+            </figure>
+            <figure>
+              <img src="./assets/paths-1-2.png" />
+              <figcaption></figcaption>
+            </figure>
+          </div>
+          <h4>Caminhos com 2 passos</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim iure nihil eaque accusantium quisquam illo
+            rem
+            quos, vero odio, omnis nobis voluptatum sit neque nam, blanditiis quas fugit esse natus!
+          </p>
+          <div class="container-figures paths-2">
+            <figure>
+              <img src="./assets/paths-2-1.png" />
+              <figcaption></figcaption>
+            </figure>
+            <figure>
+              <img src="./assets/paths-2-2.png" />
+              <figcaption></figcaption>
+            </figure>
+          </div>
+          <div class="container-figures paths-2">
+            <figure>
+              <img src="./assets/paths-2-3.png" />
+              <figcaption></figcaption>
+            </figure>
+            <figure>
+              <img src="./assets/paths-2-4.png" />
+              <figcaption></figcaption>
+            </figure>
+          </div>
+          <h4>Caminhos com 3 passos</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim iure nihil eaque accusantium quisquam illo
+            rem
+            quos, vero odio, omnis nobis voluptatum sit neque nam, blanditiis quas fugit esse natus!
+          </p>
+          <div class="container-figures paths-3">
+            <figure>
+              <img src="./assets/paths-3-1.png" />
+              <figcaption></figcaption>
+            </figure>
+            <figure>
+              <img src="./assets/paths-3-2.png" />
+              <figcaption></figcaption>
+            </figure>
+            <figure>
+              <img src="./assets/paths-3-3.png" />
+              <figcaption></figcaption>
+            </figure>
+          </div>
+          <div class="container-figures paths-3">
+            <figure>
+              <img src="./assets/paths-3-4.png" />
+              <figcaption></figcaption>
+            </figure>
+            <figure>
+              <img src="./assets/paths-3-5.png" />
+              <figcaption></figcaption>
+            </figure>
+            <figure>
+              <img src="./assets/paths-3-6.png" />
+              <figcaption></figcaption>
+            </figure>
+          </div>
+          <div class="container-figures paths-3">
+            <figure>
+              <img src="./assets/paths-3-7.png" />
+              <figcaption></figcaption>
+            </figure>
+            <figure>
+              <img src="./assets/paths-3-8.png" />
+              <figcaption></figcaption>
+            </figure>
+          </div>
           <h3 id="pascal-triangle">Triângulo de Pascal</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae iusto quo aliquid illo

@@ -1,9 +1,5 @@
 #home {
   background-color: var(--main-blue);
-  /* background-image: url('../assets/polygon-scatter-haikei.svg'), url('../assets/polygon-scatter-haikei.svg');
-  background-position: top left, bottom right;
-  background-repeat: no-repeat; */
-  /* background-size: cover; */
 }
 
 #home .section-container {
@@ -19,10 +15,10 @@
 .home-grid {
   display: grid;
   grid-template-areas: 'control content'
-                       'path content'
-                       'path prob';
-  column-gap: 52px; 
-  background-color: var(--main-blue);
+    'path content'
+    'path prob';
+  column-gap: 52px;
+  /* background-color: var(--main-blue); */
 }
 
 .controls {
@@ -60,7 +56,7 @@
   appearance: none;
   width: 106px;
   height: 8px;
-  background-image: linear-gradient(#dddee7,#dddee7);
+  background-image: linear-gradient(#dddee7, #dddee7);
   background-size: 66% 100%;
   background-position-x: right;
   background-repeat: no-repeat;
@@ -99,7 +95,7 @@
   color: var(--dark-gray);
   padding: 4px 0;
   border-radius: 4px;
-  left: calc( 33% + (16px * 0.1));
+  left: calc(33% + (16px * 0.1));
   transform: translateX(-50%);
 }
 
@@ -129,7 +125,7 @@
   color: var(--dark-gray);
   height: 32px;
   width: 110px;
-  font-family: 'Kumbh Sans',sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   padding-left: 12px;
   margin-top: 4px;
   cursor: pointer;
@@ -160,7 +156,7 @@
   position: relative;
 }
 
-.buttons-control > button:focus,
+.buttons-control>button:focus,
 #step-input:focus::-webkit-slider-thumb,
 #path-select:focus {
   outline: 3px solid #00112888;
@@ -172,12 +168,12 @@
   pointer-events: none;
 }
 
-button#play-pause #icon-play, 
+button#play-pause #icon-play,
 button#play-pause.pause #icon-pause {
   display: inline;
 }
 
-button#play-pause #icon-pause, 
+button#play-pause #icon-pause,
 button#play-pause.pause #icon-play {
   display: none;
 }
@@ -189,7 +185,7 @@ button#play-pause.pause #icon-play {
   background-color: var(--dark-gray);
   left: 50%;
   bottom: -28px;
-  transform: translateX(-50%); 
+  transform: translateX(-50%);
   border-radius: 4px;
   font-size: 12px;
   padding: 4px 8px;
@@ -205,16 +201,19 @@ button#play-pause.pause #icon-play {
     visibility: hidden;
     bottom: -28px;
   }
+
   10% {
     opacity: 1;
     visibility: visible;
     bottom: -32px;
   }
+
   75% {
     opacity: 1;
     visibility: visible;
     bottom: -32px;
   }
+
   100% {
     opacity: 0;
     visibility: hidden;
@@ -223,13 +222,26 @@ button#play-pause.pause #icon-play {
 }
 
 .path-chart-wrapper {
+  position: relative;
   grid-area: path;
   background-color: var(--white);
   border-radius: 6px;
   width: 680px;
   height: 375px;
   padding: 8px;
-  box-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+  transform-style: preserve-3d;
+}
+
+.path-chart-wrapper::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  background: 2px 2px/10px 10px transparent radial-gradient(#63c5f2 1px, transparent 0);
+  transform: translateZ(-10px);
+  bottom: -40px;
+  left: -40px;
 }
 
 .intro-content {
@@ -254,7 +266,7 @@ button#play-pause.pause #icon-play {
 }
 
 .intro-content ol li {
-  font-weight: 300;
+  font-weight: 400;
   position: relative;
   line-height: 24px;
   counter-increment: counter;
@@ -266,18 +278,19 @@ button#play-pause.pause #icon-play {
 
 .intro-content ol li::before {
   content: counter(counter) ".";
-  color: var(--white); 
-  font-size: 18px;
-  font-weight: 700;
+  color: var(--white);
+  /* font-size: 18px; */
+  font-weight: 600;
   font-family: 'Red Hat Display', sans-serif;
   text-align: center;
   width: 16px;
   left: -24px;
-  top: -1px;
+  /* top: -1px; */
   position: absolute;
 }
 
 .probability-chart-wrapper {
+  position: relative;
   grid-area: prob;
   max-width: 368px;
   background-color: var(--white);
@@ -285,15 +298,38 @@ button#play-pause.pause #icon-play {
   padding: 8px 16px 8px 8px;
   height: 275px;
   margin-top: 32px;
-  box-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+  transform-style: preserve-3d;
+}
+
+.probability-chart-wrapper::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: 2px 2px/10px 10px transparent radial-gradient(#6bc0e8 1px, transparent 0);
+  transform: translateZ(-10px);
+  top: -20px;
+  right: -20px;
+}
+
+.probability-chart-wrapper::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: 2px 2px/10px 10px transparent radial-gradient(#6bc0e8 1px, transparent 0);
+  transform: translateZ(-10px);
+  bottom: -20px;
+  left: -20px;
 }
 
 .chevron-container {
- display: grid;
- place-items: center;
- position: absolute;
- bottom: 16px;
- transition: 0.5s;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  bottom: 16px;
+  transition: 0.5s;
 }
 
 .chevron-container > a {
@@ -311,7 +347,7 @@ button#play-pause.pause #icon-play {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(calc(-50% + 13px),-50%) rotate(-40deg);
+  transform: translate(calc(-50% + 13px), -50%) rotate(-40deg);
 }
 
 .chevron-container > a::after {
@@ -323,7 +359,7 @@ button#play-pause.pause #icon-play {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(calc(-50% - 13px),-50%) rotate(40deg);
+  transform: translate(calc(-50% - 13px), -50%) rotate(40deg);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -335,7 +371,7 @@ button#play-pause.pause #icon-play {
     background-color: var(--dark-gray);
     left: 50%;
     bottom: 42px;
-    transform: translateX(-50%); 
+    transform: translateX(-50%);
     border-radius: 4px;
     font-size: 12px;
     padding: 4px 8px;
@@ -344,7 +380,7 @@ button#play-pause.pause #icon-play {
     visibility: hidden;
     transition: 0.3s;
   }
-  
+
   .buttons-control > button::after {
     content: '';
     width: 10px;
@@ -360,16 +396,15 @@ button#play-pause.pause #icon-play {
     visibility: hidden;
     transition: 0.3s;
   }
-  
-  .buttons-control > button:hover::before, 
+
+  .buttons-control > button:hover::before,
   .buttons-control > button:hover::after {
     opacity: 1;
     visibility: visible;
-  } 
+  }
 
   .chevron-container:hover {
     transform: translateY(5px);
   }
 
 }
-
