@@ -50,7 +50,7 @@
 .article-content ul {
   padding-left: 16px;
   line-height: 24px;
-  margin-bottom: 16px;
+  margin: 0 0 16px 16px;
 }
 
 table.coin-table {
@@ -126,12 +126,24 @@ table.coin-table tbody tr:nth-child(odd) {
   width: 300px;
 }
 
-figure.bus-stop {
+figure.bus-stop.mb-32 {
   margin-bottom: 32px;
+}
+
+figure.bus-stop.mt-32 {
+  margin-top: 32px;
 }
 
 figure.bus-stop img {
   max-width: min(400px, 100%);
+}
+
+figure.paths-example {
+  margin: 32px 0;
+} 
+
+figure.paths-example img {
+  max-width: min(370px, 100%);
 }
 
 figure {

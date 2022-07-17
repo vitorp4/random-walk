@@ -325,6 +325,15 @@
     gap: 24px;  
   }
 
+  .container-figures.paths-1,
+  .container-figures.paths-2 {
+    gap: 32px;
+  }
+
+  .article-content ul {
+    margin-left: 0;
+  }
+
 
 
   /*  -------------------------- references.css -------------------------------------- */

@@ -309,7 +309,7 @@ button#play-pause.pause #icon-play {
   height: 100px;
   background: 2px 2px/10px 10px transparent radial-gradient(#6bc0e8 1px, transparent 0);
   transform: translateZ(-10px);
-  top: -20px;
+  bottom: -20px;
   right: -20px;
 }
 
