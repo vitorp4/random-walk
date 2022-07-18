@@ -57,7 +57,7 @@
                 <ul>
                   <li><a href="#final-position">Posição Final</a></li>
                   <li><a href="#pascal-triangle">Triângulo de Pascal</a></li>
-                  <li><a href="#prob-modeling">Modelagem Probabilística</a></li>
+                  <li><a href="#probability-distributions">Distribuições de Probabilidade</a></li>
                 </ul>
               </li>
               <li>
@@ -191,7 +191,7 @@
               <ol>
                 <li><a href="#final-position">Posição Final</a></li>
                 <li><a href="#pascal-triangle">Triângulo de Pascal</a></li>
-                <li><a href="#prob-modeling">Modelagem Probabilística</a></li>
+                <li><a href="#probability-distributions">Distribuições de Probabilidade</a></li>
               </ol>
             </li>
             <li>
@@ -439,7 +439,7 @@
           <p>
             Indo além, indexamos a variável aleatória \(Y\) com um inteiro não negativo \(k\) para identificar o
             \(k\)-ésimo passo
-            dado. Quando analisando um passeio aleatório composto de \(t\) passos, denotamos:
+            dado. Quando analisando um passeio aleatório composto de \(t\) passos, \(k=1,2,...,t\) e denotamos:
           </p>
           <ul>
             <li>\(Y_1\) como sendo o sentido do \(1º\) passo (frente \(=+1\), trás\(=-1\));</li>
@@ -486,9 +486,13 @@
           <p>
             $$P(X_6=-2)\neq\Big(\frac{1}{2}\Big)^6$$
           </p>
-          pois existem
-          outros caminhos com \(6\) passos que também desembocam na posição final \(-2\). Precisamos
-          considerar todos.
+          <p>
+            pois existem outros caminhos com \(6\) passos que também desembocam na posição final \(-2\).
+            Precisamos considerar todos.
+          </p>
+          <p>
+            A seguir retrocederemos um pouco na complexidade do problema para analisar um passeio aleatório
+            de \(3\) passos.
           </p>
           <h4>Analisando os caminhos possíveis</h4>
           <p>
@@ -498,7 +502,7 @@
             \(Y_1=Y_2=Y_3=+1\). Não existe nenhum outro caminho que satisfaça a essas condições. Logo,
           </p>
           <p>
-            $$P(X_3=3)=\Big(\frac{1}{2}\Big)^3 =\frac{1}{8}$$
+            $$P(X_3=3)=1 \times \Big(\frac{1}{2}\Big)^3 =\frac{1}{8}$$
           </p>
           <p>
             Muito bem, e qual a probabilidade de estar na posição \(-1\) com exatos \(3\) passos?
@@ -625,7 +629,7 @@
           </ul>
           <p>
             Existem pistas mais que suficientes para percebermos que um padrão vem se formando ao longo da análise.
-            É inegável que todas as informações levantadas possuem alguma relação com o número de passos \(t\).
+            É inegável que todas as informações levantadas possuem alguma relação com o número de passos \(t\):
           </p>
           <ul>
             <li>A quantidade de caminhos possíveis é dada por \(2^t\);</li>
@@ -635,44 +639,86 @@
             <li>
               A variável posição final \(X_t\) toma valores no conjunto simétrico \(\{-t,-t+2,-t+4,...,t\}\).
             </li>
+            <li>
+              Para calcular \(P(X_t=x)\) é necessário <strong>contar</strong>, dentre todos os \(2^t\) caminhos
+              possíveis,
+              quantos
+              possuem posição final igual a \(x\).
+            </li>
           </ul>
           <p>
-
+            Felizmente, graças ao gradioso matemático francês Blaise Pascal, podemos utilizar de um curioso arranjo
+            triangular de números para generalizar este tipo de problema de contagem. Estamos falando do
+            <strong>triângulo de Pascal</strong>.
           </p>
           <h3 id="pascal-triangle">Triângulo de Pascal</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae iusto quo aliquid illo
-            suscipit
-            repellat, numquam blanditiis assumenda laboriosam odit temporibus minima doloribus nobis. Dolore
-            distinctio
-            maiores tenetur veritatis.
+            O triângulo de Pascal é uma abordagem sistemática e generalista de contar as maneiras possíveis de
+            selecionar
+            um subconjunto de elementos a partir de uma coleção. A figura abaixo ilustra os 4 primeiros níveis do
+            triângulo.
           </p>
+          <figure class="paths-example">
+            <img src="./assets/pascal-triangle.png" />
+            <figcaption>Triângulo de Pascal</figcaption>
+          </figure>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae iusto quo aliquid illo
-            suscipit
-            repellat, numquam blanditiis assumenda laboriosam odit temporibus minima doloribus nobis. Dolore
-            distinctio
-            maiores tenetur veritatis.
+            De fato, é possível estender a quantidade de níveis iterativamente. Para isso basta seguir o procedimento
+            de somar os números das diagonais provenientes do nível ligeiramente acima. Por exemplo, as setas azuis na
+            figura indicam como
+            o conteúdo do nível \(4\) foi obtido a partir do nível \(3\). Caso o elemento diagonal não exista no nível
+            superior,
+            como acontece nas bordas do triângulo, então assume-se contribuição \(0\) para a soma.
           </p>
-          <h4>Coeficientes Binomiais</h4>
+          <blockquote>
+            Quer tentar? Confirme que o nível \(t=5\) deve ser composto pelos números \(1,5,10,10,5,1\).
+          </blockquote>
+          <h4>Amarrando o triângulo ao passeio</h4>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae iusto quo aliquid illo
-            suscipit
-            repellat, numquam blanditiis assumenda laboriosam odit temporibus minima doloribus nobis. Dolore
-            distinctio
-            maiores tenetur veritatis.
+            Estas são associações que podemos fazer entre o triângulo e o nosso problema:
           </p>
-          <h3 id="prob-modeling">Modelagem Probabilística</h3>
+          <ul>
+            <li>O nível \(t\) do triângulo corresponde a quantidade de passos \(t\) do passeio aleatório;</li>
+            <li>A soma dos números de um mesmo nível do triângulo corresponde à quantidade total de caminhos possíveis
+              \(2^t\);</li>
+            <li>A quantidade de números em um nível do triângulo corresponde à quantidade de posições finais distintas
+              alcançáveis
+              com \(t\) passos;
+            </li>
+            <li>Os números de um nível correspondem à contagem de caminhos possíveis de cada posição final alcançável.
+            </li>
+          </ul>
+          <p>Vamos validar essas associações revisitando alguns exemplos:</p>
+          <figure class="triangle-prob">
+            <img src="./assets/link-triangle-prob-1.png" />
+            <figcaption>Prob. de chegar à posição final \(-1\) com \(3\) passos</figcaption>
+          </figure>
+          <figure class="triangle-prob">
+            <img src="./assets/link-triangle-prob-2.png" class="large" />
+            <figcaption>Prob. de chegar à posição final \(-2\) com \(6\) passos</figcaption>
+          </figure>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad et architecto corrupti ipsam blanditiis
-            distinctio in. Architecto, quasi dicta sunt illo temporibus itaque quaerat quam maxime atque neque ullam
-            totam?
+            Com este procedimento é possível encontrar a distribuição de probabilidade da variável aleatória posição
+            final \(X_t\) para qualquer que seja a quantidade de passos \(t\) definida. \(\{X_t, t \in \mathbb{N}\}\)
+            é um processo estocástico. A quantidade de passos \(t\) define o tempo do processo e as posições finais
+            alcançáveis
+            formam o espaço de estados.
           </p>
+          <blockquote>
+            Existem maneiras
+            alternativas de se obter tais probabilidades que não através do processo iterativo utilizando o triângulo
+            de Pascal. Mas a simulação presente neste site foi implementada desta forma.
+          </blockquote>
+          <h3 id="probability-distributions">Distribuições de Probabilidade</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad et architecto corrupti ipsam blanditiis
-            distinctio in. Architecto, quasi dicta sunt illo temporibus itaque quaerat quam maxime atque neque ullam
-            totam?
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis minima dignissimos molestiae
+            cupiditate, quae, laboriosam sapiente aliquam aspernatur velit quo qui tempora consequatur adipisci,
+            distinctio impedit nemo saepe hic vel!
           </p>
+          <figure class="paths-example">
+            <img src="./assets/dist-10-steps.png"/>
+            <figcaption>Distribuição de \(X_{10}\)</figcaption>
+          </figure>
           <h2 id="about-simulation">Sobre a Simulação</h2>
           <h3 id="controls">Controles</h3>
           <p>

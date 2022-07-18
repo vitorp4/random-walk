@@ -228,7 +228,7 @@ button#play-pause.pause #icon-play {
   border-radius: 6px;
   width: 680px;
   height: 375px;
-  padding: 8px;
+  padding: 8px 24px 4px 4px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
   transform-style: preserve-3d;
 }
@@ -295,7 +295,7 @@ button#play-pause.pause #icon-play {
   max-width: 368px;
   background-color: var(--white);
   border-radius: 6px;
-  padding: 8px 16px 8px 8px;
+  padding: 8px 16px 4px 8px;
   height: 275px;
   margin-top: 32px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);

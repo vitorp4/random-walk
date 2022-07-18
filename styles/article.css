@@ -134,15 +134,18 @@ figure.bus-stop.mt-32 {
   margin-top: 32px;
 }
 
-figure.bus-stop img {
+figure.bus-stop img,
+figure.triangle-prob img.large  {
   max-width: min(400px, 100%);
 }
 
-figure.paths-example {
+figure.paths-example,
+figure.triangle-prob {
   margin: 32px 0;
 } 
 
-figure.paths-example img {
+figure.paths-example img,
+figure.triangle-prob img {
   max-width: min(370px, 100%);
 }
 

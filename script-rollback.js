@@ -107,11 +107,19 @@ function createPathChart() {
           grid: {
             color: "#00000010",
           },
+          title: {
+            display: true,
+            text: 'Posição Final'
+          }
         },
         x: {
           grid: {
             color: "#00000010",
           },
+          title: {
+            display: true,
+            text: 'Passos'
+          }
         },
       },
       maintainAspectRatio: false,
