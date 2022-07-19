@@ -228,7 +228,7 @@ button#play-pause.pause #icon-play {
   border-radius: 6px;
   width: 680px;
   height: 375px;
-  padding: 8px 24px 4px 4px;
+  padding: 8px 12px 4px 4px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
   transform-style: preserve-3d;
 }

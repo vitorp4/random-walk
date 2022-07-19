@@ -136,6 +136,8 @@ function createProbabilityChart() {
     lastPositionsCounter = Array.from({ length: totalSteps + 1 }, () => 0);
   }
 
+  console.log({labels:toLabel(totalSteps), probs: toProbabilities(totalSteps)})
+
   const data = {
     labels: toLabel(totalSteps),
     datasets: [

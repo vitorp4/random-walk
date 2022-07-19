@@ -126,6 +126,25 @@ table.coin-table tbody tr:nth-child(odd) {
   width: 300px;
 }
 
+.container-figures.dists {
+  flex-wrap: wrap;
+  gap: 16px 8px;
+  /* flex-direction: column; */
+}
+
+.container-figures.dists figure {
+  max-width: min(350px, 100%);
+}
+
+.container-figures.dists figure figcaption {
+  margin-inline-start: 62px;
+  margin-top: 0;
+}
+
+.container-figures.dists figure img {
+  width: 100%;
+}
+
 figure.bus-stop.mb-32 {
   margin-bottom: 32px;
 }

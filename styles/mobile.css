@@ -189,12 +189,13 @@
   .path-chart-wrapper {
     width: 100%;
     border-radius: 6px 6px 0 0;
+    padding: 8px 8px 4px 4px;
   }
   
   .probability-chart-wrapper {
     width: 100%;
     max-width: initial;
-    padding: 8px; 
+    padding: 8px 16px 8px 8px; 
     margin: 0;
     border-top: 1px solid #00000020;
     border-radius: 0 0 6px 6px;
