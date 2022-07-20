@@ -335,6 +335,10 @@
     margin-left: 0;
   }
 
+  .controls-description-grid {
+    grid-template-columns: 100px 1fr;
+  }
+
 
 
   /*  -------------------------- references.css -------------------------------------- */

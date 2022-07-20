@@ -216,5 +216,30 @@ blockquote::before {
   font-family: 'BIZ UDPGothic', sans-serif;
 }
 
+.controls-description-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 16px 8px;
+}
+
+.play-pause {
+  display: flex;
+  gap: 4px;
+}
+
+.button-like {
+  margin-bottom: 4px;
+  border: 1px solid var(--light-gray);
+  height: 32px;
+  width: 32px;
+  border-radius: 6px;
+  font-size: 18px;
+  display: grid;
+  place-items: center;
+  color: var(--main-blue);
+  background-color: var(--white);
+  position: relative;
+}
+
 
 

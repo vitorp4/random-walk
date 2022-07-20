@@ -109,7 +109,7 @@ function createPathChart() {
           },
           title: {
             display: true,
-            text: 'Posição Final'
+            text: 'Posição'
           }
         },
         x: {
