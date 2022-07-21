@@ -455,9 +455,7 @@
           <blockquote>
             Atenção ao fato de que \(Y_k\) não é um processo estocástico. A probabilidade de dar um passo para frente ou
             para trás
-            não evolui à medida que se dá novos passos! Já a posição final \(X_t\) é sim um processo estocástico,
-            conforme
-            veremos a seguir.
+            não evolui à medida que se dá novos passos! Já sobre a posição final \(X_t\), bem... veremos a seguir.
           </blockquote>
           <h3 id="final-position">Posição Final</h3>
           <p>
@@ -506,8 +504,16 @@
           </p>
           <p>
             Muito bem, e qual a probabilidade de estar na posição \(-1\) com exatos \(3\) passos?
-            Essa questão é um pouco menos óbvia que a anterior e a complexidade tente a aumentar proporcionalmente
-            com a quantidade de passos do passeio. Por isso vamos construir o raciocínio por partes.
+            Essa questão é um pouco menos óbvia que a anterior, mas há pistas de que deve ser algo da
+            forma:
+            </p>
+            <p>
+              $$P(X_3=-1)= \text{?}\times \Big(\frac{1}{2}\Big)^3$$
+            </p>
+            <p>
+              onde \(\text{?}\) é um inteiro positivo que representa a quantidade de caminhos que satisfazem
+              as condições impostas. Vamos construir o raciocínio por partes.
+            </p>
           </p>
           <h4>Caminhos com 1 passo</h4>
           <ul>
@@ -704,9 +710,7 @@
             alcançáveis formam o espaço de estados.
           </p>
           <blockquote>
-            Existem maneiras
-            alternativas de se obter tais probabilidades que não através do processo iterativo utilizando o triângulo
-            de Pascal. Mas a simulação presente neste site foi implementada desta forma.
+            Essa é a exata metodologia utilizada para gerar a probabilidade teórica da simulação! 
           </blockquote>
           <h3 id="probability-distributions">Distribuições de Probabilidade</h3>
           <p>
@@ -741,8 +745,18 @@
             </figure>
           </div>
           <h2 id="about-simulation">Sobre a Simulação</h2>
+          <p>
+            Esta seção cobre os pontos mais importantes do funcionamento da simulação. Se você
+            tem dúvidas quanto à utilização dos controles ou simplesmente está curioso sobre detalhes de desenvolvimento,
+            então é aqui que encontrarás as respostas.
+          </p>
           <h3 id="controls">Controles</h3>
-          <p>Abaixo segue a lista de controles:</p>
+          <p>O sobre a simulação é mantido através de dois grupos de controles: os de criação e os de execução.
+            Alterações nas configurações de criação, implica no cálculo das probabilidades teóricas inerentes ao novo problema. 
+            Enquanto que utilizar os botões de execução impacta diretamente o fluxo de execução da simulação.
+          </p>
+          <h4>Controles de criação</h4>
+          <h4>Controles de execução</h4>
           <div class="controls-description-grid">
             <div class="button-like"><i class="fa-solid fa-play"></i>&nbsp;<i class="fa-solid fa-pause"></i></div>
             <p>

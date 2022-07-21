@@ -331,6 +331,10 @@
     gap: 32px;
   }
 
+  .container-figures.dists figure figcaption {
+    margin-inline-start: 42px;
+  }
+
   .article-content ul {
     margin-left: 0;
   }

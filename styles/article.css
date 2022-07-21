@@ -129,6 +129,8 @@ table.coin-table tbody tr:nth-child(odd) {
 .container-figures.dists {
   flex-wrap: wrap;
   gap: 16px 8px;
+  position: relative;
+  left: -16px;
   /* flex-direction: column; */
 }
 
@@ -137,7 +139,7 @@ table.coin-table tbody tr:nth-child(odd) {
 }
 
 .container-figures.dists figure figcaption {
-  margin-inline-start: 62px;
+  margin-inline-start: 58px;
   margin-top: 0;
 }
 

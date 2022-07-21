@@ -108,7 +108,7 @@ function createPathChart() {
             color: "#00000010",
           },
           title: {
-            display: true,
+            display: false,
             text: 'Posição'
           }
         },
