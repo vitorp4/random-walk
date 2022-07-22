@@ -279,13 +279,11 @@ button#play-pause.pause #icon-play {
 .intro-content ol li::before {
   content: counter(counter) ".";
   color: var(--white);
-  /* font-size: 18px; */
   font-weight: 600;
   font-family: 'Red Hat Display', sans-serif;
   text-align: center;
   width: 16px;
   left: -24px;
-  /* top: -1px; */
   position: absolute;
 }
 

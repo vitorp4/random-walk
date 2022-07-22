@@ -15,13 +15,6 @@
   color: var(--dark-gray);
 }
 
-.acrticle-content h2,
-.acrticle-content h3,
-.acrticle-content h4 {
-  font-family: 'Red Hat Display', sans-serif;
-  font-weight: bold;
-}
-
 .article-content h2 {
   font-size: 32px;
   margin: 48px 0 24px;
@@ -39,6 +32,11 @@
 .article-content h4 {
   font-size: 18px;
   margin: 16px 0;
+}
+
+.article-content h5.control-title {
+  font-size:  16px;
+  font-weight: 600;
 }
 
 .article-content p {
@@ -224,15 +222,79 @@ blockquote::before {
   column-gap: 8px;
 }
 
-.control-title {
-  font-weight: 600;
-}
-
 .button-like {
   margin-top: 4px;
   font-size: 18px;
   color: var(--main-blue);
   background-color: var(--white);
+}
+
+.range-like {
+  width: 60px;
+  height: 8px;
+  background-color: #dddee7;
+  border-radius: 3px;
+  margin-top: 8px;
+  position: relative;
+}
+
+.range-like > div {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background-color: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.092);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.08);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.range-like > div::before {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.05);
+  content: '10';
+  position: absolute;
+  bottom: -30px;
+  font-size: 14px;
+  width: 28px;
+  text-align: center;
+  background-color: var(--main-blue);
+  color: var(--white);
+  padding: 4px 0;
+  border-radius: 4px;
+  left: calc(33% + (16px * 0.1));
+  transform: translateX(-50%);
+}
+
+.range-like > div::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: var(--main-blue);
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  clip-path: polygon(50% 50%, 100% 100%, 0 100%);
+}
+
+.select-like {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 8px;
+  border-radius: 6px;
+  width: 60px;
+  border: 1px solid rgba(0, 0, 0, 0.092);
+  margin-top: 2px;
+}
+
+.select-like .icon-chevron {
+  font-size: 14px;
+  color: var(--main-blue);
+}
+
+.button-like, .range-like, .select-like {
   justify-self: center;
   align-self: flex-start;
 }

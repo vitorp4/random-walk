@@ -41,7 +41,7 @@
           <li><a href="#home">Simulação</a></li>
           <li class="nav-dropdown">
             <a href="#cards">Como funciona?<span class="icon-chevron"><i
-                  class="fa-solid fa-chevron-down"></span></i></a>
+                  class="fa-solid fa-chevron-down"></i></span></a>
             <ul>
               <li>
                 <a href="#initial-concepts">Conceitos Iniciais<span class="icon-chevron"><i
@@ -65,7 +65,7 @@
                       class="fa-solid fa-chevron-right"></i></span></a>
                 <ul>
                   <li><a href="#controls">Controles</a></li>
-                  <li><a href="#development">Desenvolvimento</a></li>
+                  <li><a href="#simulated-proportion">Proporção Simulada</a></li>
                 </ul>
               </li>
             </ul>
@@ -198,7 +198,7 @@
               <a href="#about-simulation">Sobre a Simulação</a>
               <ol>
                 <li><a href="#controls">Controles</a></li>
-                <li><a href="#development">Desenvolvimento</a></li>
+                <li><a href="#simulated-proportion">Proporção Simulada</a></li>
               </ol>
             </li>
           </ol>
@@ -425,7 +425,8 @@
           </p>
           <p>
             A fim de simplificar o problema assumiremos que \(p=1/2\), ou seja, trataremos de um passeio aleatório
-            simétrico onde a probabilidade de um passo para frente ou para trás são idênticas. Assumiremos
+            <strong>simétrico</strong> onde a probabilidade de um passo para frente ou para trás são idênticas.
+            Assumiremos
             também que o problema é unidimensional, o que significa que não haverá outros graus de liberdade de
             movimento, a direção é única.
           </p>
@@ -506,14 +507,15 @@
             Muito bem, e qual a probabilidade de estar na posição \(-1\) com exatos \(3\) passos?
             Essa questão é um pouco menos óbvia que a anterior, mas há pistas de que deve ser algo da
             forma:
-            </p>
-            <p>
-              $$P(X_3=-1)= \text{?}\times \Big(\frac{1}{2}\Big)^3$$
-            </p>
-            <p>
-              onde \(\text{?}\) é um inteiro positivo que representa a quantidade de caminhos que satisfazem
-              as condições impostas. Vamos construir o raciocínio por partes.
-            </p>
+          </p>
+          <p>
+            $$P(X_3=-1)= \text{?}\times \Big(\frac{1}{2}\Big)^3$$
+          </p>
+          <p>
+            onde \(\text{(?)}\) deve ser substituido por um inteiro positivo que represente a quantidade
+            de caminhos que satisfazem
+            as condições da questão. Vamos construir o raciocínio por partes.
+          </p>
           </p>
           <h4>Caminhos com 1 passo</h4>
           <ul>
@@ -706,11 +708,12 @@
           <p>
             Com este procedimento é possível encontrar a distribuição de probabilidade da variável aleatória posição
             final \(X_t\) para qualquer que seja a quantidade de passos \(t\) definida. \(\{X_t, t \in \mathbb{N}\}\)
-            é um processo estocástico. A quantidade de passos \(t\) define o tempo do processo e as posições finais
-            alcançáveis formam o espaço de estados.
+            é um processo estocástico. A quantidade de passos \(t\) define o tempo do processo e a união de todas
+            posições
+            finais alcançáveis formam o espaço de estados.
           </p>
           <blockquote>
-            Essa é a exata metodologia utilizada para gerar a probabilidade teórica da simulação! 
+            Essa é a metodologia utilizada para encontrar as probabilidades teóricas da simulação!
           </blockquote>
           <h3 id="probability-distributions">Distribuições de Probabilidade</h3>
           <p>
@@ -746,50 +749,76 @@
           </div>
           <h2 id="about-simulation">Sobre a Simulação</h2>
           <p>
-            Esta seção cobre os pontos mais importantes do funcionamento da simulação. Se você
-            tem dúvidas quanto à utilização dos controles ou simplesmente está curioso sobre detalhes de desenvolvimento,
-            então é aqui que encontrarás as respostas.
+            Esta seção cobre os pontos mais importantes do funcionamento da simulação. Se você, leitor,
+            tem dúvidas quanto à utilização dos controles ou quer descobrir algum detalhe de desenvolvimento,
+            então é aqui que as respostas.
           </p>
           <h3 id="controls">Controles</h3>
-          <p>O sobre a simulação é mantido através de dois grupos de controles: os de criação e os de execução.
-            Alterações nas configurações de criação, implica no cálculo das probabilidades teóricas inerentes ao novo problema. 
+          <p>O controle sobre a simulação é mantido através de dois grupos: os controles de criação e os controles de
+            execução.
+            Alterações nas configurações de criação, implicam no cálculo das probabilidades teóricas inerentes ao novo
+            problema.
             Enquanto que utilizar os botões de execução impacta diretamente o fluxo de execução da simulação.
           </p>
           <h4>Controles de criação</h4>
+          <div class="controls-description-grid">
+            <div class="range-like">
+              <div></div>
+            </div>
+            <div>
+              <h5 class="control-title">Passos</h5>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ex perspiciatis sint quae vel cumque ad reiciendis, tenetur dolor omnis optio similiqu</p>
+            </div>
+            <div class="select-like">10<span class="icon-chevron"><i
+              class="fa-solid fa-chevron-down"></i></span></div>
+            <div>
+              <h5 class="control-title">Caminhos</h5>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni placeat explicabo aut a odit iure sunt animi quia ad quasi tempora perferendis nisi temporibus aperiam culpa expedita ipsum, minus alias.</p>
+            </div>
+          </div>
           <h4>Controles de execução</h4>
           <div class="controls-description-grid">
             <div class="button-like"><i class="fa-solid fa-play"></i>&nbsp;<i class="fa-solid fa-pause"></i></div>
-            <p>
-              <span class="control-title">Play/Pause</span><br>
-              Interrompe/retoma a execução da simulação.
-            </p>
+            <div>
+              <h5 class="control-title">Play/Pause</h5>
+              <p>
+                Interrompe/retoma a execução da simulação.
+              </p>
+            </div>
 
             <div class="button-like"><i class="fa-solid fa-backward"></i></div>
-            <p>
-              <span class="control-title">Desacelerar</span><br>
-              Diminui a velocidade de execução da simulação por um fator de 0.5x.
-            </p>
+            <div>
+              <h5 class="control-title">Desacelerar</h5>
+              <p>
+                Diminui a velocidade de execução da simulação por um fator de 0.5x.
+              </p>
+            </div>
 
             <div class="button-like"><i class="fa-solid fa-forward"></i></div>
-            <p>
-              <span class="control-title">Acelerar</span><br>
-              Aumenta a velocidade de execução da simulação por um fator de 2x.
-            </p>
-            
+            <div>
+              <h5 class="control-title">Acelerar</h5>
+              <p>
+                Aumenta a velocidade de execução da simulação por um fator de 2x.
+              </p>
+            </div>
+
             <div class="button-like"><i class="fa-solid fa-arrow-rotate-right"></i></div>
-            
-            <p>
-              <span class="control-title">Reiniciar simulação</span><br>
-              Reinicia a simulação desde o primeiro caminho utilizando os mesmos dados já em execução.
-            </p>
-            
+            <div>
+              <h5 class="control-title">Reiniciar simulação</h5>
+              <p>
+                Reinicia a simulação desde o primeiro caminho utilizando os mesmos dados já em execução.
+              </p>
+            </div>
+
             <div class="button-like"><i class="fa-solid fa-shuffle"></i></div>
-            <p>             
-              <span class="control-title">Nova simulação</span><br>
-              Gera uma nova simulação através da criação aleatória de novos caminhos.
-            </p>
+            <div>
+              <h5 class="control-title">Nova simulação</h5>
+              <p>
+                Gera uma nova simulação através da criação aleatória de novos caminhos.
+              </p>
+            </div>
           </div>
-          <h3 id="development">Desenvolvimento</h3>
+          <h3 id="simulated-proportion">Proporção Simulada</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi illo blanditiis laboriosam, atque earum
             repellat. Quis dolor laudantium illo deserunt esse est, qui exercitationem a, ab aspernatur inventore quae
