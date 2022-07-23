@@ -707,20 +707,32 @@
           </figure>
           <p>
             Com este procedimento é possível encontrar a distribuição de probabilidade da variável aleatória posição
-            final \(X_t\) para qualquer que seja a quantidade de passos \(t\) definida. \(\{X_t, t \in \mathbb{N}\}\)
-            é um processo estocástico. A quantidade de passos \(t\) define o tempo do processo e a união de todas
-            posições
-            finais alcançáveis formam o espaço de estados.
+            final \(X_t\) para qualquer que seja a quantidade de passos \(t\) definida.
           </p>
           <blockquote>
             Essa é a metodologia utilizada para encontrar as probabilidades teóricas da simulação!
           </blockquote>
           <h3 id="probability-distributions">Distribuições de Probabilidade</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis minima dignissimos molestiae
-            cupiditate, quae, laboriosam sapiente aliquam aspernatur velit quo qui tempora consequatur adipisci,
-            distinctio impedit nemo saepe hic vel!
+            Até agora calculamos apenas probabilidades pontuais: especificando a quantidade de passos e a posição
+            final desejada. Mas podemos, pensando de forma mais ampla, ter interesse em obter as probabilidades
+            de cada uma das posições finais alcançáveis com \(t\) passos. Como proceder nessa situação? Basta repetir
+            o procedimento da seção anterior para cada um dos números do nível \(t\) do triângulo de Pascal.
           </p>
+          <p>
+            Revisitando o exemplo onde \(t=6\) passos:
+          </p>
+          <div class="container-figures dists">
+            <figure class="dist-example">
+              <img src="./assets/dist_example.png" />
+              <figcaption></figcaption>
+            </figure>
+            <figure>
+              <img src="./assets/dist_6.svg" />
+              <figcaption>Distribuição de \(X_6\)</figcaption>
+            </figure>
+          </div>
+          <p></p>
           <div class="container-figures dists">
             <figure>
               <img src="./assets/dist_1.svg" />
@@ -735,10 +747,6 @@
               <figcaption>Distribuição de \(X_3\)</figcaption>
             </figure>
             <figure>
-              <img src="./assets/dist_6.svg" />
-              <figcaption>Distribuição de \(X_6\)</figcaption>
-            </figure>
-            <figure>
               <img src="./assets/dist_10.svg" />
               <figcaption>Distribuição de \(X_{10}\)</figcaption>
             </figure>
@@ -747,6 +755,9 @@
               <figcaption>Distribuição de \(X_{19}\)</figcaption>
             </figure>
           </div>
+          <p> E é isso! Concluímos dizendo que a sequência de variáveis aleatórias \(\{X_t, t \in \mathbb{N}\}\) 
+            que modelam a posição final é um processo estocástico. A quantidade de passos \(t\) é dito como tempo do processo e a união de todas
+            posições finais alcançáveis formam o espaço de estados.</p>
           <h2 id="about-simulation">Sobre a Simulação</h2>
           <p>
             Esta seção cobre os pontos mais importantes do funcionamento da simulação. Se você, leitor,
@@ -767,13 +778,17 @@
             </div>
             <div>
               <h5 class="control-title">Passos</h5>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ex perspiciatis sint quae vel cumque ad reiciendis, tenetur dolor omnis optio similiqu</p>
+              <p>Designa a quantidade de passos a serem percorridos pelo passeio. Possui valor default igual a \(10\),
+                mas
+                pode assumir qualquer valor inteiro no intervalo de \(1\) a \(30\), ambos inclusos. Quando
+                alterado, provoca automaticamente a criação de uma nova simulação.</p>
             </div>
-            <div class="select-like">10<span class="icon-chevron"><i
-              class="fa-solid fa-chevron-down"></i></span></div>
+            <div class="select-like">10<span class="icon-chevron"><i class="fa-solid fa-chevron-down"></i></span></div>
             <div>
               <h5 class="control-title">Caminhos</h5>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni placeat explicabo aut a odit iure sunt animi quia ad quasi tempora perferendis nisi temporibus aperiam culpa expedita ipsum, minus alias.</p>
+              <p>Designa a quantidade de caminhos a serem gerados aleatoriamente. Possui valor default igual a \(10\),
+                mas pode assumir valores em \(\{10, 100, 200, 500, 1000\}\).
+                Quando alterado, também provoca automaticamente a criação de uma nova simulação.</p>
             </div>
           </div>
           <h4>Controles de execução</h4>
@@ -790,7 +805,7 @@
             <div>
               <h5 class="control-title">Desacelerar</h5>
               <p>
-                Diminui a velocidade de execução da simulação por um fator de 0.5x.
+                Diminui a velocidade de execução da simulação por um fator de \(0.5\).
               </p>
             </div>
 
@@ -798,7 +813,7 @@
             <div>
               <h5 class="control-title">Acelerar</h5>
               <p>
-                Aumenta a velocidade de execução da simulação por um fator de 2x.
+                Aumenta a velocidade de execução da simulação por um fator de \(2\).
               </p>
             </div>
 

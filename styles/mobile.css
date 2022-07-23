@@ -343,6 +343,22 @@
     grid-template-columns: 50px 1fr;
   }
 
+  .range-like, .select-like {
+    width: 40px;
+  }
+
+  .select-like {
+    font-size: 14px;
+    padding: 2px 4px;
+  }
+
+  .select-like .icon-chevron{
+    font-size: 12px;
+  }
+
+
+
+
 
 
   /*  -------------------------- references.css -------------------------------------- */
