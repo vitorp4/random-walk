@@ -1,5 +1,3 @@
-import Simulator from './simulator.js';
-
 let pathChart, probabilityChart;
 let nPath = 0;
 let totalSteps = 10;
@@ -109,11 +107,19 @@ function createPathChart() {
           grid: {
             color: "#00000010",
           },
+          title: {
+            display: false,
+            text: 'Posição'
+          }
         },
         x: {
           grid: {
             color: "#00000010",
           },
+          title: {
+            display: true,
+            text: 'Passos'
+          }
         },
       },
       maintainAspectRatio: false,
@@ -130,12 +136,14 @@ function createProbabilityChart() {
     lastPositionsCounter = Array.from({ length: totalSteps + 1 }, () => 0);
   }
 
+  console.log({labels:toLabel(totalSteps), probs: toProbabilities(totalSteps)})
+
   const data = {
     labels: toLabel(totalSteps),
     datasets: [
       {
         data: toProbabilities(totalSteps),
-        label: "Probabilidade teórica",
+        label: "Probabilidade",
         order: 2,
         borderColor: "#00112833",
         backgroundColor: "#00112811",
@@ -145,7 +153,7 @@ function createProbabilityChart() {
       },
       {
         data: lastPositionsCounter,
-        label: "Proporção simulada",
+        label: "Frequência relativa",
         order: 1,
         backgroundColor: "#128fc8",
         barPercentage: 0.5,
@@ -378,7 +386,7 @@ function playToggle() {
 }
 
 function stopSimulationOnScroll() {
-  if (window.scrollY > window.innerHeight) {
+  if (window.scrollY > window.innerHeight && state == 'SE') {
     clearInterval(interval);
     toState("SP");
   }
@@ -437,7 +445,7 @@ function asideHighlight() {
   const asideLinksList = [...asideLinks];
 
   const headingsScrolled = articleHeadingsList
-    .filter((el) => el.getBoundingClientRect().top <100)
+    .filter((el) => el.getBoundingClientRect().top < 100)
     .map((el) => el.id);
 
   asideLinksList.forEach((el) => {

@@ -36,12 +36,6 @@
   max-width: 800px;
 }
 
-.ref-card {
-  box-shadow: 0px 4px 8px rgba(5, 5, 165, 0.05);
-  border-radius: 6px;
-  position: relative;
-}
-
 .ref-card + .ref-card {
   margin-top: 16px;
 }
@@ -50,14 +44,16 @@
   background-color: var(--main-blue);
   color: var(--white);
   width: fit-content;
-  border-radius: 6px 0;
+  border-radius: 6px 6px 0 0;
   padding: 6px 16px;
-  position: absolute;
-  top: -1px;
+}
+
+.ref-card-body {
+  border-top: 1px solid var(--main-blue);
 }
 
 .ref-card ul {
-  padding: 48px 0 16px 40px;
+  padding: 16px 0 16px 24px;
   color: var(--dark-gray);
   line-height: 24px;
 }
@@ -66,6 +62,13 @@
   text-decoration: none;
 }
 
+.ref-card ul a:link {
+  color: var(--link);
+}
+
+.ref-card ul a:visited {
+  color: var(--link-visited);
+}
 
 @media (hover: hover) and (pointer: fine) {
   .ref-card ul a:hover {

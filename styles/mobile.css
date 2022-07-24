@@ -293,7 +293,7 @@
 
   #cards .section-container {
     width: 100%;
-    padding: 96px 8px 56px;
+    padding: 96px 8px 80px;
   } 
 
 
@@ -335,7 +335,7 @@
     margin-inline-start: 42px;
   }
 
-  .article-content ul {
+  .article-content :where(ul, ol) {
     margin-left: 0;
   }
 
@@ -364,8 +364,8 @@
   /*  -------------------------- references.css -------------------------------------- */
   #references .section-container {
     width: 100%;
-    max-width: auto; 
-    padding: 0 16px 80px;
+    max-width: initial; 
+    padding: 0 16px 96px;
   }
 
   #references {
@@ -384,13 +384,12 @@
     border-radius: 6px;
   }
 
-  .ref-card {
-    box-shadow: none;
-    border-radius: 6px 0 6px 6px;
+  .ref-card-body {
+    border: none;
   }
 
   .ref-card ul {
-    padding: 48px 0 16px 24px;  
+    padding-left: 24px;  
   }
 
 

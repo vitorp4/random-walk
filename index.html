@@ -13,14 +13,13 @@
     href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;500;600;700&family=Red+Hat+Display:wght@300;400;500;600;700&family=BIZ+UDPGothic&display=swap"
     rel="stylesheet">
   <link rel="icon" href="/assets/person-walking-solid.svg" />
-  <script src="script-rollback.js" defer></script>
+  <script src="script.js" defer></script>
   <script src="https://kit.fontawesome.com/2240dcfd9d.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.4.0/chartjs-plugin-annotation.min.js"></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <script src="https://unpkg.com/rxjs@^7/dist/bundles/rxjs.umd.min.js"></script>
 </head>
 
 <body>
@@ -65,7 +64,7 @@
                       class="fa-solid fa-chevron-right"></i></span></a>
                 <ul>
                   <li><a href="#controls">Controles</a></li>
-                  <li><a href="#simulated-proportion">Proporção Simulada</a></li>
+                  <li><a href="#relative-frequency">Frequência Relativa</a></li>
                 </ul>
               </li>
             </ul>
@@ -127,7 +126,7 @@
             <ol>
               <li>Escolha a quantidade de passos e caminhos;</li>
               <li>Inicie a simulação, acelere o quanto desejar;</li>
-              <li>Acompanhe a proporção simulada se aproximar da probabilidade teórica.</li>
+              <li>Acompanhe a frequência relativa se aproximar da probabilidade teórica.</li>
             </ol>
           </div>
 
@@ -198,7 +197,7 @@
               <a href="#about-simulation">Sobre a Simulação</a>
               <ol>
                 <li><a href="#controls">Controles</a></li>
-                <li><a href="#simulated-proportion">Proporção Simulada</a></li>
+                <li><a href="#relative-frequency">Frequência Relativa</a></li>
               </ol>
             </li>
           </ol>
@@ -305,7 +304,7 @@
               $$P(X=2) = P(\{RR\}) = \frac{1}{25}$$
             </p>
           </div>
-          <blockquote>
+          <blockquote class="author-words">
             \(P(X=x)\), no geral lê-se: probabilidade de que a variável aleatória \(X\) assuma o valor \(x\).
           </blockquote>
           <p>
@@ -355,9 +354,9 @@
             de horas.
             Há ainda os casos em que os índices são uma abstração do tempo através da contagem de acontecimentos.
           </p>
-          <blockquote>
+          <blockquote class="author-words">
             No nosso exemplo, o tempo é dado pelas chegadas sucessivas do ônibus. O índice desse processo assume
-            valores no conjunto dos números naturais, \(t=1,2,3,...\)
+            valores no conjunto dos números naturais, \(t=1,2,3,\text{...}\)
           </blockquote>
           <h4>Estado</h4>
           <p>
@@ -365,7 +364,7 @@
             estado
             deste espaço há de existir uma probabilidade associada que evolui ao longo do tempo.
           </p>
-          <blockquote>
+          <blockquote class="author-words">
             No exemplo, a variável de estudo pode assumir valores em \(\{0,1,2,3,4,5,6\}\), que é a quantidade
             de assentos ocupados no ponto.
           </blockquote>
@@ -440,7 +439,7 @@
           <p>
             Indo além, indexamos a variável aleatória \(Y\) com um inteiro não negativo \(k\) para identificar o
             \(k\)-ésimo passo
-            dado. Quando analisando um passeio aleatório composto de \(t\) passos, \(k=1,2,...,t\) e denotamos:
+            dado. Quando analisando um passeio aleatório composto de \(t\) passos, \(k=1,2,\text{...},t\) e denotamos:
           </p>
           <ul>
             <li>\(Y_1\) como sendo o sentido do \(1º\) passo (frente \(=+1\), trás\(=-1\));</li>
@@ -453,11 +452,6 @@
           <p>
             $$X_t=\sum_{k=1}^tY_k$$
           </p>
-          <blockquote>
-            Atenção ao fato de que \(Y_k\) não é um processo estocástico. A probabilidade de dar um passo para frente ou
-            para trás
-            não evolui à medida que se dá novos passos! Já sobre a posição final \(X_t\), bem... veremos a seguir.
-          </blockquote>
           <h3 id="final-position">Posição Final</h3>
           <p>
             A posição final é uma importante variávei de interesse em um passeio aleatório. Assumindo uma posição
@@ -514,7 +508,7 @@
           <p>
             onde \(\text{(?)}\) deve ser substituido por um inteiro positivo que represente a quantidade
             de caminhos que satisfazem
-            as condições da questão. Vamos construir o raciocínio por partes.
+            as condições impostas pela questão. Vamos construir o raciocínio por partes.
           </p>
           </p>
           <h4>Caminhos com 1 passo</h4>
@@ -645,7 +639,7 @@
               Cada um deles têm probabilidade \((1/2)^t\), ou seja, são equiprováveis;
             </li>
             <li>
-              A variável posição final \(X_t\) toma valores no conjunto simétrico \(\{-t,-t+2,-t+4,...,t\}\).
+              A variável posição final \(X_t\) toma valores no conjunto simétrico \(\{-t,-t+2,-t+4,\text{...},t\}\).
             </li>
             <li>
               Para calcular \(P(X_t=x)\) é necessário <strong>contar</strong>, dentre todos os \(2^t\) caminhos
@@ -671,15 +665,15 @@
             <figcaption>Triângulo de Pascal</figcaption>
           </figure>
           <p>
-            De fato, é possível estender a quantidade de níveis iterativamente. Para isso basta seguir o procedimento
-            de somar os números das diagonais provenientes do nível ligeiramente acima. Por exemplo, as setas azuis na
+            É possível estender a quantidade de níveis iterativamente. Para isso basta seguir o procedimento
+            de somar os números das diagonais do nível ligeiramente acima. Por exemplo, as setas azuis na
             figura indicam como
             o conteúdo do nível \(4\) foi obtido a partir do nível \(3\). Caso o elemento diagonal não exista no nível
             superior,
             como acontece nas bordas do triângulo, então assume-se contribuição \(0\) para a soma.
           </p>
-          <blockquote>
-            Quer tentar? Confirme que o nível \(t=5\) deve ser composto pelos números \(1,5,10,10,5,1\).
+          <blockquote class="author-words">
+            Se desejar, confirme que o nível \(t=5\) deve ser composto pelos números \(1,5,10,10,5,1\).
           </blockquote>
           <h4>Amarrando o triângulo ao passeio</h4>
           <p>
@@ -709,7 +703,7 @@
             Com este procedimento é possível encontrar a distribuição de probabilidade da variável aleatória posição
             final \(X_t\) para qualquer que seja a quantidade de passos \(t\) definida.
           </p>
-          <blockquote>
+          <blockquote class="author-words">
             Essa é a metodologia utilizada para encontrar as probabilidades teóricas da simulação!
           </blockquote>
           <h3 id="probability-distributions">Distribuições de Probabilidade</h3>
@@ -717,7 +711,7 @@
             Até agora calculamos apenas probabilidades pontuais: especificando a quantidade de passos e a posição
             final desejada. Mas podemos, pensando de forma mais ampla, ter interesse em obter as probabilidades
             de cada uma das posições finais alcançáveis com \(t\) passos. Como proceder nessa situação? Basta repetir
-            o procedimento da seção anterior para cada um dos números do nível \(t\) do triângulo de Pascal.
+            o procedimento da seção anterior para cada um dos números que compõem o nível \(t\) do triângulo de Pascal.
           </p>
           <p>
             Revisitando o exemplo onde \(t=6\) passos:
@@ -732,7 +726,29 @@
               <figcaption>Distribuição de \(X_6\)</figcaption>
             </figure>
           </div>
-          <p></p>
+          <p>
+            Como resultado encontramos a distribuição de probabilidade da variável aleatória \(X_6\).
+          </p>
+          <p>A <strong>distribuição
+              de probabilidade</strong> de uma variável aleatória descreve como as probabilidades estão distribuídas
+            sobre
+            todos os valores os quais a variável pode assumir. No contexto de uma variável aleatória discreta, uma
+            distribuição
+            é considerada válida se:
+          </p>
+          <ol>
+            <li>Todas as probabilidades são números reais não negativos;</li>
+            <li>A soma das probabilidades é igual a \(1\).</li>
+          </ol>
+          <p>
+            As figuras abaixo ilustram as distribuições de probabilidade da posição final para diferentes quantidades de
+            passos.
+          </p>
+          <blockquote class="author-words">
+            Perceba a simetria ao redor da posição \(0\). Isso acontece porque além do problema partir da posição
+            inicial \(0\), nós
+            simplificamos o passeio de forma que fossem dados passos para frente ou para trás com igual probabilidade.
+          </blockquote>
           <div class="container-figures dists">
             <figure>
               <img src="./assets/dist_1.svg" />
@@ -755,21 +771,31 @@
               <figcaption>Distribuição de \(X_{19}\)</figcaption>
             </figure>
           </div>
-          <p> E é isso! Concluímos dizendo que a sequência de variáveis aleatórias \(\{X_t, t \in \mathbb{N}\}\) 
-            que modelam a posição final é um processo estocástico. A quantidade de passos \(t\) é dito como tempo do processo e a união de todas
-            posições finais alcançáveis formam o espaço de estados.</p>
+          <p>
+            Em tom de conclusão, encerramos com a seguinte afirmação:
+          </p>
+          <blockquote class="highlight-idea">
+            <span class="bulb-icon"><i class="fa-solid fa-lightbulb"></i></span>
+            A sequência de variáveis aleatórias que modelam a posição final de um passeio aleatório \(\{X_t,
+            t=1,2,3\text{...}\}\)
+            é um processo estocástico. A quantidade de passos \(t\)
+            é dita ser o tempo do processo, e a união de todas posições finais alcançáveis formam o espaço de estados.
+          </blockquote>
           <h2 id="about-simulation">Sobre a Simulação</h2>
           <p>
-            Esta seção cobre os pontos mais importantes do funcionamento da simulação. Se você, leitor,
-            tem dúvidas quanto à utilização dos controles ou quer descobrir algum detalhe de desenvolvimento,
-            então é aqui que as respostas.
+            Esta seção extra cobre alguns pontos específicos sobre o funcionamento da simulação. Se você tem dúvidas
+            quanto à utilização dos controles ou quer descobrir o porquê da frequência relativa se aproximar da
+            probabilidade
+            teórica, então o que você procura está aqui.
           </p>
           <h3 id="controls">Controles</h3>
-          <p>O controle sobre a simulação é mantido através de dois grupos: os controles de criação e os controles de
-            execução.
-            Alterações nas configurações de criação, implicam no cálculo das probabilidades teóricas inerentes ao novo
-            problema.
-            Enquanto que utilizar os botões de execução impacta diretamente o fluxo de execução da simulação.
+          <p>
+            O controle sobre a simulação é mantido de através dos controles de criação e dos controles de
+            execução. Alterações nas configurações de criação, implicam no cálculo de novas probabilidades teóricas,
+            bem como na geração aleatória de novos caminhos. Modificações nos controles de criação iniciam
+            automaticamente
+            uma nova simulação. Por outro lado, interações feitas com os controles de execução impactam no comportamento
+            daquilo que está em andamento.
           </p>
           <h4>Controles de criação</h4>
           <div class="controls-description-grid">
@@ -778,17 +804,18 @@
             </div>
             <div>
               <h5 class="control-title">Passos</h5>
-              <p>Designa a quantidade de passos a serem percorridos pelo passeio. Possui valor default igual a \(10\),
-                mas
-                pode assumir qualquer valor inteiro no intervalo de \(1\) a \(30\), ambos inclusos. Quando
-                alterado, provoca automaticamente a criação de uma nova simulação.</p>
+              <p>
+                Designa a quantidade de passos a serem percorridos pelo passeio. Possui valor default igual a \(10\),
+                mas pode assumir qualquer valor inteiro no intervalo \([1,30]\).
+              </p>
             </div>
             <div class="select-like">10<span class="icon-chevron"><i class="fa-solid fa-chevron-down"></i></span></div>
             <div>
               <h5 class="control-title">Caminhos</h5>
-              <p>Designa a quantidade de caminhos a serem gerados aleatoriamente. Possui valor default igual a \(10\),
-                mas pode assumir valores em \(\{10, 100, 200, 500, 1000\}\).
-                Quando alterado, também provoca automaticamente a criação de uma nova simulação.</p>
+              <p>
+                Designa a quantidade de caminhos a serem gerados aleatoriamente. Possui valor default igual a \(10\),
+                mas pode assumir qualquer um dos valores em \(\{10, 100, 200, 500, 1000\}\).
+              </p>
             </div>
           </div>
           <h4>Controles de execução</h4>
@@ -821,7 +848,7 @@
             <div>
               <h5 class="control-title">Reiniciar simulação</h5>
               <p>
-                Reinicia a simulação desde o primeiro caminho utilizando os mesmos dados já em execução.
+                Reinicia a simulação utilizando os mesmos dados que a trouxe até o estado atual de execução.
               </p>
             </div>
 
@@ -829,26 +856,58 @@
             <div>
               <h5 class="control-title">Nova simulação</h5>
               <p>
-                Gera uma nova simulação através da criação aleatória de novos caminhos.
+                Inicia uma nova simulação através da geração aleatória de novos caminhos.
               </p>
             </div>
           </div>
-          <h3 id="simulated-proportion">Proporção Simulada</h3>
+          <h3 id="relative-frequency">Frequência Relativa</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi illo blanditiis laboriosam, atque earum
-            repellat. Quis dolor laudantium illo deserunt esse est, qui exercitationem a, ab aspernatur inventore quae
-            veniam?
+            O propósito da simulação se resume a acompanhar a frequência relativa se aproximar da probabilidade
+            teórica. A cada novo caminho gerado aleatoriamente, a atenção se volta à posição final alcançada. Tanto isso
+            é verdade que o gráfico mais à esquerda exibe o valor da posição final de forma explicita sempre que
+            um caminho é traçado.
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi illo blanditiis laboriosam, atque earum
-            repellat. Quis dolor laudantium illo deserunt esse est, qui exercitationem a, ab aspernatur inventore quae
-            veniam?
+            Por trás dos panos são mantidas variáveis contadoras para armazenar quantas vezes cada posição final
+            foi observada. Estas variáveis representam a <strong>frequência absoluta</strong> \(f_a\). Sempre ao iniciar
+            um nova simulação, estas contagens são zeradas.
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi illo blanditiis laboriosam, atque earum
-            repellat. Quis dolor laudantium illo deserunt esse est, qui exercitationem a, ab aspernatur inventore quae
-            veniam?
+            A <strong>frequência relativa</strong> \(f_r\), por sua vez, é definida como a relação entre a frequência
+            absoluta e
+            o número total de observações \(n\). No nosso contexto, \(n\) é dado pela quantidade de caminhos já
+            gerados até o momento.
           </p>
+          <p>$$f_r=\frac{f_a}{n}$$</p>
+          <h4>Lei dos Grandes Números</h4>
+          <p>
+            Nem sempre um problema probabilístico é facilmente modelável como a variável posição final de um passeio
+            aleatório simétrico unidimensional. Às vezes a melhor estimativa da probabilidade derivada da 
+            frequência relativa obtida pela repetição sucessida de um experimento.
+          </p>
+          <p>
+            É por meio da lei dos grandes números que o conceito frequencista de probabilidade se relaciona com a
+            probabilidade teórica clássica.
+          </p>
+          <p>
+            Bernoulli formulou que para um grande número de experiências, tendo cada qual um resultado aleatório, a
+            frequência relativa de cada um desses resultados tende a estabilizar e convergir para um valor que
+            constitui sua probabilidade. É somente no limite em que infinitas repetições forem realizadas,
+            que os conceitos se tornarão exatamente equivalentes.
+          </p>
+          <p>
+            $$p=\lim_{n\to\infty} f_r = \lim_{n\to\infty}\frac{f_a}{n}$$
+          </p>
+          <p>
+            Isto significa que o propósito de "acompanhar a frequência relativa se aproximar da probabilidade teórica"
+            traduz-se como "pôr a lei dos grandes números à prova". Muito porque já deduzimos como se dão as 
+            distribuições de probabilidade, só queremos validar se o que foi obtido via teoria, de fato modela o 
+            problema na prática.
+          </p>
+          <blockquote class="author-words">
+            <strong>Spoiler:</strong> Sim, modela o problema na prática. Basta selecionar a quantidade máxima de caminhos 
+            e observar a convergência acontecer!
+          </blockquote>
         </article>
       </div>
     </section>
@@ -860,44 +919,54 @@
             <div class="ref-card-header">
               Livros
             </div>
-            <ul>
-              <li>P. L. Meyer (1983). <cite>Probabilidade. Aplicações à Estatística</cite>. Livros Técnicos e
-                Científicos;</li>
-              <li>S. Ross (1976). <cite>A First Course in Probability</cite>. Pearson Education;</li>
-              <li>A. Papoulis, S. A. Pilai (1965). <cite>Probability, Random Variables and Stochastic Processes</cite>.
-                McGraw-Hill
-                Higher Education.</li>
-            </ul>
+            <div class="ref-card-body">
+              <ul>
+                <li>P. L. Meyer (1983). <cite>Probabilidade. Aplicações à Estatística</cite>. Livros Técnicos e
+                  Científicos;</li>
+                <li>S. Ross (1976). <cite>A First Course in Probability</cite>. Pearson Education;</li>
+                <li>A. Papoulis, S. A. Pilai (1965). <cite>Probability, Random Variables and Stochastic
+                    Processes</cite>.
+                  McGraw-Hill
+                  Higher Education.</li>
+              </ul>
+            </div>
           </div>
           <div class="ref-card">
             <div class="ref-card-header">
               Vídeos
             </div>
-            <ul>
-              <li><a href="https://www.youtube.com/watch?v=stgYW6M5o4k&t=123s" target="_blank"><cite>What is a Random
-                    Walk?</cite> por Infinity Series <i class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
-              <li><a href="https://www.youtube.com/watch?v=2SZCkq-a6wU" target="_blank"><cite>Random Walk, o Andar do
-                    Bêbado - Professor da USP Explica</cite> por
-                  Caio Dallaqua <i class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
-              <li><a href="https://www.youtube.com/watch?v=vz1wWCFpzl0" target="_blank"><cite>Passeio aleatório</cite>
-                  por Camillo Penna <i class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
-              <li><a href="https://www.youtube.com/watch?v=TuTmC8aOQJE&t=519s" target="_blank"><cite>Stochastic
-                    Processes
-                  </cite> by MIT OpenCourseWare <i class="fa-solid fa-arrow-up-right-from-square"></i></a>.</li>
-            </ul>
+            <div class="ref-card-body">
+              <ul>
+                <li><a href="https://www.youtube.com/watch?v=stgYW6M5o4k&t=123s" target="_blank"><cite>What is a Random
+                      Walk?</cite> por Infinity Series <i class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
+                <li><a href="https://www.youtube.com/watch?v=2SZCkq-a6wU" target="_blank"><cite>Random Walk, o Andar do
+                      Bêbado - Professor da USP Explica</cite> por
+                    Caio Dallaqua <i class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
+                <li><a href="https://www.youtube.com/watch?v=vz1wWCFpzl0" target="_blank"><cite>Passeio aleatório</cite>
+                    por Camillo Penna <i class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
+                <li><a href="https://www.youtube.com/watch?v=TuTmC8aOQJE&t=519s" target="_blank"><cite>Stochastic
+                      Processes
+                    </cite> by MIT OpenCourseWare <i class="fa-solid fa-arrow-up-right-from-square"></i></a>.</li>
+              </ul>
+            </div>
           </div>
           <div class="ref-card">
             <div class="ref-card-header">
               Outras simulações
             </div>
-            <ul>
-              <li><a href="https://www.randomservices.org/random/apps/RandomWalk.html" target="_blank">Simulando outras
-                  variáveis além da posição final <i class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
-              <li><a href="http://e.sci.osaka-cu.ac.jp/yoshino/download/rw/" target="_blank">Passeio aleatório em 1 ou 2
-                  dimensões <i class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
-              <li><a href="https://demonstrations.wolfram.com/SimulatingTheSimpleRandomWalk/" target="_blank">Simulação
-                  com intervalo de confiança <i class="fa-solid fa-arrow-up-right-from-square"></i></a>.</li>
-            </ul>
+            <div class="ref-card-body">
+              <ul>
+                <li><a href="https://www.randomservices.org/random/apps/RandomWalk.html" target="_blank">Simulando
+                    outras
+                    variáveis além da posição final <i class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
+                <li><a href="http://e.sci.osaka-cu.ac.jp/yoshino/download/rw/" target="_blank">Passeio aleatório em 1 ou
+                    2
+                    dimensões <i class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
+                <li><a href="https://demonstrations.wolfram.com/SimulatingTheSimpleRandomWalk/"
+                    target="_blank">Simulação
+                    com intervalo de confiança <i class="fa-solid fa-arrow-up-right-from-square"></i></a>.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
