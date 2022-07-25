@@ -95,6 +95,7 @@
               <div class="path">
                 <select id="path-select">
                   <option value="10" selected>10</option>
+                  <option value="50">50</option>
                   <option value="100">100</option>
                   <option value="200">200</option>
                   <option value="500">500</option>
@@ -205,9 +206,9 @@
         <article class="article-content">
           <h2 id="initial-concepts">Conceitos Iniciais</h2>
           <p>
-            Antes de mergulharmos na definição de passeio aleatório, parece razoável nos familiarizarmos com alguns dos
-            conceitos básicos estabelecidos pela teoria da probabilidade. Embora seja uma apresentação inicial,
-            recomenda-se que o leitor possua noções de probabilidade.
+            Antes de partirmos para a definição de passeio aleatório, parece razoável introduzir alguns dos
+            conceitos básicos estabelecidos pela teoria da probabilidade. Vale salientar que mesmo sendo uma seção
+            introdutória, o conteúdo exige noções prévias de probabilide.
           </p>
           <h3 id="random-variable">Variável Aleatória</h3>
           <p>
@@ -262,7 +263,7 @@
             aos ramos percorridos. E é o conjunto destas folhas e suas probabilidades que formam o espaço amostral \(S\)
             do experimento.
           </p>
-          <table class="coin-table">
+          <table>
             <thead>
               <tr>
                 <td>Resultado</td>
@@ -771,9 +772,6 @@
               <figcaption>Distribuição de \(X_{19}\)</figcaption>
             </figure>
           </div>
-          <p>
-            Em tom de conclusão, encerramos com a seguinte afirmação:
-          </p>
           <blockquote class="highlight-idea">
             <span class="bulb-icon"><i class="fa-solid fa-lightbulb"></i></span>
             A sequência de variáveis aleatórias que modelam a posição final de um passeio aleatório \(\{X_t,
@@ -814,7 +812,7 @@
               <h5 class="control-title">Caminhos</h5>
               <p>
                 Designa a quantidade de caminhos a serem gerados aleatoriamente. Possui valor default igual a \(10\),
-                mas pode assumir qualquer um dos valores em \(\{10, 100, 200, 500, 1000\}\).
+                mas pode assumir qualquer um dos valores em \(\{10, 50, 100, 200, 500, 1000\}\).
               </p>
             </div>
           </div>
@@ -879,10 +877,185 @@
             gerados até o momento.
           </p>
           <p>$$f_r=\frac{f_a}{n}$$</p>
+          <p>
+            Por exemplo, vejamos a evolução da frequência relativa durante a simulação de \(50\) caminhos aleatórios de
+            \(6\) passos:
+          </p>
+          <div class="container-figures relative-frequency">
+            <table class="frequency">
+              <thead>
+                <td>Posição final</td>
+                <td>\(f_a\)</td>
+                <td>\(f_r\)</td>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>\(-6\)</td>
+                  <td>\(0\)</td>
+                  <td>\(0\)</td>
+                </tr>
+                <tr>
+                  <td>\(-4\)</td>
+                  <td>\(0\)</td>
+                  <td>\(0\)</td>
+                </tr>
+                <tr>
+                  <td>\(-2\)</td>
+                  <td>\(0\)</td>
+                  <td>\(0\)</td>
+                </tr>
+                <tr>
+                  <td>\(0\)</td>
+                  <td>\(1\)</td>
+                  <td>\(1\)</td>
+                </tr>
+                <tr>
+                  <td>\(2\)</td>
+                  <td>\(0\)</td>
+                  <td>\(0\)</td>
+                </tr>
+                <tr>
+                  <td>\(4\)</td>
+                  <td>\(0\)</td>
+                  <td>\(0\)</td>
+                </tr>
+                <tr>
+                  <td>\(6\)</td>
+                  <td>\(0\)</td>
+                  <td>\(0\)</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <td>Total:</td>
+                <td>\(1\)</td>
+                <td>\(1\)</td>
+              </tfoot>
+            </table>
+            <figure>
+              <img src="./assets/relative-freq-1.png" />
+              <figcaption>Após observados \(1/50\) caminhos</figcaption>
+            </figure>
+          </div>
+          <div class="container-figures relative-frequency">
+            <table class="frequency">
+              <thead>
+                <td>Posição final</td>
+                <td>\(f_a\)</td>
+                <td>\(f_r\)</td>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>\(-6\)</td>
+                  <td>\(0\)</td>
+                  <td>\(0\)</td>
+                </tr>
+                <tr>
+                  <td>\(-4\)</td>
+                  <td>\(0\)</td>
+                  <td>\(0\)</td>
+                </tr>
+                <tr>
+                  <td>\(-2\)</td>
+                  <td>\(1\)</td>
+                  <td>\(0.2\)</td>
+                </tr>
+                <tr>
+                  <td>\(0\)</td>
+                  <td>\(3\)</td>
+                  <td>\(0.6\)</td>
+                </tr>
+                <tr>
+                  <td>\(2\)</td>
+                  <td>\(1\)</td>
+                  <td>\(0.2\)</td>
+                </tr>
+                <tr>
+                  <td>\(4\)</td>
+                  <td>\(0\)</td>
+                  <td>\(0\)</td>
+                </tr>
+                <tr>
+                  <td>\(6\)</td>
+                  <td>\(0\)</td>
+                  <td>\(0\)</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <td>Total:</td>
+                <td>\(5\)</td>
+                <td>\(1\)</td>
+              </tfoot>
+            </table>
+            <figure>
+              <img src="./assets/relative-freq-5.png" />
+              <figcaption>Após observados \(5/50\) caminhos</figcaption>
+            </figure>
+          </div>
+          <div class="container-figures relative-frequency">
+            <table class="frequency">
+              <thead>
+                <td>Posição final</td>
+                <td>\(f_a\)</td>
+                <td>\(f_r\)</td>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>\(-6\)</td>
+                  <td>\(0\)</td>
+                  <td>\(0\)</td>
+                </tr>
+                <tr>
+                  <td>\(-4\)</td>
+                  <td>\(5\)</td>
+                  <td>\(0.1\)</td>
+                </tr>
+                <tr>
+                  <td>\(-2\)</td>
+                  <td>\(11\)</td>
+                  <td>\(0.22\)</td>
+                </tr>
+                <tr>
+                  <td>\(0\)</td>
+                  <td>\(12\)</td>
+                  <td>\(0.24\)</td>
+                </tr>
+                <tr>
+                  <td>\(2\)</td>
+                  <td>\(17\)</td>
+                  <td>\(0.34\)</td>
+                </tr>
+                <tr>
+                  <td>\(4\)</td>
+                  <td>\(3\)</td>
+                  <td>\(0.06\)</td>
+                </tr>
+                <tr>
+                  <td>\(6\)</td>
+                  <td>\(2\)</td>
+                  <td>\(0.04\)</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <td>Total:</td>
+                <td>\(50\)</td>
+                <td>\(1\)</td>
+              </tfoot>
+            </table>
+            <figure>
+              <img src="./assets/relative-freq-50.png" />
+              <figcaption>Após observados \(50/50\)</figcaption>
+            </figure>
+          </div>
+          <p>
+            Mesmo simulando apenas \(50\) caminhos já é possível identificar certa acomodação das frequências relativas
+            próximo às probabilidades da distribuição. Quando maior a quantidade de caminhos aleatórios observados, mais 
+            visível se torna o processo de convergência. Esse é o cerne da <strong>lei dos grandes números</strong>.  
+          </p>
           <h4>Lei dos Grandes Números</h4>
           <p>
-            Nem sempre um problema probabilístico é facilmente modelável como a variável posição final de um passeio
-            aleatório simétrico unidimensional. Às vezes a melhor estimativa da probabilidade derivada da 
+            Nem sempre um problema probabilístico é facilmente modelável como fizemos com a variável posição final do
+            passeio
+            aleatório simétrico unidimensional. Às vezes a melhor estimativa da probabilidade derivada da
             frequência relativa obtida pela repetição sucessida de um experimento.
           </p>
           <p>
@@ -893,21 +1066,17 @@
             Bernoulli formulou que para um grande número de experiências, tendo cada qual um resultado aleatório, a
             frequência relativa de cada um desses resultados tende a estabilizar e convergir para um valor que
             constitui sua probabilidade. É somente no limite em que infinitas repetições forem realizadas,
-            que os conceitos se tornarão exatamente equivalentes.
+            que ambos os conceitos se tornarão exatamente equivalentes.
           </p>
           <p>
             $$p=\lim_{n\to\infty} f_r = \lim_{n\to\infty}\frac{f_a}{n}$$
           </p>
           <p>
             Isto significa que o propósito de "acompanhar a frequência relativa se aproximar da probabilidade teórica"
-            traduz-se como "pôr a lei dos grandes números à prova". Muito porque já deduzimos como se dão as 
-            distribuições de probabilidade, só queremos validar se o que foi obtido via teoria, de fato modela o 
-            problema na prática.
+            traduz-se aqui como "pôr a lei dos grandes números à prova". Muito porque já deduzimos como se dão as
+            distribuições de probabilidade. Só queremos ter a satisfação de visualizar que aquilo obtido via teoria,
+            de fato modela o experimento na prática.
           </p>
-          <blockquote class="author-words">
-            <strong>Spoiler:</strong> Sim, modela o problema na prática. Basta selecionar a quantidade máxima de caminhos 
-            e observar a convergência acontecer!
-          </blockquote>
         </article>
       </div>
     </section>

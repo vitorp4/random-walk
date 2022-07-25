@@ -52,33 +52,29 @@
   margin: 0 0 16px 16px;
 }
 
-table.coin-table {
+table {
   border-collapse: collapse;
   margin: 32px auto;
 }
 
-table.coin-table thead {
+table thead {
   font-weight: 500;
 }
 
-table.coin-table tbody {
+table tbody {
    font-family: 'Century';
 }
 
-table.coin-table thead tr {
+table thead tr {
   border-bottom: 1px solid var(--medium-gray);
 }
 
-table.coin-table tbody tr td:last-child {
-  text-align: left;
-}
-
-table.coin-table td {
+table td {
   padding: 8px 16px;
   text-align: center;
 }
 
-table.coin-table tbody tr:nth-child(odd) {
+table tbody tr:nth-child(odd) {
   background-color: var(--blued-white);
 }
 
@@ -132,9 +128,16 @@ table.coin-table tbody tr:nth-child(odd) {
   left: -16px;
 }
 
-.container-figures.dists figure {
+.container-figures.dists figure,
+.container-figures.relative-frequency figure,
+.container-figures.relative-frequency figure img {
   max-width: min(350px, 100%);
 }
+
+.container-figures.relative-frequency figcaption {
+  margin-top: 0;
+  margin-inline-start: 24px;
+} 
 
 .container-figures.dists figure.dist-example {
   max-width: min(250px, 100%);
@@ -316,6 +319,10 @@ mjx-container {
 .button-like, .range-like, .select-like {
   justify-self: center;
   align-self: flex-start;
+}
+
+table.frequency {
+  margin: 0;
 }
 
 

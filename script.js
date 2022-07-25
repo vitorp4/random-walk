@@ -248,6 +248,10 @@ function updateProbabilityChart(chart, walk) {
   let idx = labels.findIndex((i) => i == lastPosition);
 
   lastPositionsCounter[idx] += 1;
+  console.log('counter',lastPositionsCounter);
+  console.log('relative', lastPositionsCounter.map(
+    (b) => b / (nPath + 1)
+  ));
 
   chart.data.datasets[1].data = lastPositionsCounter.map(
     (b) => b / (nPath + 1)
@@ -299,31 +303,36 @@ elPathSelect.addEventListener("change", (e) => {
 });
 
 function pascalTriangle(steps) {
-  var arr = [];
-  var a;
+  var triangle = [];
+  var level;
+
   for (let i = 0; i <= steps; i++) {
-    a = [];
+    level = [];
+    
     for (let j = 0; j <= i; j++) {
       if (j == 0 || i == j) {
-        a.push(1);
+        level.push(1);
       } else {
-        a.push(arr[i - 1][j - 1] + arr[i - 1][j]);
+        level.push(triangle[i - 1][j - 1] + triangle[i - 1][j]);
       }
     }
-    arr.push(a);
+    triangle.push(level);
   }
-  return arr[arr.length - 1];
+
+  return triangle[triangle.length - 1];
 }
 
 function toProbabilities(steps) {
   let pascalCoeficients = pascalTriangle(steps);
   let sum = pascalCoeficients.reduce((acc, num) => (acc += num), 0);
-  return pascalCoeficients.map((a) => a / sum);
+  return pascalCoeficients.map((coef) => coef / sum);
 }
 
 function toLabel(steps) {
   let labels = [];
-  for (let i = -steps; i <= steps; i += 2) labels.push(i);
+  for (let i = -steps; i <= steps; i += 2) {
+    labels.push(i);
+  }
   return labels;
 }
 
@@ -342,7 +351,6 @@ function speedUp() {
     executeSimulation();
     velocityChangeMsg(elSpeedUp);
   }
-
 
   if (velocityFactor == velocityFactorLimits.max) {
     elSpeedUp.disabled = true;
@@ -372,7 +380,6 @@ function slowDown() {
 
 function restart() {
   initializeSimulation(false);
-  toState("SE");
 }
 
 function playToggle() {
@@ -387,8 +394,12 @@ function playToggle() {
 
 function stopSimulationOnScroll() {
   if (window.scrollY > window.innerHeight && state == 'SE') {
-    clearInterval(interval);
-    toState("SP");
+    if (nPath) {
+      clearInterval(interval);
+      toState("SP");
+    } else {
+      setInterval(() => stopSimulationOnScroll(), 500);
+    }
   }
 }
 
