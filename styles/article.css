@@ -204,19 +204,15 @@ mjx-container {
   margin: 0;
 }
 
-.author-words,
-.highlight-idea {
+blockquote {
   border-radius: 3px;
   position: relative;
   padding: 16px;
   margin: 16px 0;
-}
-
-.author-words {
   background-color: var(--hover-blue);
 }
 
-.author-words::before {
+blockquote::before {
   content: '"';
   transform: rotate(180deg);
   position: absolute;
@@ -225,18 +221,6 @@ mjx-container {
   color: var(--main-blue);
   font-size: 42px;
   font-family: 'BIZ UDPGothic', sans-serif;
-}
-
-.highlight-idea {
-  background-color: var(--very-very-light-orange);
-}
-
-.highlight-idea .bulb-icon {
-  position: absolute;
-  font-size: 18px;
-  top: -4px;
-  left: 2px;
-  color: var(--light-orange);
 }
 
 .controls-description-grid {
@@ -323,6 +307,10 @@ mjx-container {
 
 table.frequency {
   margin: 0;
+}
+
+table.frequency tbody mjx-container {
+  font-size: 15px;
 }
 
 

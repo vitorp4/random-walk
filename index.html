@@ -206,35 +206,32 @@
         <article class="article-content">
           <h2 id="initial-concepts">Conceitos Iniciais</h2>
           <p>
-            Antes de seguirmos com a definição de passeio aleatório, parece razoável introduzir alguns
-            conceitos básicos estabelecidos pela teoria da probabilidade. Saliento que mesmo sendo uma seção
-            introdutória, o conteúdo pode exigir noções prévias de probabilidade.
+            Antes mesmo de pensar em introduzir a definição de passeio aleatório, parece prudente desenvolver alguns conceitos 
+            essenciais estabelecidos pela teoria da probabilidade. Esta seção apresenta o necessário sobre variáveis
+            aleatórias e processos estocásticos utilizando-se de alguns exemplos.
           </p>
           <h3 id="random-variable">Variável Aleatória</h3>
           <p>
             Frequentemente, quando um experimento probabilístico é realizado, estamos interessados em uma função
             definida sobre o resultado ao invés do resultado propriamente dito. Por exemplo, suponha o
-            lançamento simultâneo de dois dados, geralmente a atenção se volta para a soma resultante e não para os
-            resultados separados de cada dado. Imagine que estamos prestes a vencer um jogo de tabuleiro e que para isso
-            precisamos avançar exatamente \(9\) casas. Nesta situação, há um interesse maior em saber se a soma dos
-            dados
-            será igual a \(9\), ao passo que deixamos de lado a preocupação com os resultados isolados de cada dado:
-            \((3,6),
-            (4,5), (5,4)\) ou \((6,3)\).
+            lançamento simultâneo de dois dados. Nessa situação é normal que a atenção se volte para a soma dos dados 
+            e não para cada resultado separadamente. Imagine que estamos prestes a vencer um jogo de tabuleiro e que 
+            para isso precisemos avançar exatamente \(9\) casas. O interesse em saber se a soma dos
+            dados será igual a \(9\) é muito maior que o interesse sobre os possíveis pares de resultados:
+            \((3,6), (4,5), (5,4)\) ou \((6,3)\).
           </p>
           <p>
-            Estas funções que abstraem os possíveis resultados de um experimento probabilístico e os mapeiam a uma
+            Estas funções que abstraem os possíveis resultados de um experimento probabilístico e os mapeiam até uma
             quantidade de interesse, são conhecidas como variáveis aleatórias.
           </p>
           <h4>Mais um exemplo</h4>
           <p>
-            Agora consideremos um jogo constituído de dois lançamentos independentes de uma moeda enviesada
+            Considere um jogo constituído de dois lançamentos independentes de uma moeda enviesada
             que costuma resultar cara \((C)\) com \(4\) vezes mais frequência que coroa \((R)\). Pretende-se tomar
-            algumas
-            decisões com base no resultado:
+            algumas decisões com base no resultado:
           </p>
           <ul>
-            <li>Se \(2\) caras, o jogador permanece no jogo;</li>
+            <li>Se \(2\) caras, o jogador permanecerá no jogo;</li>
             <li>Se faces distintas, o jogador sofrerá uma penalidade;</li>
             <li>Se ambas coroas, o jogador será desclassificado.</li>
           </ul>
@@ -253,15 +250,14 @@
           </div>
           <p>
             A árvore de possibilidades possui \(2\) níveis, cada um representando o lançamento de uma das moedas. Como
-            um lançamento é limitado
-            a resultar cara ou coroa, cada nó de ramificação gera \(2\) novos ramos. Ao fim percebe-se a existência
-            de \(4\) folhas: \(CC,CR,RC\) e \(RR\).
+            os lançamentos são limitados
+            a resultar cara ou coroa, cada nó não-folha gera \(2\) novos ramos. No fim, o problema se resume a
+            \(4\) possíveis sequências: \(CC,CR,RC\) e \(RR\).
           </p>
           <p>
-            Como foi dito que os lançamentos são indepententes, então assume-se que partindo da raiz, a probabilidade
-            de alcançar determinada folha é igual a multiplicação das probabilidades associadas
-            aos ramos percorridos. E é o conjunto destas folhas e suas probabilidades que formam o espaço amostral \(S\)
-            do experimento.
+            Somado a isso consta o fato de que os lançamentos são indepententes, logo, partindo da raiz, a probabilidade
+            de alcançar uma folha deve ser igual a multiplicação das probabilidades dos ramos percorridos. O conjunto 
+            destas folhas formam o espaço amostral \(S\) do experimento cujas probabilidades são: 
           </p>
           <table>
             <thead>
@@ -290,8 +286,8 @@
             </tbody>
           </table>
           <p>
-            Definamos a seguinte variável aleatória
-            \(X =\) "número de coroas obtidas nos dois lançamentos de moeda". Isso nos permite criar um mapeamento da
+            Assim, definir a variável aleatória
+            \(X =\) "número de coroas obtidas nos dois lançamentos de moeda" nos permite criar um mapeamento da
             forma:
           </p>
           <div class="container-figures random-variable">
@@ -305,16 +301,16 @@
               $$P(X=2) = P(\{RR\}) = \frac{1}{25}$$
             </p>
           </div>
-          <blockquote class="author-words">
+          <blockquote>
             \(P(X=x)\), no geral lê-se: probabilidade de que a variável aleatória \(X\) assuma o valor \(x\).
           </blockquote>
           <p>
-            Logo, se nos for perguntado qual a probabilidade de que o jogador sofra uma penalidade como consequência do
-            lançamento das moedas, reponderíamos que é a mesma probabilidade de se obter 1 coroa, ou seja,
+            Portanto, se nos for perguntado qual a probabilidade de que o jogador sofra uma penalidade como consequência do
+            lançamento das moedas, reponderíamos que é a mesma probabilidade de se obter \(1\) coroa, ou seja,
             \(P(X=1)=8/25\).
           </p>
           <p>
-            Uma função \(X\), definida no espaço amostral \(S\) e com valores num conjunto enumerável de pontos da reta
+            Uma função \(X\), definida no espaço amostral \(S\) e mapeia à valores num conjunto enumerável de pontos da reta
             é denominada <strong>variável aleatória discreta</strong>.
           </p>
           <h3 id="stochastic-process">Processo Estocástico</h3>
@@ -355,7 +351,7 @@
             de horas.
             Há ainda os casos em que os índices são uma abstração do tempo através da contagem de acontecimentos.
           </p>
-          <blockquote class="author-words">
+          <blockquote>
             No nosso exemplo, o tempo é dado pelas chegadas sucessivas do ônibus. O índice desse processo assume
             valores no conjunto dos números naturais, \(t=1,2,3,\text{...}\)
           </blockquote>
@@ -365,7 +361,7 @@
             estado
             deste espaço há de existir uma probabilidade associada que evolui ao longo do tempo.
           </p>
-          <blockquote class="author-words">
+          <blockquote>
             No exemplo, a variável de estudo pode assumir valores em \(\{0,1,2,3,4,5,6\}\), que é a quantidade
             de assentos ocupados no ponto.
           </blockquote>
@@ -673,7 +669,7 @@
             superior,
             como acontece nas bordas do triângulo, então assume-se contribuição \(0\) para a soma.
           </p>
-          <blockquote class="author-words">
+          <blockquote>
             Se desejar, confirme que o nível \(t=5\) deve ser composto pelos números \(1,5,10,10,5,1\).
           </blockquote>
           <h4>Amarrando o triângulo ao passeio</h4>
@@ -704,7 +700,7 @@
             Com este procedimento é possível encontrar a distribuição de probabilidade da variável aleatória posição
             final \(X_t\) para qualquer que seja a quantidade de passos \(t\) definida.
           </p>
-          <blockquote class="author-words">
+          <blockquote>
             Essa é a metodologia utilizada para encontrar as probabilidades teóricas da simulação!
           </blockquote>
           <h3 id="probability-distributions">Distribuições de Probabilidade</h3>
@@ -745,11 +741,6 @@
             As figuras abaixo ilustram as distribuições de probabilidade da posição final para diferentes quantidades de
             passos.
           </p>
-          <blockquote class="author-words">
-            Perceba a simetria ao redor da posição \(0\). Isso acontece porque além do problema partir da posição
-            inicial \(0\), nós
-            simplificamos o passeio de forma que fossem dados passos para frente ou para trás com igual probabilidade.
-          </blockquote>
           <div class="container-figures dists">
             <figure>
               <img src="./assets/dist_1.svg" />
@@ -772,13 +763,17 @@
               <figcaption>Distribuição de \(X_{19}\)</figcaption>
             </figure>
           </div>
-          <blockquote class="highlight-idea">
-            <span class="bulb-icon"><i class="fa-solid fa-lightbulb"></i></span>
+          <blockquote>
+            Perceba a simetria ao redor da posição \(0\). Isso acontece porque além do problema partir da posição
+            inicial \(0\), nós
+            simplificamos o passeio de forma que fossem dados passos para frente ou para trás com igual probabilidade.
+          </blockquote>
+          <p>
             A sequência de variáveis aleatórias que modelam a posição final de um passeio aleatório \(\{X_t,
             t=1,2,3\text{...}\}\)
             é um processo estocástico. A quantidade de passos \(t\)
             é dita ser o tempo do processo, e a união de todas posições finais alcançáveis formam o espaço de estados.
-          </blockquote>
+          </p>
           <h2 id="about-simulation">Sobre a Simulação</h2>
           <p>
             Esta seção extra cobre alguns pontos específicos sobre o funcionamento da simulação. Se você tem dúvidas
@@ -933,7 +928,7 @@
             </table>
             <figure>
               <img src="./assets/relative-freq-1.png" />
-              <figcaption>Após observados \(1/50\) caminhos</figcaption>
+              <figcaption>Após observado \(1/50\) caminhos</figcaption>
             </figure>
           </div>
           <div class="container-figures relative-frequency">
@@ -1109,7 +1104,7 @@
                 <li><a href="https://www.youtube.com/watch?v=stgYW6M5o4k&t=123s" target="_blank"><cite>What is a Random
                       Walk?</cite> por Infinity Series <i class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
                 <li><a href="https://www.youtube.com/watch?v=2SZCkq-a6wU" target="_blank"><cite>Random Walk, o Andar do
-                      Bêbado - Professor da USP Explica</cite> por
+                      Bêbado - Professor da USP Leonarno P. Maia Explica</cite> por
                     Caio Dallaqua <i class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
                 <li><a href="https://www.youtube.com/watch?v=vz1wWCFpzl0" target="_blank"><cite>Passeio aleatório</cite>
                     por Camillo Penna <i class="fa-solid fa-arrow-up-right-from-square"></i></a>;</li>
