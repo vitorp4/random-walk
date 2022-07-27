@@ -285,9 +285,8 @@
             </tbody>
           </table>
           <p>
-            Definir uma variável aleatória
-            \(X =\) "número de coroas obtidas nos dois lançamentos de moeda" significa gerar um mapeamento da
-            forma:
+            Definir uma variável aleatória \(X\) da forma
+            \(X =\) "número de coroas obtidas nos dois lançamentos de moeda" significa gerar o mapeamento:
           </p>
           <div class="container-figures random-variable">
             <figure>
@@ -300,14 +299,14 @@
               $$P(X=2) = P(\{RR\}) = \frac{1}{25}$$
             </p>
           </div>
-          <blockquote>
-            \(P(X=x)\) no geral lê-se: probabilidade de que a variável aleatória \(X\) assuma o valor \(x\).
-          </blockquote>
           <p>
-            Se nos for perguntado qual a probabilidade de que o jogador sofra uma penalidade como consequência do
+            Portanto se for perguntado qual a probabilidade de que o jogador sofra uma penalidade como consequência do
             lançamento das duas moedas, reponderíamos que é a mesma probabilidade de se obter \(1\) coroa, ou seja,
             \(P(X=1)=8/25\).
           </p>
+          <blockquote>
+            \(P(X=x)\) no geral lê-se: probabilidade de que a variável aleatória \(X\) assuma o valor \(x\).
+          </blockquote>
           <p>
             Uma função \(X\) definida sobre o espaço amostral \(S\) e que mapeia à valores num conjunto enumerável de pontos
             é denominada <strong>variável aleatória discreta</strong>.
@@ -322,44 +321,46 @@
             de sol.
           </p>
           <ul>
-            <li>Quando a van chega e existem \(6\) pessoas ou menos na fila, ela parte levando todo mundo e o ponto fica vazio;</li>
-            <li>Por outro lado, quando existem mais de \(6\) pessoas aguardando, o motorista permite que apenas as primeiras pessoas da fila
-              embarquem, e as restantes devem esperar pelo próximo veículo.</li>
+            <li>
+              Quando a van chega e existem \(6\) pessoas ou menos na fila, ela parte levando todos e o ponto fica vazio;
+            </li>
+            <li>
+              Por outro lado, quando existem mais de \(6\) pessoas aguardando, o motorista permite que apenas as primeiras
+              pessoas da fila embarquem e as restantes devem esperar pelo próximo veículo.
+            </li>
           </ul>
           <figure class="bus-stop mb-32">
-            <img src="./assets/bus_stop.jpg" alt="Pessoas na parada de ônibus" />
+            <img src="./assets/bus_stop.jpg" alt="Pessoas no ponto de espera" />
             <figcaption>Ilustração por <a href='https://www.freepik.com/vectors/commute'>pch.vector</a></figcaption>
           </figure>
           <p>
             Atendendo às reclamações do corpo discente quanto à infraestrutura insuficiente do ponto de espera, os gestores
-            de mobilidade urbana propuseram a condução de um estudo. Eles decidiram que seria útil observar
-            a quantidade de assentos do ponto que permanecem ocupados após as partidas das vans.
+            de mobilidade urbana propuseram a condução de um estudo.
           </p>
           <p>
-            Podemos tratar este problema como um processo estocástico. Consideremos como variável de interesse o número
-            de assentos ainda ocupados no ponto após a partida de uma van, ao passo em que o tempo é contado pelo
+            Decidiram tratar este problema como um processo estocástico, onde a variável de interesse é o número
+            de assentos ainda ocupados no ponto após a partida de uma van, e o tempo é medido pelo
             número de vezes que uma van parte. Dependendo do horário, a probabilidade de que o ponto permaneça mais
-            vazio ou mais ocupado pode variar porque, naturalmente, a chegada de pessoas à fila possui natureza
-            estocástica (aleatória). Dizemos que este é um <strong>processo estocástico de tempo
-              discreto e estado discreto</strong>.
+            vazio ou mais ocupado pode variar porque, naturalmente, a chegada de pessoas à fila é de caráter
+            aleatório. Dizemos que este problema é um <strong>processo estocástico de tempo
+            discreto e estado discreto</strong>.
           </p>
           <h4>Tempo</h4>
           <p>
             O conjunto dos índices que evidenciam a evolução do processo geralmente é referido como tempo. Esta
             representação
-            pode ser dada pela passagem contínua do tempo; ou pela contagem de unidades discretas, como a quantidade
-            de horas.
-            Há ainda os casos em que os índices são uma abstração do tempo através da contagem de acontecimentos.
+            pode ser dada pela passagem contínua do tempo, ou pela contagem de unidades discretas (como a quantidade
+            de horas passadas).
+            Há ainda os casos em que os índices são uma abstração do tempo através da contagem de acontecimentos regulares.
           </p>
           <blockquote>
-            No nosso exemplo, o tempo é dado pelas chegadas sucessivas do ônibus. O índice desse processo assume
+            No nosso exemplo, o tempo é dado pelas chegadas sucessivas das vans. O índice desse processo assume
             valores no conjunto dos números naturais, \(t=1,2,3,\text{...}\)
           </blockquote>
           <h4>Estado</h4>
           <p>
             Os valores que a variável de interesse pode assumir formam o espaço de estados do processo. Para cada
-            estado
-            deste espaço há de existir uma probabilidade associada que evolui ao longo do tempo.
+            estado deste espaço há de existir uma probabilidade associada que evolui ao longo do tempo.
           </p>
           <blockquote>
             No exemplo, a variável de estudo pode assumir valores em \(\{0,1,2,3,4,5,6\}\), que é a quantidade
@@ -367,8 +368,8 @@
           </blockquote>
           <h4>Interpretando realizações e probabilidades</h4>
           <p>
-            A figura abaixo ilustra uma realização do processo estocástico alvo do estudo. No gráfico mais acima está
-            representada a contagem de assentos ocupados que foi observada após as \(9\) primeiras viagens do dia. No
+            A figura abaixo ilustra uma realização do processo estocástico alvo do estudo. Na parte superior da figura estão
+            representadas as contagens de assentos ocupados registradas após cada uma das \(9\) primeiras viagens do dia. No
             esquema mais abaixo, apontado por setas, está a probabilidade de que após a partida da \(t\)-ésima
             van, aquela quantidade de assentos ocupados fosse observada.
           </p>
@@ -383,8 +384,8 @@
               expressão \(P(X_2=0)\).
             </li>
             <li>
-              Vemos através da distribuição \(X_2\) que é mais provável que o ponto fique vazio após a partida da \(2º\)
-              van. A probabilidade está representada pela altura das barras verticais.
+              Vemos através da distribuição de \(X_2\) que é mais provável que o ponto fique vazio após a partida da \(2º\)
+              van.
             </li>
             <li>
               Ainda neste mesmo dia, quando a \(5ª\) van partiu, \(3\) pessoas foram deixadas para trás e por isso \(3\)
@@ -395,12 +396,15 @@
               completamente ocupado após a partida da \(5ª\) van.
             </li>
             <li>
-              Fechando a análise para este dia, depois que a \(8ª\) van partiu, o ponto permaneceu com todos os assentos
-              ocupados.
+              Finalmente, depois que a \(8ª\) van partiu, o ponto permaneceu com todos os assentos
+              ocupados. O mesmo se repete após a partida de \(9ª\).
             </li>
             <li>
               Através da distribuição de probabilidade de \(X_8\) percebemos que a lotação do ponto neste instante
-              é algo muito provável.
+              é algo recorrente e exige maiores investigações. Até porque apenas identificamos a lotação dos assentos, mas
+              quantas pessoas ainda tiveram de continuar esperando em pé? Será que vale mais a pena aumentar a frota de 
+              vans ou melhorar a infraestrutura do ponto? Por que uma quantidade maior de pessoas chegam ao ponto por 
+              volta desse instante?
             </li>
           </ul>
           <p>
@@ -409,12 +413,12 @@
           </p>
           <p>
             Processos estocásticos têm aplicação em diversas áreas do conhecimento como biologia, física, processamento
-            de sinais, teoria da informação, criptografia e telecomunicações. Entretanto, não entraremos no mérito da
-            aplicação em si, discutiremos uma categoria genérica deste conceito, o <strong>passeio aleatório</strong>.
+            de sinais, teoria da informação, criptografia e telecomunicações. Entretanto, não vamos entrar no mérito de
+            uma aplicação específica, mas sim discutiremos uma categoria genérica deste conceito, o <strong>passeio aleatório</strong>.
           </p>
           <h2 id="random-walk">Passeio Aleatório</h2>
           <p>
-            Uma forma irreverente de descrever o passeio aleatório se dá através do andar de um bêbado. Imaginemos que
+            Uma forma irreverente de descrever o passeio aleatório se dá através do andar de um bêbado. Imagine que
             os movimentos dessa pessoa embriagada são de certo modo imprevisíveis e que consistem de simples passos.
             Sempre após uma unidade de tempo é dado um passo: podendo ser para frente, com probabilidade \(p\); ou
             para trás, com probabilidade \(1-p\).
@@ -423,7 +427,7 @@
             A fim de simplificar o problema assumiremos que \(p=1/2\), ou seja, trataremos de um passeio aleatório
             <strong>simétrico</strong> onde a probabilidade de um passo para frente ou para trás são idênticas.
             Assumiremos
-            também que o problema é unidimensional, o que significa que não haverá outros graus de liberdade de
+            também que o problema é unidimensional, o que significa que não haverá outros graus de liberdade para o
             movimento, a direção é única.
           </p>
           <p>
@@ -434,9 +438,8 @@
             <li class="align-eq-left">$$P(Y=-1) = 1-p = \frac{1}{2}$$</li>
           </ul>
           <p>
-            Indo além, indexamos a variável aleatória \(Y\) com um inteiro não negativo \(k\) para identificar o
-            \(k\)-ésimo passo
-            dado. Quando analisando um passeio aleatório composto de \(t\) passos, \(k=1,2,\text{...},t\) e denotamos:
+            Em seguida indexamos a variável aleatória \(Y\) com um inteiro não negativo \(k\) para identificar o
+            \(k\)-ésimo passo dado. Para um passeio aleatório composto de \(t\) passos, \(k=1,2,\text{...},t\), denotamos:
           </p>
           <ul>
             <li>\(Y_1\) como sendo o sentido do \(1º\) passo (frente \(=+1\), trás\(=-1\));</li>
@@ -451,15 +454,14 @@
           </p>
           <h3 id="final-position">Posição Final</h3>
           <p>
-            A posição final é uma importante variávei de interesse em um passeio aleatório. Assumindo uma posição
+            A posição final é uma das diversas variáveis de interesse em um passeio aleatório. Assumindo uma posição
             inicial,
-            digamos o ponto \(0\) da reta real, a posição final é alcançada por meio da soma dos passos realizados.
+            digamos o ponto \(0\) da reta real, a posição final será obtida por meio da soma dos passos realizados.
           </p>
           <p>
             Revisitando o conceito de realização introduzido anteriormente, chamaremos de <strong>caminho</strong>
             uma possível realização do passeio aleatório. Partindo do pressuposto de que o sentido
-            assumido por cada passo é independente e que pode ser feito para frente ou para trás com igual
-            probabilidade, podemos
+            tomado por cada passo é independente e acontece para frente ou para trás com igual probabilidade, podemos
             deduzir que a probabilidade de que um caminho específico com \(t\) passos aconteça é igual a \((1/2)^t\).
           </p>
           <figure class="paths-example">
@@ -470,19 +472,19 @@
             $$P(X_6=-2)=\text{?}$$
           </p>
           <p>
-            Por exemplo, o caminho de \(6\) passos ilustrado acima tem probabilidade \((1/2)^6\) de acontecer.
+            Por exemplo, o exato caminho de \(6\) passos ilustrado acima tem probabilidade \((1/2)^6\) de acontecer.
             E mesmo que a posição final dele seja igual a \(-2\), atentemos que
           </p>
           <p>
             $$P(X_6=-2)\neq\Big(\frac{1}{2}\Big)^6$$
           </p>
           <p>
-            pois existem outros caminhos com \(6\) passos que também desembocam na posição final \(-2\).
-            Precisamos considerar todos.
+            pois existem outros caminhos de \(6\) passos que também desembocam na posição final \(-2\).
+            Precisamos considerar todos eles.
           </p>
           <p>
-            A seguir retrocederemos um pouco na complexidade do problema para analisar um passeio aleatório
-            de \(3\) passos.
+            Para ir adiante com esse problema retrocederemos um pouco na complexidade e analisaremos um passeio aleatório
+            de apenas \(3\) passos.
           </p>
           <h4>Analisando os caminhos possíveis</h4>
           <p>
@@ -496,16 +498,15 @@
           </p>
           <p>
             Muito bem, e qual a probabilidade de estar na posição \(-1\) com exatos \(3\) passos?
-            Essa questão é um pouco menos óbvia que a anterior, mas há pistas de que deve ser algo da
-            forma:
+            É díficil responder de cabeça. Parece que retornamos ao mesmo tipo de problema enfrentado com \(P(X_6=-2)\). 
+            Mas pelo menos há pistas de que a resposta deve ser algo da forma:
           </p>
           <p>
             $$P(X_3=-1)= \text{?}\times \Big(\frac{1}{2}\Big)^3$$
           </p>
           <p>
-            onde \(\text{(?)}\) deve ser substituido por um inteiro positivo que represente a quantidade
-            de caminhos que satisfazem
-            as condições impostas pela questão. Vamos construir o raciocínio por partes.
+            onde \(\text{(?)}\) deve ser substituído por um inteiro positivo que represente a quantidade
+            de caminhos possíveis que se encerram na posição \(-1) com \(3\) passos. Vamos construir o raciocínio por partes.
           </p>
           </p>
           <h4>Caminhos com 1 passo</h4>
@@ -607,16 +608,15 @@
             </figure>
           </div>
           <p>
-            Para saber a probabilide de que um passeio de \(3\) passos encerre na posição \(-1\) basta identificar
-            quantos
-            caminhos têm posição final igual a \(-1\). À propósito os caminhos são \([+1,-1,-1]\), \([-1,+1,-1]\) e
+            Para responder a questão sobre a probabilide de que um passeio de \(3\) passos encerre na posição \(-1\), basta identificar
+            quantos dos caminhos acima têm posição final igual a \(-1\). À propósito os caminhos são \([+1,-1,-1]\), \([-1,+1,-1]\) ou
             \([-1,-1,+1]\), sendo \(3\) de um total de \(8\). Logo,
           </p>
           <p>
             $$P(X_3=-1)=3\times \Big(\frac{1}{2}\Big)^3=\frac{3}{8}$$
           </p>
           <h4>Caminhos com 4 passos</h4>
-          <p>Se prosseguíssemos com a análise descrobriríamos que para \(t=4\) passos:</p>
+          <p>Se prosseguíssemos com a análise iríamos descobrir que para \(t=4\) passos:</p>
           <ul>
             <li>Existem \(2^4\) caminhos possíveis;</li>
             <li>
@@ -627,8 +627,8 @@
             </li>
           </ul>
           <p>
-            Existem pistas mais que suficientes para percebermos que um padrão vem se formando ao longo da análise.
-            É inegável que todas as informações levantadas possuem alguma relação com o número de passos \(t\):
+            Acho que existem pistas mais que suficientes para percebermos a formação de um padrão ao longo da análise.
+            É evidente que todas as informações levantadas possuem alguma relação com o número de passos \(t\):
           </p>
           <ul>
             <li>A quantidade de caminhos possíveis é dada por \(2^t\);</li>
@@ -639,15 +639,14 @@
               A variável posição final \(X_t\) toma valores no conjunto simétrico \(\{-t,-t+2,-t+4,\text{...},t\}\).
             </li>
             <li>
-              Para calcular \(P(X_t=x)\) é necessário <strong>contar</strong>, dentre todos os \(2^t\) caminhos
-              possíveis,
-              quantos
-              possuem posição final igual a \(x\).
+              E para calcular \(P(X_t=x)\) é necessário <strong>contar</strong>, dentre todos os \(2^t\) caminhos
+              possíveis, quantos possuem posição final igual a \(x\).
             </li>
           </ul>
           <p>
-            Felizmente, graças ao gradioso matemático francês Blaise Pascal, podemos utilizar de um curioso arranjo
-            triangular de números para generalizar este tipo de problema de contagem. Estamos falando do
+            Felizmente, graças ao gradioso matemático francês Blaise Pascal, somos poupados de continuar contando
+            caminhos exaustivamente. Podemos utilizar de um curioso arranjo triangular de números para 
+            generalizar de uma vez por todas este problema de contagem. Estamos falando do
             <strong>triângulo de Pascal</strong>.
           </p>
           <h3 id="pascal-triangle">Triângulo de Pascal</h3>

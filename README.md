@@ -13,7 +13,7 @@ do experimento.
   - [Tecnologias e Ferramentas](#-tecnologias-e-ferramentas)
   - [Aprendizado](#-aprendizado)
   - [Dificuldades](#-dificuldades)
-  - [Próximos Pasoss](#-próximos-passos)
+  - [Próximos Passos](#-próximos-passos)
 - [Autor](#autor)
 
 ## Visão Geral
