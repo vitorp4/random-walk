@@ -206,23 +206,23 @@
         <article class="article-content">
           <h2 id="initial-concepts">Conceitos Iniciais</h2>
           <p>
-            Antes mesmo de pensar em introduzir a definição de passeio aleatório, parece prudente desenvolver alguns conceitos 
-            essenciais estabelecidos pela teoria da probabilidade. Esta seção apresenta o necessário sobre variáveis
-            aleatórias e processos estocásticos utilizando-se de alguns exemplos.
+            Antes mesmo de introduzir o que é um passeio aleatório, parece prudente desenvolver alguns conceitos 
+            essenciais da teoria da probabilidade. Esta seção apresenta apenas o necessário sobre variáveis
+            aleatórias e processos estocásticos para que você se familiarize com as notações matemáticas.
           </p>
           <h3 id="random-variable">Variável Aleatória</h3>
           <p>
             Frequentemente, quando um experimento probabilístico é realizado, estamos interessados em uma função
             definida sobre o resultado ao invés do resultado propriamente dito. Por exemplo, suponha o
-            lançamento simultâneo de dois dados. Nessa situação é normal que a atenção se volte para a soma dos dados 
-            e não para cada resultado separadamente. Imagine que estamos prestes a vencer um jogo de tabuleiro e que 
+            lançamento simultâneo de dois dados. Nessa situação é normal que a atenção se volte para a soma resultante
+            do lançamento e não para cada dado separadamente. Imagine que estamos prestes a vencer um jogo de tabuleiro e que 
             para isso precisemos avançar exatamente \(9\) casas. O interesse em saber se a soma dos
             dados será igual a \(9\) é muito maior que o interesse sobre os possíveis pares de resultados:
             \((3,6), (4,5), (5,4)\) ou \((6,3)\).
           </p>
           <p>
-            Estas funções que abstraem os possíveis resultados de um experimento probabilístico e os mapeiam até uma
-            quantidade de interesse, são conhecidas como variáveis aleatórias.
+            Estas funções que abstraem os possíveis resultados de um experimento probabilístico e os mapeiam a uma
+            quantidade de interesse são conhecidas como variáveis aleatórias.
           </p>
           <h4>Mais um exemplo</h4>
           <p>
@@ -233,7 +233,7 @@
           <ul>
             <li>Se \(2\) caras, o jogador permanecerá no jogo;</li>
             <li>Se faces distintas, o jogador sofrerá uma penalidade;</li>
-            <li>Se ambas coroas, o jogador será desclassificado.</li>
+            <li>Se \(2\) coroas, o jogador será desclassificado.</li>
           </ul>
           <p>
             Modelando os resultados através de uma árvore de possibilidades, obtemos:
@@ -252,12 +252,11 @@
             A árvore de possibilidades possui \(2\) níveis, cada um representando o lançamento de uma das moedas. Como
             os lançamentos são limitados
             a resultar cara ou coroa, cada nó não-folha gera \(2\) novos ramos. No fim, o problema se resume a
-            \(4\) possíveis sequências: \(CC,CR,RC\) e \(RR\).
+            \(4\) possíveis sequências: \(CC,CR,RC\) e \(RR\). O conjunto dessas folhas formam o espaço amostral \(S\).
           </p>
           <p>
-            Somado a isso consta o fato de que os lançamentos são indepententes, logo, partindo da raiz, a probabilidade
-            de alcançar uma folha deve ser igual a multiplicação das probabilidades dos ramos percorridos. O conjunto 
-            destas folhas formam o espaço amostral \(S\) do experimento cujas probabilidades são: 
+            Adicionalmente, sabendo que os lançamentos individuais são indepententes, deduzimos que partindo da raiz, a probabilidade
+            de alcançar uma folha deve ser igual a multiplicação das probabilidades dos ramos percorridos.
           </p>
           <table>
             <thead>
@@ -286,8 +285,8 @@
             </tbody>
           </table>
           <p>
-            Assim, definir a variável aleatória
-            \(X =\) "número de coroas obtidas nos dois lançamentos de moeda" nos permite criar um mapeamento da
+            Definir uma variável aleatória
+            \(X =\) "número de coroas obtidas nos dois lançamentos de moeda" significa gerar um mapeamento da
             forma:
           </p>
           <div class="container-figures random-variable">
@@ -302,28 +301,29 @@
             </p>
           </div>
           <blockquote>
-            \(P(X=x)\), no geral lê-se: probabilidade de que a variável aleatória \(X\) assuma o valor \(x\).
+            \(P(X=x)\) no geral lê-se: probabilidade de que a variável aleatória \(X\) assuma o valor \(x\).
           </blockquote>
           <p>
-            Portanto, se nos for perguntado qual a probabilidade de que o jogador sofra uma penalidade como consequência do
-            lançamento das moedas, reponderíamos que é a mesma probabilidade de se obter \(1\) coroa, ou seja,
+            Se nos for perguntado qual a probabilidade de que o jogador sofra uma penalidade como consequência do
+            lançamento das duas moedas, reponderíamos que é a mesma probabilidade de se obter \(1\) coroa, ou seja,
             \(P(X=1)=8/25\).
           </p>
           <p>
-            Uma função \(X\), definida no espaço amostral \(S\) e mapeia à valores num conjunto enumerável de pontos da reta
+            Uma função \(X\) definida sobre o espaço amostral \(S\) e que mapeia à valores num conjunto enumerável de pontos
             é denominada <strong>variável aleatória discreta</strong>.
           </p>
           <h3 id="stochastic-process">Processo Estocástico</h3>
           <p>
             Uma van universitária que transporta estudantes entre os dormitórios e a reitoria chega à parada mais
-            próxima dos dormitórios em intervalos regulares de tempo. O veículo possui \(6\) assentos para passageiros,
-            a mesma quantidade de assentos que o ponto de espera utilizado como brigo contra o sol. Uma vez que todos
-            os assentos do ponto estejam ocupados, as pessoas remanescentes ficam desabrigadas até a chegada da van.
-            Desembocando então nas seguintes situações:
+            próxima dos dormitórios em intervalos regulares de tempo. O veículo sempre chega vazio, mas possui apenas
+            \(6\) assentos para passageiros,
+            sendo igual a quantidade de assentos que possui o ponto de espera. Uma vez que todos
+            os assentos do ponto estejam ocupados, as pessoas excedentes ficam em pé aguardando a chegada da van debaixo
+            de sol.
           </p>
           <ul>
-            <li>Quando há espaço suficiente na van, ela parte levando todos os estudantes, e o ponto fica vazio;</li>
-            <li>Quando a lotação é alcançada, o motorista permite que apenas as primeiras pessoas da fila
+            <li>Quando a van chega e existem \(6\) pessoas ou menos na fila, ela parte levando todo mundo e o ponto fica vazio;</li>
+            <li>Por outro lado, quando existem mais de \(6\) pessoas aguardando, o motorista permite que apenas as primeiras pessoas da fila
               embarquem, e as restantes devem esperar pelo próximo veículo.</li>
           </ul>
           <figure class="bus-stop mb-32">
@@ -331,9 +331,9 @@
             <figcaption>Ilustração por <a href='https://www.freepik.com/vectors/commute'>pch.vector</a></figcaption>
           </figure>
           <p>
-            Atendendo às reclamações do corpo discente quanto à infraestrutura reduzida do ponto de espera, os gestores
-            de mobilidade urbana da universidade propuseram a condução de um estudo. Eles decidiram que seria útil ter
-            conhecimento da quantidade de assentos do ponto que permanecem ocupados após a partida de uma van.
+            Atendendo às reclamações do corpo discente quanto à infraestrutura insuficiente do ponto de espera, os gestores
+            de mobilidade urbana propuseram a condução de um estudo. Eles decidiram que seria útil observar
+            a quantidade de assentos do ponto que permanecem ocupados após as partidas das vans.
           </p>
           <p>
             Podemos tratar este problema como um processo estocástico. Consideremos como variável de interesse o número
