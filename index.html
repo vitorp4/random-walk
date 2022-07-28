@@ -397,7 +397,7 @@
             </li>
             <li>
               Finalmente, depois que a \(8ª\) van partiu, o ponto permaneceu com todos os assentos
-              ocupados. O mesmo se repete após a partida de \(9ª\).
+              ocupados. O mesmo se repete após a partida da \(9ª\) van.
             </li>
             <li>
               Através da distribuição de probabilidade de \(X_8\) percebemos que a lotação do ponto neste instante
@@ -412,57 +412,58 @@
             aleatórias indexadas por um conjunto ordenado de índices.
           </p>
           <p>
-            Processos estocásticos têm aplicação em diversas áreas do conhecimento como biologia, física, processamento
-            de sinais, teoria da informação, criptografia e telecomunicações. Entretanto, não vamos entrar no mérito de
-            uma aplicação específica, mas sim discutiremos uma categoria genérica deste conceito, o <strong>passeio aleatório</strong>.
+            Processos estocásticos têm aplicação em diversas áreas do conhecimento como biologia, física e teoria da informação,
+            mas não entraremos neste nível de especificidade. A partir de agora nos contentaremos em discutir uma categoria mais
+            genérica deste conceito: o <strong>passeio aleatório</strong>.
           </p>
           <h2 id="random-walk">Passeio Aleatório</h2>
           <p>
             Uma forma irreverente de descrever o passeio aleatório se dá através do andar de um bêbado. Imagine que
-            os movimentos dessa pessoa embriagada são de certo modo imprevisíveis e que consistem de simples passos.
+            os movimentos dessa pessoa são de certo modo imprevisíveis e que consistem de simples passos.
             Sempre após uma unidade de tempo é dado um passo: podendo ser para frente, com probabilidade \(p\); ou
             para trás, com probabilidade \(1-p\).
           </p>
           <p>
             A fim de simplificar o problema assumiremos que \(p=1/2\), ou seja, trataremos de um passeio aleatório
-            <strong>simétrico</strong> onde a probabilidade de um passo para frente ou para trás são idênticas.
+            <strong>simétrico</strong>.
             Assumiremos
-            também que o problema é unidimensional, o que significa que não haverá outros graus de liberdade para o
-            movimento, a direção é única.
+            também que o problema é unidimensional, pois não haverá outros graus de liberdade para o
+            movimento.
           </p>
           <p>
-            Portanto, definimos \(Y=\) "sentido do passo (frente \(=+1\), trás\(=-1\))", de forma que:
+            Definimos então uma variável aleatória \(Y=\) "sentido do passo (frente \(=+1\), trás\(=-1\))", 
+            cujas probabilidades são:
           </p>
           <ul>
             <li class="align-eq-left">$$P(Y=+1) = p = \frac{1}{2}$$</li>
             <li class="align-eq-left">$$P(Y=-1) = 1-p = \frac{1}{2}$$</li>
           </ul>
           <p>
-            Em seguida indexamos a variável aleatória \(Y\) com um inteiro não negativo \(k\) para identificar o
-            \(k\)-ésimo passo dado. Para um passeio aleatório composto de \(t\) passos, \(k=1,2,\text{...},t\), denotamos:
+            Em seguida indexamos \(Y\) utilizando um inteiro não negativo \(k\) para identificar o \(k\)-ésimo passo realizado. 
+            Sob a persepectiva de um passeio aleatório composto de \(t\) passos independentes, denotamos:
           </p>
           <ul>
-            <li>\(Y_1\) como sendo o sentido do \(1º\) passo (frente \(=+1\), trás\(=-1\));</li>
-            <li>\(Y_2\) como sendo o sentido do \(2º\) passo (frente \(=+1\), trás\(=-1\));<br>...</li>
-            <li>\(Y_t\) como sendo o sentido do \(t\)-ésimo passo (frente \(=+1\), trás\(=-1\)).</li>
+            <li>\(Y_1\) como sendo o sentido do \(1º\) passo;</li>
+            <li>\(Y_2\) como o sentido do \(2º\) passo;<br>...</li>
+            <li>\(Y_t\) como o sentido do \(t\)-ésimo e último passo.</li>
           </ul>
           <p>
-            E a soma dos passos realizados revelará a <strong>posição final</strong> do passeio:
+            Cada um dos passos aleatórios \(Y_k\) contribuirão da sua forma para o cálculo da <strong>posição final</strong>.
+          </p>
+          <h3 id="final-position">Posição Final</h3>
+          <p>
+            A posição final é uma das diversas variáveis passíveis de análise em um passeio aleatório. Partindo da posição
+            inicial \(0\) na reta real, a posição final \(X_t\) será obtida por meio da soma dos \(t\)
+            passos que forem realizados. Passos à frente contribuem em \(1\) para o somatório, enquanto passos para trás contribuem com \(-1\).
           </p>
           <p>
             $$X_t=\sum_{k=1}^tY_k$$
           </p>
-          <h3 id="final-position">Posição Final</h3>
           <p>
-            A posição final é uma das diversas variáveis de interesse em um passeio aleatório. Assumindo uma posição
-            inicial,
-            digamos o ponto \(0\) da reta real, a posição final será obtida por meio da soma dos passos realizados.
-          </p>
-          <p>
-            Revisitando o conceito de realização introduzido anteriormente, chamaremos de <strong>caminho</strong>
-            uma possível realização do passeio aleatório. Partindo do pressuposto de que o sentido
-            tomado por cada passo é independente e acontece para frente ou para trás com igual probabilidade, podemos
-            deduzir que a probabilidade de que um caminho específico com \(t\) passos aconteça é igual a \((1/2)^t\).
+            Revisitando o conceito de realização apresentado na seção anterior, chamaremos de <strong>caminho</strong>
+            uma possível realização do passeio aleatório. Uma vez que o sentido
+            tomado por cada passo é independente e equiprovável, infere-se que a probabilidade de que um caminho específico
+            com \(t\) passos aconteça seja igual a \((1/2)^t\).
           </p>
           <figure class="paths-example">
             <img src="./assets/paths-example.png" />
@@ -480,7 +481,7 @@
           </p>
           <p>
             pois existem outros caminhos de \(6\) passos que também desembocam na posição final \(-2\).
-            Precisamos considerar todos eles.
+            Como encontrar todos eles?
           </p>
           <p>
             Para ir adiante com esse problema retrocederemos um pouco na complexidade e analisaremos um passeio aleatório
@@ -490,23 +491,23 @@
           <p>
             Qual a probabilidade de que, partindo da posição inicial \(0\), se esteja na posição \(3\) após
             exatos \(3\) passos?
-            Essa é até simples, trata-se do caso especial onde todos os passos são dados à frente, ou seja,
-            \(Y_1=Y_2=Y_3=+1\). Não existe nenhum outro caminho que satisfaça a essas condições. Logo,
+            Essa é simples. Se trata do caso especial onde todos os passos são dados à frente, ou seja,
+            \(Y_1=Y_2=Y_3=+1\). Não existe nenhum outro caminho que satisfaça essas condições. Logo,
           </p>
           <p>
             $$P(X_3=3)=1 \times \Big(\frac{1}{2}\Big)^3 =\frac{1}{8}$$
           </p>
           <p>
-            Muito bem, e qual a probabilidade de estar na posição \(-1\) com exatos \(3\) passos?
-            É díficil responder de cabeça. Parece que retornamos ao mesmo tipo de problema enfrentado com \(P(X_6=-2)\). 
-            Mas pelo menos há pistas de que a resposta deve ser algo da forma:
+            Muito bem. E qual a probabilidade de estar na posição \(-1\) com exatos \(3\) passos?
+            É díficil responder de imediato. Acabamos de retornar ao mesmo problema enfrentado com \(P(X_6=-2)\), 
+            porém já temos pistas o suficiente para desconfiar que a resposta dessa vez deve ser algo da forma:
           </p>
           <p>
-            $$P(X_3=-1)= \text{?}\times \Big(\frac{1}{2}\Big)^3$$
+            $$P(X_3=-1)= \text{?}\times \Big(\frac{1}{2}\Big)^3 = \frac{\text{?}}{8}$$
           </p>
           <p>
             onde \(\text{(?)}\) deve ser substituído por um inteiro positivo que represente a quantidade
-            de caminhos possíveis que se encerram na posição \(-1) com \(3\) passos. Vamos construir o raciocínio por partes.
+            de caminhos possíveis que se encerram na posição \(-1\) com \(3\) passos. Vamos construir o raciocínio por partes.
           </p>
           </p>
           <h4>Caminhos com 1 passo</h4>
@@ -516,7 +517,7 @@
               Cada um deles têm probabilidade \((1/2)^1\);
             </li>
             <li>
-              A variável posição final \(X_1\) toma valores em \(\{-1,1\}\).
+              E a variável posição final \(X_1\) toma valores em \(\{-1,1\}\).
             </li>
           </ul>
           <div class="container-figures paths-1">
@@ -536,7 +537,7 @@
               Cada um deles têm probabilidade \((1/2)^2\);
             </li>
             <li>
-              A variável posição final \(X_2\) toma valores em \(\{-2,0,2\}\).
+              E a variável posição final \(X_2\) toma valores em \(\{-2,0,2\}\).
             </li>
           </ul>
           <div class="container-figures paths-2">
@@ -566,7 +567,7 @@
               Cada um deles têm probabilidade \((1/2)^3\);
             </li>
             <li>
-              A variável posição final \(X_3\) toma valores em \(\{-3,-1,1,3\}\).
+              E a variável posição final \(X_3\) toma valores em \(\{-3,-1,1,3\}\).
             </li>
           </ul>
           <div class="container-figures paths-3">
@@ -609,7 +610,7 @@
           </div>
           <p>
             Para responder a questão sobre a probabilide de que um passeio de \(3\) passos encerre na posição \(-1\), basta identificar
-            quantos dos caminhos acima têm posição final igual a \(-1\). À propósito os caminhos são \([+1,-1,-1]\), \([-1,+1,-1]\) ou
+            quantos dos caminhos acima têm posição final igual a \(-1\). À propósito os caminhos são \([+1,-1,-1]\), \([-1,+1,-1]\) e
             \([-1,-1,+1]\), sendo \(3\) de um total de \(8\). Logo,
           </p>
           <p>
@@ -623,12 +624,12 @@
               Cada um deles têm probabilidade \((1/2)^4\);
             </li>
             <li>
-              A variável posição final \(X_4\) toma valores em \(\{-4,-2,0,2,4\}\).
+              E a variável posição final \(X_4\) toma valores em \(\{-4,-2,0,2,4\}\).
             </li>
           </ul>
           <p>
-            Acho que existem pistas mais que suficientes para percebermos a formação de um padrão ao longo da análise.
-            É evidente que todas as informações levantadas possuem alguma relação com o número de passos \(t\):
+            Aos pouvos vem ficando evidente que existe um padrão guiando a análise dos caminhos. Na verdade, todas as informações 
+            levantadas possuem algum grau de relação com o número de passos \(t\):
           </p>
           <ul>
             <li>A quantidade de caminhos possíveis é dada por \(2^t\);</li>
@@ -646,7 +647,7 @@
           <p>
             Felizmente, graças ao gradioso matemático francês Blaise Pascal, somos poupados de continuar contando
             caminhos exaustivamente. Podemos utilizar de um curioso arranjo triangular de números para 
-            generalizar de uma vez por todas este problema de contagem. Estamos falando do
+            generalizar de uma vez por todas este problema. Estamos falando do
             <strong>triângulo de Pascal</strong>.
           </p>
           <h3 id="pascal-triangle">Triângulo de Pascal</h3>
@@ -662,10 +663,10 @@
           </figure>
           <p>
             É possível estender a quantidade de níveis iterativamente. Para isso basta seguir o procedimento
-            de somar os números das diagonais do nível ligeiramente acima. Por exemplo, as setas azuis na
+            de somar os números das diagonais ligeiramente acima. Por exemplo, as setas azuis na
             figura indicam como
-            o conteúdo do nível \(4\) foi obtido a partir do nível \(3\). Caso o elemento diagonal não exista no nível
-            superior,
+            o conteúdo do nível \(4\) foi obtido a partir do nível \(3\). Caso um dos elementos diagonais não existam
+            no nível anterior,
             como acontece nas bordas do triângulo, então assume-se contribuição \(0\) para a soma.
           </p>
           <blockquote>
@@ -673,20 +674,20 @@
           </blockquote>
           <h4>Amarrando o triângulo ao passeio</h4>
           <p>
-            Estas são associações que podemos fazer entre o triângulo e o nosso problema:
+            Estas são associações que podemos fazer entre o triângulo e o nosso passeio aleatório:
           </p>
           <ul>
             <li>O nível \(t\) do triângulo corresponde a quantidade de passos \(t\) do passeio aleatório;</li>
-            <li>A soma dos números de um mesmo nível do triângulo corresponde à quantidade total de caminhos possíveis
+            <li>A soma dos números do nível \(t\) do triângulo corresponde à quantidade total de caminhos possíveis
               \(2^t\);</li>
-            <li>A quantidade de números em um nível do triângulo corresponde à quantidade de posições finais distintas
-              alcançáveis
-              com \(t\) passos;
+            <li>A quantidade de números do nível \(t\) corresponde à quantidade de posições finais distintas
+              alcançáveis com \(t\) passos;
             </li>
-            <li>Os números de um nível correspondem à contagem de caminhos possíveis de cada posição final alcançável.
+            <li>Um número do nível \(t\) corresponde à contagem de caminhos possíveis de uma posição final alcançável
+              com \(t\) passos. O mapeamento é feito em ordem.
             </li>
           </ul>
-          <p>Vamos validar essas associações revisitando alguns exemplos:</p>
+          <p>Talvez fique mais intuitivo desenhando. Vamos validar essas associações revisitando alguns exemplos:</p>
           <figure class="triangle-prob">
             <img src="./assets/link-triangle-prob-1.png" />
             <figcaption>Prob. de chegar à posição final \(-1\) com \(3\) passos</figcaption>
@@ -706,8 +707,9 @@
           <p>
             Até agora calculamos apenas probabilidades pontuais: especificando a quantidade de passos e a posição
             final desejada. Mas podemos, pensando de forma mais ampla, ter interesse em obter as probabilidades
-            de cada uma das posições finais alcançáveis com \(t\) passos. Como proceder nessa situação? Basta repetir
-            o procedimento da seção anterior para cada um dos números que compõem o nível \(t\) do triângulo de Pascal.
+            de todas as posições finais alcançáveis com \(t\) passos. Como proceder nessa situação? Basta repetir
+            o procedimento da seção anterior de utilizar os números do nível \(t\) do 
+            triângulo de Pascal para contar os caminhos.
           </p>
           <p>
             Revisitando o exemplo onde \(t=6\) passos:
@@ -728,7 +730,7 @@
           <p>A <strong>distribuição
               de probabilidade</strong> de uma variável aleatória descreve como as probabilidades estão distribuídas
             sobre
-            todos os valores os quais a variável pode assumir. No contexto de uma variável aleatória discreta, uma
+            todos os valores os quais é possível assumir. No contexto de uma variável aleatória discreta, uma
             distribuição
             é considerada válida se:
           </p>
@@ -737,7 +739,7 @@
             <li>A soma das probabilidades é igual a \(1\).</li>
           </ol>
           <p>
-            As figuras abaixo ilustram as distribuições de probabilidade da posição final para diferentes quantidades de
+            As figuras abaixo ilustram as distribuições de probabilidade da posição final para diferentes números de
             passos.
           </p>
           <div class="container-figures dists">
@@ -763,9 +765,9 @@
             </figure>
           </div>
           <blockquote>
-            Perceba a simetria ao redor da posição \(0\). Isso acontece porque além do problema partir da posição
+            Perceba a simetria ao redor da posição \(0\). Isso acontece porque além de partir da posição
             inicial \(0\), nós
-            simplificamos o passeio de forma que fossem dados passos para frente ou para trás com igual probabilidade.
+            simplificamos o passeio para que realizasse passos para frente ou para trás de maneira equiprovável.
           </blockquote>
           <p>
             A sequência de variáveis aleatórias que modelam a posição final de um passeio aleatório \(\{X_t,
@@ -778,7 +780,7 @@
             Esta seção extra cobre alguns pontos específicos sobre o funcionamento da simulação. Se você tem dúvidas
             quanto à utilização dos controles ou quer descobrir o porquê da frequência relativa se aproximar da
             probabilidade
-            teórica, então o que você procura está aqui.
+            teórica, então as respostas estão aqui.
           </p>
           <h3 id="controls">Controles</h3>
           <p>
