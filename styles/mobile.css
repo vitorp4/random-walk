@@ -214,9 +214,8 @@
   /*  -------------------------- cards.css -------------------------------------- */
   .cards-wrapper {
     flex-direction: column;
-    align-items: stretch; 
+    align-items: center; 
     gap: 36px;
-    width: fit-content;  
     padding: 0 8px 0 72px;
     margin: 48px auto 0;
     counter-reset: card-counter;
@@ -231,8 +230,8 @@
   }
 
   .cards-wrapper .card {
-    padding: 16px 24px 16px 64px;
-    width: initial;
+    padding: 16px 16px 16px 64px;
+    width: 100%;
     counter-increment: card-counter;
     background-color: initial;
     box-shadow: 2px 2px 16px rgba(5, 5, 165, 0.1);
