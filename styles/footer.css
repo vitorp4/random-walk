@@ -1,5 +1,15 @@
 footer {
   background-color: var(--main-blue);
+  position: relative;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  background-color: inherit;
+  height: 3px;
+  top: -2px;
+  width: 100%;
 }
 
 footer .footer-container {
