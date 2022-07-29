@@ -9,7 +9,7 @@ do experimento.
   - [Ideia Inicial](#-ideia-inicial)
   - [Screenshots](#-screenshots)
   - [Links](#-links)
-- [Desenvolvimento](#sesenvolvimento)
+- [Desenvolvimento](#desenvolvimento)
   - [Tecnologias e Ferramentas](#-tecnologias-e-ferramentas)
   - [Aprendizado](#-aprendizado)
   - [Dificuldades](#-dificuldades)

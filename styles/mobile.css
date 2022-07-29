@@ -335,8 +335,16 @@
     margin-inline-start: 42px;
   }
 
+  .container-figures.relative-frequency + .container-figures.relative-frequency {
+    margin-top: 40px;
+  }
+
   .article-content :where(ul, ol) {
     margin-left: 0;
+  }
+
+  figure.triangle-prob + figure.triangle-prob {
+    margin-top: 40px;
   }
 
   .controls-description-grid {
