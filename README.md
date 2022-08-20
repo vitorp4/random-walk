@@ -30,8 +30,7 @@ No início, ainda durante a fase de planejamento, eu já tinha em mente que quer
 - Acompanhar a leitura aplicando estilos ao menu lateral;
 - Usar o figma para prototipar algo minimamente útil.
 
-Complementar a tudo isso abdiquei do uso do Angular e do Sass. A simulação era relativamente simples e na minha cabeça super fazia sentido abrir mão dessas tecnologias. No fundo eu queria aproveitar a oportunidae para ter uma noção de como seria desenvolver algo sem frameworks e pré-processadores. \
-Com exceção dos gráficos com Chart.js e das equações com MathJax, todo o resto foi feito do zero.
+Complementar a tudo isso abdiquei do uso do Angular e do Sass. A simulação era relativamente simples e na minha cabeça super fazia sentido abrir mão dessas tecnologias. No fundo eu queria aproveitar a oportunidae para ter uma noção de como seria desenvolver algo sem frameworks e pré-processadores.
 
 ### 📸 Screenshots
 
